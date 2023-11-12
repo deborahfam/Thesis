@@ -2791,28 +2791,30 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">Bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">ham10000</bcf:citekey>
-    <bcf:citekey order="2">ohe</bcf:citekey>
-    <bcf:citekey order="3">pandas</bcf:citekey>
-    <bcf:citekey order="4">img_gen</bcf:citekey>
-    <bcf:citekey order="5">augmentation</bcf:citekey>
-    <bcf:citekey order="6">efficientnet</bcf:citekey>
-    <bcf:citekey order="7">regularization</bcf:citekey>
-    <bcf:citekey order="8">dense</bcf:citekey>
-    <bcf:citekey order="9">dropout</bcf:citekey>
-    <bcf:citekey order="10">adamax</bcf:citekey>
-    <bcf:citekey order="11">lr</bcf:citekey>
-    <bcf:citekey order="12">ham10000</bcf:citekey>
-    <bcf:citekey order="13">ohe</bcf:citekey>
-    <bcf:citekey order="14">pandas</bcf:citekey>
-    <bcf:citekey order="15">img_gen</bcf:citekey>
-    <bcf:citekey order="16">augmentation</bcf:citekey>
-    <bcf:citekey order="17">efficientnet</bcf:citekey>
-    <bcf:citekey order="18">regularization</bcf:citekey>
-    <bcf:citekey order="19">dense</bcf:citekey>
-    <bcf:citekey order="20">dropout</bcf:citekey>
-    <bcf:citekey order="21">adamax</bcf:citekey>
-    <bcf:citekey order="22">lr</bcf:citekey>
+    <bcf:citekey order="1">whited2002teledermatology</bcf:citekey>
+    <bcf:citekey order="2">ham10000</bcf:citekey>
+    <bcf:citekey order="3">ohe</bcf:citekey>
+    <bcf:citekey order="4">pandas</bcf:citekey>
+    <bcf:citekey order="5">img_gen</bcf:citekey>
+    <bcf:citekey order="6">augmentation</bcf:citekey>
+    <bcf:citekey order="7">efficientnet</bcf:citekey>
+    <bcf:citekey order="8">regularization</bcf:citekey>
+    <bcf:citekey order="9">dense</bcf:citekey>
+    <bcf:citekey order="10">dropout</bcf:citekey>
+    <bcf:citekey order="11">adamax</bcf:citekey>
+    <bcf:citekey order="12">lr</bcf:citekey>
+    <bcf:citekey order="13">whited2002teledermatology</bcf:citekey>
+    <bcf:citekey order="14">ham10000</bcf:citekey>
+    <bcf:citekey order="15">ohe</bcf:citekey>
+    <bcf:citekey order="16">pandas</bcf:citekey>
+    <bcf:citekey order="17">img_gen</bcf:citekey>
+    <bcf:citekey order="18">augmentation</bcf:citekey>
+    <bcf:citekey order="19">efficientnet</bcf:citekey>
+    <bcf:citekey order="20">regularization</bcf:citekey>
+    <bcf:citekey order="21">dense</bcf:citekey>
+    <bcf:citekey order="22">dropout</bcf:citekey>
+    <bcf:citekey order="23">adamax</bcf:citekey>
+    <bcf:citekey order="24">lr</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

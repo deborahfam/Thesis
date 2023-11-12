@@ -127,6 +127,87 @@
       \field{title}{Tasa de aprendizaje}
       \field{year}{2023}
     \endentry
+    \entry{whited2002teledermatology}{article}{}
+      \name{author}{9}{}{%
+        {{un=0,uniquepart=base,hash=0c476985149ab0d628dc113fe9c7ba9e}{%
+           family={Whited},
+           familyi={W\bibinitperiod},
+           given={John\bibnamedelima D},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7beeba994a5150b9ef27ac7897f1024e}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Russell\bibnamedelima P},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29516fc8e43c0cab728ec7849803bc32}{%
+           family={Foy},
+           familyi={F\bibinitperiod},
+           given={Marjorie\bibnamedelima E},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4de591ad74466c9a5a4fb1312e380a23}{%
+           family={Marbrey},
+           familyi={M\bibinitperiod},
+           given={Laurie\bibnamedelima E},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d322454ef768c172099eb6fa7001740a}{%
+           family={Grambow},
+           familyi={G\bibinitperiod},
+           given={Steven\bibnamedelima C},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d559d322efcc8295841caf72a1250c6}{%
+           family={Dudley},
+           familyi={D\bibinitperiod},
+           given={Tara\bibnamedelima K},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b42fcee38bafa3edb27a0d30e7fe8078}{%
+           family={Datta},
+           familyi={D\bibinitperiod},
+           given={Santanu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a61badd84258f87a60e7f7bba1f4b8b9}{%
+           family={Simel},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima L},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9880e956377b0099ceb1caf52d24d37}{%
+           family={Oddone},
+           familyi={O\bibinitperiod},
+           given={Eugene\bibnamedelima Z},
+           giveni={E\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Mary Ann Liebert, Inc.}%
+      }
+      \strng{namehash}{dc4c95e7eda85be59a5744626daf5b10}
+      \strng{fullhash}{28c004fc551c1194f92a4c72275aface}
+      \strng{bibnamehash}{28c004fc551c1194f92a4c72275aface}
+      \strng{authorbibnamehash}{28c004fc551c1194f92a4c72275aface}
+      \strng{authornamehash}{dc4c95e7eda85be59a5744626daf5b10}
+      \strng{authorfullhash}{28c004fc551c1194f92a4c72275aface}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Telemedicine Journal and e-Health}
+      \field{number}{3}
+      \field{title}{Teledermatology's impact on time to intervention among referrals to a dermatology consult service}
+      \field{volume}{8}
+      \field{year}{2002}
+      \field{pages}{313\bibrangedash 321}
+      \range{pages}{9}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
