@@ -1,0 +1,133 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{adamax}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://keras.io/api/optimizers/adamax/}}
+      \field{title}{Adamax}
+      \field{year}{2023}
+    \endentry
+    \entry{augmentation}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningmastery.com/image-augmentation-deep-learning-keras/}}
+      \field{title}{Aumentación de datos}
+      \field{year}{2023}
+    \endentry
+    \entry{dense}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://towardsdatascience.com/activated-dense-layer-intuition-and-implementation-93e090cadc34}}
+      \field{title}{Capas densas}
+      \field{year}{2023}
+    \endentry
+    \entry{ham10000}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000}}
+      \field{title}{Conjunto de datos HAM10000}
+      \field{year}{2023}
+    \endentry
+    \entry{pandas}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html}}
+      \field{title}{Dataframes de Pandas}
+      \field{year}{2023}
+    \endentry
+    \entry{dropout}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/}}
+      \field{title}{Dropout}
+      \field{year}{2023}
+    \endentry
+    \entry{efficientnet}{misc}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://towardsdatascience.com/complete-architectural-details-of-efficientnets-7e50bc115fe0}}
+      \field{title}{EfficientNetB1}
+    \endentry
+    \entry{img_gen}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://keras.io/api/preprocessing/image/}}
+      \field{title}{ImageDataGenerator}
+      \field{year}{2023}
+    \endentry
+    \entry{ohe}{misc}{}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/}}
+      \field{title}{One-hot encoding}
+      \field{year}{2023}
+    \endentry
+    \entry{regularization}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningmastery.com/how-to-reduce-overfitting-in-deep-neural-networks-with-weight-regularization-in-keras/}}
+      \field{title}{Regularización}
+      \field{year}{2023}
+    \endentry
+    \entry{lr}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.jeremyjordan.me/nn-learning-rate/}}
+      \field{title}{Tasa de aprendizaje}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
