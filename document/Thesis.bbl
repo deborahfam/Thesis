@@ -117,6 +117,57 @@
       \field{title}{Regularización}
       \field{year}{2023}
     \endentry
+    \entry{tajerian2023design}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1aa2ca9c5ae56e744b3e909a8b0f0bb0}{%
+           family={Tajerian},
+           familyi={T\bibinitperiod},
+           given={Amin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab149648ac4cba25f668b197fb564f5e}{%
+           family={Kazemian},
+           familyi={K\bibinitperiod},
+           given={Mohsen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cdc3ed7566dc9e5f35205bafdae443d6}{%
+           family={Tajerian},
+           familyi={T\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8afb2d34cd2da85b6b5cad31a01e0b26}{%
+           family={Akhavan\bibnamedelima Malayeri},
+           familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Ava},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science San Francisco, CA USA}%
+      }
+      \strng{namehash}{1afd4eef8adf7ba3e65d7320cbf2b3fb}
+      \strng{fullhash}{e17f3741b6d90df8c77e30b659adeaa8}
+      \strng{bibnamehash}{e17f3741b6d90df8c77e30b659adeaa8}
+      \strng{authorbibnamehash}{e17f3741b6d90df8c77e30b659adeaa8}
+      \strng{authornamehash}{1afd4eef8adf7ba3e65d7320cbf2b3fb}
+      \strng{authorfullhash}{e17f3741b6d90df8c77e30b659adeaa8}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Plos one}
+      \field{number}{4}
+      \field{title}{Design and validation of a new machine-learning-based diagnostic tool for the differentiation of dermatoscopic skin cancer images}
+      \field{volume}{18}
+      \field{year}{2023}
+      \field{pages}{e0284437}
+      \range{pages}{-1}
+    \endentry
     \entry{lr}{misc}{}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}

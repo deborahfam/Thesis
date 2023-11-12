@@ -1419,6 +1419,9 @@ INPUT MainMatter/Background.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmro12.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmro10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm
 INPUT ./MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
@@ -1429,7 +1432,6 @@ INPUT ./MainMatter/Proposal.tex
 INPUT MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
 INPUT MainMatter/Proposal.tex
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT ./MainMatter/Implementation.tex
 INPUT ./MainMatter/Implementation.tex
 INPUT ./MainMatter/Implementation.tex
@@ -1550,7 +1552,9 @@ INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb
+INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
