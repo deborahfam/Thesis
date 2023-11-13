@@ -2,82 +2,55 @@
 
 \section{Metodología}\label{sec:method}
 %-----------------------------------------------------------------------------------
- En este capítulo se propone una método para la detección de cáncer de piel mediante el aprendizaje automático. 
- Este enfoque de solución se basa
-en la implementación de una  red neuronal profunda para analizar y categorizar automáticamente imágenes, con el objetivo de asistir 
-en la detección de posibles casos malignos y mejorar la eficiencia del proceso diagnóstico. \\
+En este capítulo se propone una método para la detección de cáncer de piel mediante el aprendizaje automático. Este enfoque de solución se basa en la implementación de una  red neuronal profunda para analizar y categorizar automáticamente imágenes, con el objetivo de asistir en la detección de posibles casos malignos y mejorar la eficiencia del proceso diagnóstico.
 
 A continuación, se introducen algunos de los conceptos básicos de los métodos o técnicas que se emplearan a lo largo del capítulo.
 
 \section{Preparación y Carga de Datos}
 
  Los datos utilizados como medio de aprendizaje para este proyecto son: Imágenes y Metadatos. Los datos son extraídos del Dataset: HAM1000-segmentation-and-classification  \cite{ham10000}.
- El mismo contiene imágenes tomadas de varios tipos de cáncer de piel y contiene además un archivo Excel formato csv de Metadatos. Los metadatos contienen información relacionada con 
- cada imagen con un formato de \textit{one hot encoding}.
+ El mismo contiene imágenes tomadas de varios tipos de cáncer de piel y contiene además un archivo Excel formato csv de Metadatos. Los metadatos contienen información relacionada con cada imagen con un formato de \textit{one hot encoding}.
 
 \subsection{Transformación de Datos}
 
-Para optimizar la eficiencia del algoritmo, se procesan las imágenes realizando diversas modificaciones, que incluyen: 
-eliminación de cabello, luces y sombras, división de canales y aplicación de un leve desenfoque.
+Para optimizar la eficiencia del algoritmo, se procesan las imágenes realizando diversas modificaciones, que incluyen: eliminación de cabello, luces y sombras, división de canales y aplicación de un leve desenfoque.
 
-Los metadatos, asociados a la clasificación, están etiquetados utilizando el método de \textit{one hot encoding}. 
-Fue necesario convertirlos a un formato \textit{categórico} para su procesamiento..
+Los metadatos, asociados a la clasificación, están etiquetados utilizando el método de \textit{one hot encoding}. Fue necesario convertirlos a un formato \textit{categórico} para su procesamiento.
 
-El \textit{one hot encoding} es una técnica de procesamiento de datos en la cual cada valor categórico se representa 
-mediante un vector binario cuyo tamaño corresponde al número de categorías posibles. En dicho vector, todos los elementos 
-son cero, salvo el correspondiente a la categoría del valor, que es uno \cite{ohe}. 
+El \textit{one hot encoding} es una técnica de procesamiento de datos en la cual cada valor categórico se representa mediante un vector binario cuyo tamaño corresponde al número de categorías posibles. En dicho vector, todos los elementos son cero, salvo el correspondiente a la categoría del valor, que es uno \cite{ohe}. 
 
 Se define \textit{categórico} como el formato en el que a cada elemento se le asigna el nombre de una categoría como propiedad.
 
 \subsection{Modelación y división del conjunto de datos}
 
- Los datos se modelan a partir de un Dataframe de Pandas  \cite{pandas}. Los mismo son divididos luego en 3 conjuntos: Entrenamiento, Validación y Prueba. 
- Estas divisiones son necesarias para que el modelo pueda aprender y ser evaluado correctamente. 
+Los datos se modelan a partir de un Dataframe de Pandas  \cite{pandas}. Los mismo son divididos luego en 3 conjuntos: Entrenamiento, Validación y Prueba. 
+Estas divisiones son necesarias para que el modelo pueda aprender y ser evaluado correctamente. 
  
- Aquí, se define que el 95\% de los datos se utilizará para entrenamiento y la cantidad restante se considera en un conjunto dummy, el cual 
- luego es dividido en validación y prueba. En esta última división al conjunto de validación le corresponde una cantidad del 50\% del conjunto 
- dummy (lo que es equivalente al 2.5\% del df original) y el conjunto de prueba el 50\% restante (también equivalente al 2.5\% del df original).
- Además se mezclan aleatoriamente los datos y se utiliza una variable fija para garantizar que la división sea reproducible.
+Aquí, se define que el 95\% de los datos se utilizará para entrenamiento y la cantidad restante se considera en un conjunto dummy, el cual  luego es dividido en validación y prueba. En esta última división al conjunto de validación le corresponde una cantidad del 50\% del conjunto  dummy (lo que es equivalente al 2.5\% del df original) y el conjunto de prueba el 50\% restante (también equivalente al 2.5\% del df original). Además se mezclan aleatoriamente los datos y se utiliza una variable fija para garantizar que la división sea reproducible.
 
- En el contexto del Machine Learning (Aprendizaje de Máquinas), un DataFrame de Pandas es una estructura de datos bidimensional, similar a una tabla, 
- proporcionada por la biblioteca Python \textit{Pandas}. Facilita la manipulación y análisis de grandes conjuntos de datos, permitiendo 
- una organización clara en forma de filas y columnas.
+En el contexto del Machine Learning (Aprendizaje de Máquinas), un DataFrame de Pandas es una estructura de datos bidimensional, similar a una tabla,proporcionada por la biblioteca Python \textit{Pandas}. Facilita la manipulación y análisis de grandes conjuntos de datos, permitiendo una organización clara en forma de filas y columnas.
 
 \section{Generadores de Datos y Preprocesamiento}
 
-Se detectó que el conjunto de datos estaba altamente desequilibrado. Por lo tanto, limitamos el número máximo de muestras por clase a 300 
-para equilibrar el conjunto de datos. 
+Se detectó que el conjunto de datos estaba altamente desequilibrado. Por lo tanto, limitamos el número máximo de muestras por clase a 300 para equilibrar el conjunto de datos. 
 
-Se empleó \textit{ImageDataGenerator} \cite{img_gen} para cargar, transformar y generar lotes de imágenes durante el entrenamiento.El \textit{ImageDataGenerator} 
-es una herramienta ofrecida por la biblioteca \textit{Keras}, diseñada específicamente para el procesamiento y manejo de imágenes en 
-tareas de Machine Learning. Se inicializa con varias transformaciones (como rotación, desplazamiento y zoom) para aplicar 
-automáticamente estas transformaciones a las imágenes a medida que se cargan devolver lotes de imágenes listos para el entrenamiento o la 
-evaluación del modelo, lo cual permite alimentar la red neuronal de manera eficiente \cite{augmentation} .
+Se empleó \textit{ImageDataGenerator} \cite{img_gen} para cargar, transformar y generar lotes de imágenes durante el entrenamiento. El \textit{ImageDataGenerator} es una herramienta ofrecida por la biblioteca \textit{Keras}, diseñada específicamente para el procesamiento y manejo de imágenes en 
+tareas de Machine Learning. Se inicializa con varias transformaciones (como rotación, desplazamiento y zoom) para aplicar automáticamente estas transformaciones a las imágenes a medida que se cargan devolver lotes de imágenes listos para el entrenamiento o la evaluación del modelo, lo cual permite alimentar la red neuronal de manera eficiente \cite{augmentation} .
 
-Además, implementamos \textit{Class Weighting}. Este método se refiere a la asignación de pesos diferenciados a cada clase 
-durante el proceso de entrenamiento del modelo debido conjuntos de datos desequilibrados, con el objetivo de reforzar la señal 
-de entrenamiento de las clases menos representadas, o sea, las clases/categorías con menos cantidad de datos.
+Además, implementamos \textit{Class Weighting}. Este método se refiere a la asignación de pesos diferenciados a cada clase durante el proceso de entrenamiento del modelo debido conjuntos de datos desequilibrados, con el objetivo de reforzar la señal de entrenamiento de las clases menos representadas, o sea, las clases/categorías con menos cantidad de datos.
 
 \section{Diseño y Entrenamiento del Modelo}
 
 Se utiliza la arquitectura de red neural denominada \textit{EfficientNetB1} \cite{efficientnet} . Esta arquitectura forma parte de la familia EfficientNet, 
-que está diseñada para proporcionar alta precisión mientras se mantiene un tamaño de modelo y una complejidad computacional 
-eficientes.
+que está diseñada para proporcionar alta precisión mientras se mantiene un tamaño de modelo y una complejidad computacional eficientes.
 
-Para aprovechar los conocimientos previos y acelerar el entrenamiento, se carga el modelo \textit{EfficientNetB1} pre-entrenado 
-con los pesos obtenidos de entrenar en el dataset \textit{ImageNet}, que es una amplia base de datos de imágenes utilizada comúnmente 
-para entrenamiento y \textit{benchmarking} en tareas de visión por computadora. Utilizar un modelo pre-entrenado permite aprovechar 
-las características que ya ha aprendido de este amplio conjunto de datos, facilitando su adaptación al dataset.
+Para aprovechar los conocimientos previos y acelerar el entrenamiento, se carga el modelo \textit{EfficientNetB1} pre-entrenado con los pesos obtenidos de entrenar en el dataset \textit{ImageNet}, que es una amplia base de datos de imágenes utilizada comúnmente para entrenamiento y \textit{benchmarking} en tareas de visión por computadora. Utilizar un modelo pre-entrenado permite aprovechar las características que ya ha aprendido de este amplio conjunto de datos, facilitando su adaptación al dataset.
 
-Se utiliza el \textit{EfficientNetB1} sin incluir su capa superior, con el objetivo de añadir y personalizar capas adicionales. 
-Tras obtener la salida del modelo base, se aplica una serie de transformaciones, incluyendo normalización por lotes, una capa 
-densa con regularizaciones, una técnica de \textit{Dropout} para prevenir el sobre-ajuste y 
-una capa de optimización. 
+Se utiliza el \textit{EfficientNetB1} sin incluir su capa superior, con el objetivo de añadir y personalizar capas adicionales. Tras obtener la salida del modelo base, se aplica una serie de transformaciones, incluyendo normalización por lotes, una capa densa con regularizaciones, una técnica de \textit{Dropout} para prevenir el sobre-ajuste y una capa de optimización. 
 
 \subsection{Capas Adicionales y Regularización}
 
-Aunque el modelo EfficientNetB1 es poderoso por sí solo, no esta perfectamente adaptado a nuestro problema específico. 
-Para ajustarlo a nuestras necesidades, se añaden capas adicionales:
+Aunque el modelo EfficientNetB1 es poderoso por sí solo, no esta perfectamente adaptado a nuestro problema específico. Para ajustarlo a nuestras necesidades, se añaden capas adicionales:
 
 \begin{enumerate}
    \item Normalización por Lotes: Esta capa busca estandarizar las activaciones del modelo para cada lote de entrenamiento. 
@@ -98,18 +71,12 @@ Para ajustarlo a nuestras necesidades, se añaden capas adicionales:
 
 \subsection{Optimización}
 
-Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \cite{adamax}. Este es una variante del conocido optimizador Adam, 
-que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en presencia de momentos espurios. 
+Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \cite{adamax}. Este es una variante del conocido optimizador Adam, que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en presencia de momentos espurios. 
 
-Se configura el modelo para minimizar la categorical crossentropy, que es una medida común de error para problemas de clasificación, y se 
-rastrea la precisión como métrica principal.
+Se configura el modelo para minimizar la categorical crossentropy, que es una medida común de error para problemas de clasificación, y se rastrea la precisión como métrica principal.
 
 \subsection{Ajuste Dinámico de la Tasa de Aprendizaje}
 
-Una de las características más innovadoras de este enfoque es la inclusión de un "Callback" personalizado para ajustar dinámicamente 
-la tasa de aprendizaje durante el entrenamiento. Este ajuste se basa en la precisión del entrenamiento y la pérdida de validación. 
-En resumen, si el modelo no mejora lo suficientemente rápido (según ciertos criterios preestablecidos), la tasa de aprendizaje se reduce,
- con la esperanza de mejorar la convergencia del modelo \cite{lr}.
+Una de las características más innovadoras de este enfoque es la inclusión de un "Callback" personalizado para ajustar dinámicamente la tasa de aprendizaje durante el entrenamiento. Este ajuste se basa en la precisión del entrenamiento y la pérdida de validación. En resumen, si el modelo no mejora lo suficientemente rápido (según ciertos criterios preestablecidos), la tasa de aprendizaje se reduce, con la esperanza de mejorar la convergencia del modelo \cite{lr}.
 
-Este enfoque puede ser especialmente útil cuando nos enfrentamos a superficies de pérdida complejas con múltiples mínimos locales; 
-al variar la tasa de aprendizaje, es más probable que el modelo salga de mínimos locales subóptimos y encuentre una solución mejor.
+Este enfoque puede ser especialmente útil cuando nos enfrentamos a superficies de pérdida complejas con múltiples mínimos locales; al variar la tasa de aprendizaje, es más probable que el modelo salga de mínimos locales subóptimos y encuentre una solución mejor.
