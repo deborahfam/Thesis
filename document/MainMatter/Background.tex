@@ -20,7 +20,7 @@ las derivaciones tradicionales. El estudio también constató que la teledermato
 El artículo destaca las posibles ventajas de la teledermatología para mejorar el acceso a la asistencia y reducir los tiempos de espera de los pacientes.
 
 
-\section*{Técnicas Tempranas de Clasificación de Imágenes} 
+\section*{Técnicas tempranas de clasificación de imágenes} 
 
 Antes del auge de las redes neuronales y del aprendizaje profundo, había varias técnicas tradicionales utilizadas para la clasificación de imágenes. Estas técnicas se 
 basaban en la extracción manual de características y en métodos de aprendizaje automático clásicos. La clave de la clasificación tradicional de imágenes radica en la 
@@ -68,7 +68,7 @@ El análisis de imágenes médicas mediante redes neuronales se ha enfocado en c
     \item[Radiología]: En radiología, las redes neuronales han permitido el desarrollo de sistemas de ayuda al diagnóstico, especialmente en la detección de patologías pulmonares y mamarias. Estos sistemas pueden identificar anomalías en las radiografías y mamografías con un nivel de precisión que se acerca al de los especialistas humanos.
 \end{description}
     
-\subsection*{Clasificación y Reconocimiento de patrones en imágenes médicas}  
+\subsection*{Clasificación y reconocimiento de patrones en imágenes médicas}  
 
 Cuando se trata de la clasificación de imágenes, es esencial considerar que nuestro sistema visual humano (SVH) primero recibe las ondas electromagnéticas que pertenecen al espectro visible y luego las interpreta en el cerebro. Sin embargo, en el campo de la visión artificial, cuando introducimos una imagen en un ordenador, lo que se interpreta es una matriz de números generalmente en el rango de [0,255] y con tres dimensiones en caso de que sea una imagen a color (RGB). Como resultado, se puede notar una gran brecha entre el significado semántico de la clase asociada a una imagen y los valores de píxeles que la componen, lo que hace que la tarea de clasificación sea compleja para sistemas artificiales. 
 
@@ -86,7 +86,7 @@ Sin embargo, enfrentaron una serie de limitaciones significativas que restringie
 
 Estas limitaciones condujeron a la necesidad de innovación y evolución en el campo de las redes neuronales. Esta necesidad llevó al surgimiento de un enfoque revolucionario en la forma de las Redes Neuronales Convolucionales (CNN), que abordaron muchas de estas limitaciones de manera efectiva.
 
-\section*{Advenimiento de las Redes Neuronales Convolucionales (CNN)}   
+\section*{Advenimiento de las redes neuronales convolucionales (CNN)}   
 
 Mediante el uso de redes neuronales convolucionales, para facilitar la identificación de características relevantes en las imágenes médicas que pudieran ser indicativas de alguna condición médica particular las redes neuronales convolucionales han probado ser muy eficientes. Estas aprovecharon estructuras específicas de datos, como imágenes, para capturar patrones con mayor precisión, redujeron la carga computacional y mejoraron la generalización y la interpretabilidad. Gracias a estas mejoras, las CNN han sido fundamentales en el avance de la visión por computadora y han demostrado ser herramientas poderosas en una amplia variedad de aplicaciones, desde reconocimiento de objetos hasta diagnóstico médico. 
 
@@ -106,14 +106,7 @@ La metodología propuesta mostró resultados prometedores a la hora de distingui
 Un artículo publicado en PubMed "An efficient deep learning-based skin cancer classifier for an imbalanced dataset" %\cite{alam2022efficient} 
 propuso un eficaz clasificador de cáncer de piel basado en el aprendizaje profundo empleando el conjunto de datos HAM10000. Se utilizaron varios modelos de aprendizaje profundo como AlexNet, InceptionV3 y RegNetY-320 para clasificar el cáncer de piel. El rendimiento del marco propuesto fue mejor que el de los métodos convencionales. La precisión, la puntuación F1 y el valor de la curva ROC obtenidos con el marco propuesto fueron del 91\%, el 88,1\% y el 0,95. 
 
-\section*{Técnicas Modernas y Avances Recientes}
-
-Uso de arquitecturas CNN avanzadas (ej. ResNet, Inception, etc.).
-Técnicas de transferencia de aprendizaje.
-Implementaciones de detección en tiempo real y aplicaciones móviles.
-Integración de métodos de inteligencia artificial con otras modalidades de diagnóstico.
-
-
+\section*{Técnicas modernas y avances recientes}
 
 El avance en la detección de cáncer mediante el uso de la inteligencia artificial (IA) y el aprendizaje automático (ML) ha sido significativo en 
 las últimas décadas, el mismo, ha demostrado un rendimiento excepcional en tareas de reconocimiento de imágenes, que es fundamental en la detección 
@@ -131,23 +124,23 @@ En otro artículo publicado en PubMed "Design and validation of a new machine-le
  se presentó un enfoque metodológico para mejorar el diagnóstico de la lesiones cutáneas pigmentadas utilizando imágenes dermatoscópicas del conjunto de datos HAM10000. Este conjunto de datos, una colección de 10015 imágenes dermatoscópicas recogidas a lo largo de 20 años, se utilizó para analizar lesiones cutáneas pigmentadas. l modelo obtiene los mejores resultados en la detección de lesiones de nevos melanocíticos,con una puntuación F1 de 0,93. La puntuación F1 para queratosis actínica, carcinoma basocelular, queratosis benigna, dermatofibroma, melanoma y lesiones vasculares fue consecutivamente de 0,63, 0,72, 0,70, 0,54, 0,58 y 0,80.
 
 
-\section*{Retos y Limitaciones Actuales}
+\section*{Retos y limitaciones actuales}
 
-\subsection*{Dificultades en la Interpretación de Resultados y la Falta de Explicabilidad de los Modelos}
+\subsection*{Dificultades en la interpretación de resultados y la falta de explicabilidad de los modelos}
 
 Uno de los desafíos más significativos en el uso de algoritmos avanzados de aprendizaje automático y aprendizaje profundo es la interpretación y explicabilidad de sus resultados. Aunque estos modelos pueden lograr un alto grado de precisión, a menudo operan como "cajas negras", lo que significa que sus procesos internos y la forma en que llegan a una conclusión específica no son transparentes ni fácilmente comprensibles para los humanos. Esta falta de transparencia puede ser un obstáculo importante en el ámbito clínico, donde los profesionales de la salud necesitan comprender el razonamiento detrás de un diagnóstico para confiar y actuar según los resultados proporcionados por estos sistemas. %\cite{uam2023doc}
 
 
-\subsection*{Problemas Relacionados con el Sobreajuste y la Generalización de los Modelos}
+\subsection*{Problemas relacionados con el sobreajuste y la generalización de los modelos}
 Otro reto importante es el sobre-ajuste y la generalización de los modelos. El sobre-ajuste ocurre cuando un modelo se ajusta demasiado a los datos de entrenamiento, perdiendo la capacidad de generalizar a nuevos datos. Este problema es particularmente prevalente en situaciones donde los conjuntos de datos de entrenamiento son limitados o no representativos de la variabilidad real de casos clínicos. Por ejemplo, la falta de diversidad en los tipos de piel y las características de las lesiones en los conjuntos de datos puede llevar a modelos que no se desempeñan bien en poblaciones no representadas durante el entrenamiento. %\cite{uam2023doc}
 
-\subsection*{Limitaciones de los Métodos Tradicionales de Aprendizaje Automático en Diagnóstico Clínico}
+\subsection*{Limitaciones de los métodos tradicionales de aprendizaje automático en diagnóstico clínico}
 Aunque los métodos tradicionales de aprendizaje automático, como las Máquinas de Vectores de Soporte (SVM), XGBoost y árboles de decisión, han sido útiles en la clasificación del cáncer de piel, enfrentan limitaciones significativas en el contexto clínico. Estos métodos requieren la extracción manual de características de las imágenes de enfermedades de la piel, un proceso que puede ser subjetivo y limitante. Además, la selección restringida de características puede impedir que estos algoritmos capturen la complejidad y variabilidad de las lesiones cutáneas, limitando su capacidad para generalizar a un espectro más amplio de tipos de cáncer de piel.%\cite{uam2023doc}
 
-\subsection*{Escasez de Datos y Variedad Limitada en Categorías de Cáncer de Piel}
+\subsection*{Escasez de datos y variedad limitada en categorías de cáncer de piel}
 La escasez de datos y la limitada variedad en las categorías de cáncer de piel presentes en los conjuntos de datos disponibles son problemas centrales en el desarrollo de algoritmos efectivos para la clasificación del melanoma. Esta limitación en los datos disponibles afecta negativamente la capacidad de los modelos para aprender y reconocer una amplia gama de manifestaciones del cáncer de piel, lo que puede resultar en un rendimiento deficiente al enfrentarse a casos menos comunes o atípicos en la práctica clínica real.%\cite{uam2023doc}
 
-\section*{Conclusión del Estado del Arte}
+\section*{Conclusión del estado del arte}
 
 Los estudios revisados reflejan un claro progreso en la aplicación de CNNs y otras técnicas de aprendizaje profundo, no solo en términos de eficacia sino también en la reducción de tiempos de espera y mejora en el acceso a diagnósticos. Es notable cómo estos avances han permitido el desarrollo de sistemas de clasificación más robustos y precisos, capaces de distinguir entre lesiones cutáneas malignas y benignas con altos niveles de precisión.
 
