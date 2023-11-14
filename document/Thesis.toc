@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Capas adicionales y regularización}{13}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Optimización}{14}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Ajusted dinámico de la tasa de aprendizaje}{14}{subsection.2.4.3}%
-\contentsline {chapter}{\numberline {3}Detalles de Implementación y Experimentos}{15}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Resultados}{15}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Estadísticas básicas}{15}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Estadísticas de eficacia}{16}{subsection.3.1.2}%
