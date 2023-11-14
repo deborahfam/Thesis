@@ -6,12 +6,12 @@ En este capítulo se propone una método para la detección de cáncer de piel m
 
 A continuación, se introducen algunos de los conceptos básicos de los métodos o técnicas que se emplearan a lo largo del capítulo.
 
-\section{Preparación y Carga de Datos}
+\section{Preparación y carga de datos}
 
  Los datos utilizados como medio de aprendizaje para este proyecto son: Imágenes y Metadatos. Los datos son extraídos del Dataset: HAM1000-segmentation-and-classification  \cite{ham10000}.
  El mismo contiene imágenes tomadas de varios tipos de cáncer de piel y contiene además un archivo Excel formato csv de Metadatos. Los metadatos contienen información relacionada con cada imagen con un formato de \textit{one hot encoding}.
 
-\subsection{Transformación de Datos}
+\subsection{Transformación de datos}
 
 Para optimizar la eficiencia del algoritmo, se procesan las imágenes realizando diversas modificaciones, que incluyen: eliminación de cabello, luces y sombras, división de canales y aplicación de un leve desenfoque.
 
@@ -30,7 +30,7 @@ Aquí, se define que el 95\% de los datos se utilizará para entrenamiento y la 
 
 En el contexto del Machine Learning (Aprendizaje de Máquinas), un DataFrame de Pandas es una estructura de datos bidimensional, similar a una tabla,proporcionada por la biblioteca Python \textit{Pandas}. Facilita la manipulación y análisis de grandes conjuntos de datos, permitiendo una organización clara en forma de filas y columnas.
 
-\section{Generadores de Datos y Preprocesamiento}
+\section{Generadores de datos y preprocesamiento}
 
 Se detectó que el conjunto de datos estaba altamente desequilibrado. Por lo tanto, limitamos el número máximo de muestras por clase a 300 para equilibrar el conjunto de datos. 
 
@@ -39,7 +39,7 @@ tareas de Machine Learning. Se inicializa con varias transformaciones (como rota
 
 Además, implementamos \textit{Class Weighting}. Este método se refiere a la asignación de pesos diferenciados a cada clase durante el proceso de entrenamiento del modelo debido conjuntos de datos desequilibrados, con el objetivo de reforzar la señal de entrenamiento de las clases menos representadas, o sea, las clases/categorías con menos cantidad de datos.
 
-\section{Diseño y Entrenamiento del Modelo}
+\section{Diseño y entrenamiento del modelo}
 
 Se utiliza la arquitectura de red neural denominada \textit{EfficientNetB1} \cite{efficientnet} . Esta arquitectura forma parte de la familia EfficientNet, 
 que está diseñada para proporcionar alta precisión mientras se mantiene un tamaño de modelo y una complejidad computacional eficientes.
@@ -48,12 +48,12 @@ Para aprovechar los conocimientos previos y acelerar el entrenamiento, se carga 
 
 Se utiliza el \textit{EfficientNetB1} sin incluir su capa superior, con el objetivo de añadir y personalizar capas adicionales. Tras obtener la salida del modelo base, se aplica una serie de transformaciones, incluyendo normalización por lotes, una capa densa con regularizaciones, una técnica de \textit{Dropout} para prevenir el sobre-ajuste y una capa de optimización. 
 
-\subsection{Capas Adicionales y Regularización}
+\subsection{Capas adicionales y regularización}
 
 Aunque el modelo EfficientNetB1 es poderoso por sí solo, no esta perfectamente adaptado a nuestro problema específico. Para ajustarlo a nuestras necesidades, se añaden capas adicionales:
 
 \begin{enumerate}
-   \item Normalización por Lotes: Esta capa busca estandarizar las activaciones del modelo para cada lote de entrenamiento. 
+   \item Normalización por lotes: Esta capa busca estandarizar las activaciones del modelo para cada lote de entrenamiento. 
    La misma regulariza el modelo y, al mismo tiempo, suele acelera el entrenamiento ya que permite utilizar tasas de aprendizaje más altas. [\cite{regularization}]
 
    \item Densa: Se introduce una capa completamente conectada con 256 neuronas. Esta capa tiene una activación ReLU y utiliza regularización L1 y L2.
@@ -64,7 +64,7 @@ Aunque el modelo EfficientNetB1 es poderoso por sí solo, no esta perfectamente 
    entrenamiento. Esta aleatoriedad ayuda a evitar la dependencia excesiva en cualquier neurona individual, lo que a su vez ayuda a prevenir
     el sobre-ajuste. \cite{dropout}
    
-   \item Capa de Salida: Finalmente, se agrega una capa densa que tiene un número de neuronas igual al número de clases en nuestro problema. 
+   \item Capa de salida: Finalmente, se agrega una capa densa que tiene un número de neuronas igual al número de clases en nuestro problema. 
    La activación \textit{softmax} se utiliza aquí para transformar las salidas en probabilidades de clase.
 
 \end{enumerate}
@@ -75,7 +75,7 @@ Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \cit
 
 Se configura el modelo para minimizar la categorical crossentropy, que es una medida común de error para problemas de clasificación, y se rastrea la precisión como métrica principal.
 
-\subsection{Ajuste Dinámico de la Tasa de Aprendizaje}
+\subsection{Ajusted dinámico de la tasa de aprendizaje}
 
 Una de las características más innovadoras de este enfoque es la inclusión de un "Callback" personalizado para ajustar dinámicamente la tasa de aprendizaje durante el entrenamiento. Este ajuste se basa en la precisión del entrenamiento y la pérdida de validación. En resumen, si el modelo no mejora lo suficientemente rápido (según ciertos criterios preestablecidos), la tasa de aprendizaje se reduce, con la esperanza de mejorar la convergencia del modelo \cite{lr}.
 

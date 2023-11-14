@@ -3,14 +3,14 @@
 \contentsline {chapter}{\numberline {1}Estado del Arte}{2}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Propuesta}{11}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Metodología}{11}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Preparación y Carga de Datos}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Transformación de Datos}{11}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}Preparación y carga de datos}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Transformación de datos}{11}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Modelación y división del conjunto de datos}{12}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Generadores de Datos y Preprocesamiento}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Diseño y Entrenamiento del Modelo}{13}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Capas Adicionales y Regularización}{13}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.3}Generadores de datos y preprocesamiento}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Diseño y entrenamiento del modelo}{13}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Capas adicionales y regularización}{13}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Optimización}{14}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Ajuste Dinámico de la Tasa de Aprendizaje}{14}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.3}Ajusted dinámico de la tasa de aprendizaje}{14}{subsection.2.4.3}%
 \contentsline {chapter}{\numberline {3}Detalles de Implementación y Experimentos}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Resultados}{15}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Estadísticas básicas}{15}{subsection.3.1.1}%
