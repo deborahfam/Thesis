@@ -1,2 +1,34 @@
 \chapter*{Introducción}\label{chapter:introduction}
 \addcontentsline{toc}{chapter}{Introducción}
+
+    La dermatología es una rama especializada de la medicina que se centra en el estudio, diagnóstico, tratamiento, y manejo de las enfermedades y trastornos de la piel, el órgano más extenso del cuerpo humano \brackcite{fundacionpielsana_dermatologia}. El cáncer de piel es el tipo de cáncer más frecuente en todo el mundo, y su detección precoz es crucial. En este sentido, la tecnología puede marcar una diferencia significativa, pues dicho proceso suele ser estrictamente humano, dependiente del oncólogo y la biopsia, prueba que en algunos países puede resultar muy cara. Sin embargo, la integración de la tecnología al análisis dermatológico del cáncer es desafiante debido a la variabilidad en la apariencia de estas lesiones. En la resolución de esta problemática, los algoritmos de Machine Learning, específicamente las redes neuronales convolucionales (CNN), han mostrado gran eficiencia.
+
+    % \section*{Contexto histórico/social donde se desarrolla la investigación}
+
+    El contexto histórico y social del uso del aprendizaje automático (AM) para la detección del cáncer de piel en imágenes dermatológicas es un relato de rápida evolución tecnológica y colaboración interdisciplinar. En las últimas décadas, los avances en potencia computacional y el advenimiento del deep learning (aprendizaje profundo) han permitido un progreso significativo en el análisis automatizado de imágenes. Los progresos en el reconocimiento de melanomas a partir de imágenes dermatoscópicas, han demostrado que los sistemas automatizados pueden lograr un rendimiento diagnóstico comparable al de los expertos humanos \brackcite{DuHarpur2020}.
+
+    Se ha pasado del análisis básico de imágenes digitales a sofisticados algoritmos capaces de identificar patrones sutiles en las imágenes de lesiones cutáneas. Este progreso se ha visto impulsado por la necesidad de mejorar el acceso a la atención dermatológica y la eficacia del cribado del cáncer de piel, especialmente en regiones con escasez de estos servicios. 
+
+    Además, la integración de la analítica de big data con el crowdsourcing y la tecnología ML, como el proyecto DataDerm, ejemplifica los esfuerzos de colaboración para refinar y mejorar los algoritmos de diagnóstico a través de grandes conjuntos de datos de imágenes de la piel. Este enfoque colaborativo ha sido fundamental a la hora de entrenar y validar modelos de ML para garantizar que sean sólidos y fiables para su uso clínico.
+
+
+    % \section*{Breve presentación de la problemática}
+
+    La problemática central en la detección del cáncer de piel radica en la necesidad de mejorar la precisión y rapidez del diagnóstico. Tradicionalmente, esta tarea recae en dermatólogos, pero la subjetividad y la variabilidad en la interpretación de las imágenes dermatoscópicas pueden llevar a diagnósticos erróneos o tardíos.
+
+    % \section*{Antecedentes del problema científico}
+
+    \textit{add citations}
+    Varios estudios han comparado el desempeño de algoritmos de aprendizaje profundo para la detección del cáncer de piel con análisis de especialistas del campo. Codella et al. y Haenssle et al. utilizaron conjuntos de datos extensos para entrenar algoritmos como InceptionV4 y demostraron que estos superaban a los dermatólogos en precisión y especificidad. Brinker et al. y Tschandl et al. también mostraron resultados similares, donde redes neuronales convolucionales (CNN) como ResNet50 eran más eficientes, especialmente en diagnósticos de melanoma. Estos estudios sugieren un papel prometedor para el ML en la asistencia a dermatólogos para un diagnóstico más preciso de melanoma \brackcite{das2021machine}.
+
+    % \subsection*{Problema científico, Objeto de estudio, Objetivos, Campo de acción, Hipótesis o Pregunta científica}
+
+    Este trabajo se enfoca en mejorar la precisión y eficiencia en la detección del cáncer de piel utilizando Machine Learning. Se centra en el diagnóstico mediante imágenes dermatológicas obtenidas del dataset antes mencionado para desarrollar y validar un modelo basado en EfficientNetB5 para clasificar lesiones cutáneas. Las enfermedades de la piel utilizadas en el entrenamiento del modelo son: Melanoma (MEL), Nevus Melanocítico (NV), Carcinoma de Células Basales (BCC), Queratosis Actínica, Enfermedad de Bowen (carcinoma intraepitelial) (AKIEC), Queratosis Benigna (BKL), Dermatofibroma (DF), Lesión Vascular (VASC) \brackcite{tschandl2018ham10000}.
+
+    % \section*{Estructuración del trabajo}
+
+    Se llevó a cabo una revisión exhaustiva para evaluar el impacto de las técnicas de deep learning (aprendizaje profundo), 
+    en la que se analizaron diversos resultados de investigación y se presentaron mediante herramientas, gráficos, tablas y marcos para mejor compresión. Se resalta en el estado del arte la teledermatología y las técnicas de clasificación de imágenes, abarcando desde los métodos tempranos hasta el advenimiento y desarrollo de redes neuronales y técnicas modernas. Luego, en la propuesta de la investigación, se analizó la metodología de red convolucional con el algoritmo de EfficientNetB5 y el ajuste de aprendizaje, sobre el conjunto de datos de imágenes que corresponden al concurso HAM10000 (Human Against Machine), así como el proceso de preparación y diseño del modelo. Finalmente, se aclaran los detalles de implementación y experimentos, incluyendo los resultados obtenidos, ventajas y desventajas de los mismos, seguido de las conclusiones y recomendaciones basadas en los hallazgos del estudio.
+
+
+    % Según la Sociedad Americana del Cáncer, Mitchell et al. (2020) \brackcite{mitchell}, los cánceres de piel tienen un estadio temprano formalmente llamado estadio 0 o melanoma \textit{in situ} donde el tratamiento arroja una tasa de éxito de casi el 100\% ya que sólo se necesita una cirugía menor para extirpar la porción de piel afectada. Esto hace que la detección precoz de esta enfermedad sea una premisa para mejorar el tratamiento oncológico.

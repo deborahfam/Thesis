@@ -1,27 +1,49 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Introducción}{1}{chapter*.8}%
-\contentsline {chapter}{\numberline {1}Estado del Arte}{2}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Propuesta}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Metodología}{11}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Dataset}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Preparación y carga de datos}{12}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Transformación de datos}{12}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Modelación y división del conjunto de datos}{12}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Generadores de datos y preprocesamiento}{13}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Aumento y división de datos}{14}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Diseño y entrenamiento del modelo}{15}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}ImageNet}{15}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Arquitectura del modelo EfficientNet}{15}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}EfficientNetB5}{16}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Capas adicionales y regularización}{17}{subsection.2.5.4}%
-\contentsline {subsection}{\numberline {2.5.5}Optimización}{17}{subsection.2.5.5}%
-\contentsline {subsection}{\numberline {2.5.6}Ajusted dinámico de la tasa de aprendizaje}{17}{subsection.2.5.6}%
-\contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Resultados}{19}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Estadísticas básicas}{19}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Estadísticas de eficacia}{20}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Estadísticas de aprendizaje}{22}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Ventajas y Desventajas}{22}{section.3.2}%
-\contentsline {chapter}{Conclusiones}{23}{section*.26}%
-\contentsline {chapter}{Recomendaciones}{24}{section*.28}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{25}{chapter*.30}%
+\contentsline {chapter}{\numberline {1}Estado del Arte}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Teledermatología}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Técnicas tempranas de clasificación de imágenes}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Introducción y Desarrollo de Redes Neuronales}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Análisis de imágenes médicas}{5}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Clasificación y reconocimiento de patrones en imágenes médicas}{6}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Advenimiento de las redes neuronales convolucionales (CNN)}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Técnicas modernas y avances recientes}{9}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Retos y limitaciones actuales}{9}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Dificultades en la interpretación de resultados y la falta de explicabilidad de los modelos}{9}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Problemas relacionados con el sobreajuste y la generalización de los modelos}{10}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Limitaciones de los métodos tradicionales de aprendizaje automático en diagnóstico clínico}{10}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Escasez de datos y variedad limitada en categorías de cáncer de piel}{10}{subsection.1.6.4}%
+\contentsline {section}{\numberline {1.7}Conclusión del estado del arte}{11}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Propuesta}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Metodología}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Selección del modelo y transferencia de aprendizaje}{12}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Preprocesamiento de datos y balanceo de clases}{12}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Arquitectura del Modelo y Regularización}{13}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Ajuste dinámico del learning rate}{13}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Diversidad en propuestas de soluciones}{13}{subsection.2.1.5}%
+\contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dataset}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Preparación y carga de datos}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Transformación de datos}{15}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Modelación y división del conjunto de datos}{15}{subsection.3.2.2}%
+\contentsline {subsubsection}{Experimento 1}{15}{section*.9}%
+\contentsline {subsubsection}{Experimento 2}{16}{section*.10}%
+\contentsline {section}{\numberline {3.3}Generadores de datos y preprocesamiento}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Experimento 1}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Experimento 2}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Aumento y división de datos}{18}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Diseño y entrenamiento del modelo}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}ImageNet}{19}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Arquitectura del modelo EfficientNet}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}EfficientNetB1}{20}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Capas adicionales y regularización}{21}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Optimización}{21}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Ajuste dinámico de la tasa de aprendizaje}{22}{subsection.3.4.6}%
+\contentsline {section}{\numberline {3.5}Resultados}{22}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Estadísticas básicas}{23}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Estadísticas de eficacia}{24}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Estadísticas de aprendizaje}{24}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Ventajas y Desventajas}{24}{section.3.6}%
+\contentsline {chapter}{Conclusiones}{26}{section*.15}%
+\contentsline {chapter}{Recomendaciones}{27}{section*.17}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{28}{chapter*.19}%

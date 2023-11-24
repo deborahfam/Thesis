@@ -19,6 +19,23 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{Iberdrola2023MachineLearning}{misc}{}
+      \list{organization}{1}{%
+        {Iberdrola}%
+      }
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2023-11-19}
+      \field{title}{'Machine Learning': definición, tipos y aplicaciones prácticas}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico
+      \endverb
+      \verb{url}
+      \verb https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico
+      \endverb
+    \endentry
     \entry{adamax}{misc}{}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
@@ -248,6 +265,65 @@
       \field{title}{Conjunto de datos HAM10000}
       \field{year}{2023}
     \endentry
+    \entry{das2021machine}{article}{}
+      \name{author}{7}{}{%
+        {{hash=d681b2b0ce2e710e9d2e6db9bf2ac4c8}{%
+           family={Das},
+           familyi={D\bibinitperiod},
+           given={Kinnor},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f4b57741113e2714cfe2ee71af6c3705}{%
+           family={Cockerell},
+           familyi={C\bibinitperiod},
+           given={Clay\bibnamedelima J},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a3770d716ffa97fbc2e2288997d6e0a5}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={Anant},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f0bef6a013d5ca91330d6aa2057f8b7f}{%
+           family={Pietkiewicz},
+           familyi={P\bibinitperiod},
+           given={Pawe{ł}},
+           giveni={P\bibinitperiod}}}%
+        {{hash=12aa84ab8a61389c41bab457f89bcae3}{%
+           family={Giulini},
+           familyi={G\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dfb0cac0b2c4b36e23c29eaf2161f1c3}{%
+           family={Grabbe},
+           familyi={G\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1933336e8ca5648b43b478bfa9a0d908}{%
+           family={Goldust},
+           familyi={G\bibinitperiod},
+           given={Mohamad},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{a375b3f759153d1c5cc39cea1d775ad7}
+      \strng{fullhash}{5009ae45dbd54cef9d08ce48b64159f3}
+      \strng{bibnamehash}{a375b3f759153d1c5cc39cea1d775ad7}
+      \strng{authorbibnamehash}{a375b3f759153d1c5cc39cea1d775ad7}
+      \strng{authornamehash}{a375b3f759153d1c5cc39cea1d775ad7}
+      \strng{authorfullhash}{5009ae45dbd54cef9d08ce48b64159f3}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Environmental Research and Public Health}
+      \field{number}{24}
+      \field{title}{Machine learning and its application in skin cancer}
+      \field{volume}{18}
+      \field{year}{2021}
+      \field{pages}{13409}
+      \range{pages}{1}
+    \endentry
     \entry{pandas}{misc}{}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
@@ -345,6 +421,26 @@
       \field{howpublished}{\url{https://towardsdatascience.com/complete-architectural-details-of-efficientnets-7e50bc115fe0}}
       \field{title}{EfficientNetB1}
     \endentry
+    \entry{fundacionpielsana_dermatologia}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0fb93c83ab79495609620af8500b4807}{%
+           family={{Fundación Piel Sana - Academia Española de Dermatología y Venereología}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{0fb93c83ab79495609620af8500b4807}
+      \strng{fullhash}{0fb93c83ab79495609620af8500b4807}
+      \strng{bibnamehash}{0fb93c83ab79495609620af8500b4807}
+      \strng{authorbibnamehash}{0fb93c83ab79495609620af8500b4807}
+      \strng{authornamehash}{0fb93c83ab79495609620af8500b4807}
+      \strng{authorfullhash}{0fb93c83ab79495609620af8500b4807}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://aedv.fundacionpielsana.es/piel-sana/que-es-la-dermatologia/}}
+      \field{note}{Último acceso: 19 de noviembre de 2023}
+      \field{title}{¿Qué es la Dermatología?}
+    \endentry
     \entry{1100578}{article}{}
       \name{author}{1}{}{%
         {{hash=365341c367e377d793e27efaff26cc0e}{%
@@ -372,6 +468,53 @@
       \range{pages}{2}
       \verb{doi}
       \verb 10.1109/TAC.1974.1100578
+      \endverb
+    \endentry
+    \entry{DuHarpur2020}{article}{}
+      \name{author}{4}{}{%
+        {{hash=53c75b358fb80d72fff19ba60e26f1c8}{%
+           family={Du-Harpur},
+           familyi={D\bibinithyphendelim H\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=30b1215a8c36b55d931f2ef00bc60ed7}{%
+           family={Watt},
+           familyi={W\bibinitperiod},
+           given={F.\bibnamedelimi M.},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d6527f03e3cfa081a7b75b8c912795ae}{%
+           family={Luscombe},
+           familyi={L\bibinitperiod},
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=14a89a2ec4f663739dfc4026d414dbd9}{%
+           family={Lynch},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f012380858116b055fa27a90e037d925}
+      \strng{fullhash}{997a51cdb016e300efaa859ecf446d52}
+      \strng{bibnamehash}{f012380858116b055fa27a90e037d925}
+      \strng{authorbibnamehash}{f012380858116b055fa27a90e037d925}
+      \strng{authornamehash}{f012380858116b055fa27a90e037d925}
+      \strng{authorfullhash}{997a51cdb016e300efaa859ecf446d52}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Medicine}
+      \field{title}{What is AI? Applications of artificial intelligence to dermatology}
+      \field{volume}{7}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.3389/fmed.2020.00100
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fmed.2020.00100/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fmed.2020.00100/full
       \endverb
     \endentry
     \entry{img_gen}{misc}{}
@@ -615,7 +758,7 @@
       \field{pages}{e0284437}
       \range{pages}{-1}
     \endentry
-    \entry{tan2019efficientnet}{inproceedings}{}
+    \entry{tan2019efficientnet}{misc}{}
       \name{author}{2}{}{%
         {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
            family={Tan},
@@ -628,9 +771,6 @@
            given={Quoc},
            giveni={Q\bibinitperiod}}}%
       }
-      \list{organization}{1}{%
-        {PMLR}%
-      }
       \strng{namehash}{3c6ed03914c0610af0050fb8a809b599}
       \strng{fullhash}{3c6ed03914c0610af0050fb8a809b599}
       \strng{bibnamehash}{3c6ed03914c0610af0050fb8a809b599}
@@ -642,11 +782,15 @@
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{International conference on machine learning}
-      \field{title}{Efficientnet: Rethinking model scaling for convolutional neural networks}
+      \field{note}{Accessed: [24 de noviembre de 2023]}
+      \field{title}{EfficientNet: Improving Accuracy and Efficiency through AutoML and Model Scaling}
       \field{year}{2019}
-      \field{pages}{6105\bibrangedash 6114}
-      \range{pages}{10}
+      \verb{urlraw}
+      \verb https://blog.research.google/2019/05/efficientnet-improving-accuracy-and.html
+      \endverb
+      \verb{url}
+      \verb https://blog.research.google/2019/05/efficientnet-improving-accuracy-and.html
+      \endverb
     \endentry
     \entry{Tan2019EfficientNetRM}{article}{}
       \name{author}{2}{}{%
@@ -868,32 +1012,6 @@
       \field{year}{2002}
       \field{pages}{313\bibrangedash 321}
       \range{pages}{9}
-    \endentry
-    \entry{wikipedia2023canny}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=9c677286866aad38f8e9b660f5411814}{%
-           family={Wikipedia},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
-      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{[En línea; consultado el 22-Octubre-2023]}
-      \field{title}{Algoritmo de Canny --- {Wikipedia}{,} La enciclopedia libre}
-      \field{year}{2023}
-      \verb{urlraw}
-      \verb https://es.wikipedia.org/wiki/Algoritmo_de_Canny
-      \endverb
-      \verb{url}
-      \verb https://es.wikipedia.org/wiki/Algoritmo_de_Canny
-      \endverb
     \endentry
   \enddatalist
 \endrefsection
