@@ -223,43 +223,48 @@ En relación con el dataset HAM1000 \brackcite{ham10000}, la implementación del
 
 Para ajustar el modelo de EfficientNetB1 a nuestras necesidades, se añaden capas adicionales:
 
-\begin{enumerate}
-   \item Normalización por lotes: Esta capa busca estandarizar las activaciones del modelo para cada lote de entrenamiento. 
-   La misma regulariza el modelo y, al mismo tiempo, suele acelera el entrenamiento ya que permite utilizar tasas de aprendizaje más altas. [\brackcite{regularization}]
+\subsubsection{Normalización por lotes}
 
-   \item Densa: Se introduce una capa completamente conectada con 256 neuronas. Esta capa tiene una activación ReLU y utiliza regularización L1 y L2.
-   La regularización L1 y L2 penaliza los pesos grandes en la red, ayudando a evitar el sobre-ajuste y garantizando que el modelo se generalice
-    bien a nuevos datos. \brackcite{dense}
-   
-   \item Dropout: Esta técnica de regularización desactiva aleatoriamente una fracción (en este caso, el 45\%) de las neuronas durante el 
-   entrenamiento. Esta aleatoriedad ayuda a evitar la dependencia excesiva en cualquier neurona individual, lo que a su vez ayuda a prevenir
-    el sobre-ajuste. \brackcite{dropout}
-   
-   \item Capa de salida: Finalmente, se agrega una capa densa que tiene un número de neuronas igual al número de clases en nuestro problema. 
-   La activación \textit{softmax} se utiliza aquí para transformar las salidas en probabilidades de clase.
+Para mejorar la estabilidad y eficiencia del modelo EfficientNetB1, se incorpora una capa de Normalización por lotes. La normalización por lotes es crucial para estabilizar las \textit{activaciones} a lo largo de las capas del modelo. Al estandarizar las activaciones por lote, mejora la eficiencia del entrenamiento y permite el uso de tasas de aprendizaje más altas. Esta técnica contribuye significativamente a la regularización del modelo, reduciendo el riesgo de sobre-ajuste y facilitando un aprendizaje más rápido y estable.
 
-\end{enumerate}
+Esta capa se define con un \textit{eje de normalización establecido en -1}, lo que indica que la normalización se aplica a lo largo del último eje en el tensor de entrada. Además, se configura un \textit{momentum} de $0.99$ y un valor de \textit{epsilon} de $0.001$. El alto valor de momentum ayuda a mantener la estabilidad de las medias y varianzas móviles a lo largo del entrenamiento, mientras que el pequeño valor de epsilon evita divisiones por cero, asegurando así cálculos numéricos estables. [\brackcite{regularization}]
+
+\subsubsection{Capa densa}
+
+Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador \textit{L2} con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador \textit{L1} con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características. \brackcite{dense}
+
+\subsubsection{Dropout}
+
+En la arquitectura del modelo, se integra una capa de dropout para aumentar la robustez y prevenir el sobre-ajuste. Esta capa se configura con una tasa de desactivación del 45\% , lo que significa que, durante el entrenamiento, el 45\% de las neuronas se desactivarán aleatoriamente en cada paso. 
+
+En una primera iteración del algoritmo tuvo una tasa de desactivación más baja. Luego de varias iteraciones se concluyó que se necesitaba un algoritmo de clasificación que estudiara más a detalle la data fomentando así una mejor generalización y reduciendo el riesgo de sobre-ajuste en el proceso de aprendizaje. Basándonos en esto aumentamos la tasa y obtuvimos mejores resultados.
+
+Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica. \brackcite{dropout}
+
+\subsubsection{Capa de salida}
+
+La capa de salida utiliza una activación \textit{softmax} para transformar las salidas del modelo en probabilidades de pertenencia a cada clase. Esto, clasifica las entradas en categorías distintas, proporcionando probabilidades para cada clase, lo cual es esencial en la clasificación multi-clase.
 
 \subsection{Optimización}
 
-Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \brackcite{adamax}. Este es una variante del conocido optimizador Adam, que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en presencia de momentos espurios. 
+Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \brackcite{adamax}. Este es una variante del conocido optimizador Adam, que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en entornos con gradientes dispersos, lo cual es común en imágenes médicas 
 
-Se configura el modelo para minimizar la categorical crossentropy, que es una medida común de error para problemas de clasificación, y se rastrea la precisión como métrica principal.
+La función de pérdida elegida es la \textit{categorical crossentropy} \brackcite{vitalflux_categorical_crossentropy}, idónea para problemas de clasificación multi-clase. Se configura el modelo para minimizarla y se rastrea la precisión como métrica principal.
 
 \subsection{Ajuste dinámico de la tasa de aprendizaje}
 
-Una de las características más innovadoras de este enfoque es la inclusión de un "Callback" personalizado para ajustar dinámicamente la tasa de aprendizaje durante el entrenamiento. Este ajuste se basa en la precisión del entrenamiento y la pérdida de validación. En resumen, si el modelo no mejora lo suficientemente rápido (según ciertos criterios preestablecidos), la tasa de aprendizaje se reduce, con la esperanza de mejorar la convergencia del modelo \brackcite{lr}.
+Un componente innovador de nuestro enfoque es el uso de un Callback personalizado para el ajuste dinámico del learning rate \brackcite{lr}, basado en la precisión del entrenamiento y la pérdida de validación. Este mecanismo adapta el learning rate durante el entrenamiento, reduciéndolo si el modelo no mejora a un ritmo esperado. Este ajuste es vital en la navegación de superficies de pérdida complejas, aumentando la probabilidad de que el modelo evite mínimos locales subóptimos y converja hacia soluciones más efectivas.
 
 Este enfoque puede ser especialmente útil cuando nos enfrentamos a superficies de pérdida complejas con múltiples mínimos locales; al variar la tasa de aprendizaje, es más probable que el modelo salga de mínimos locales subóptimos y encuentre una solución mejor.
 
 %-----------------------------------------------------------------------------------
 \section{Resultados}\label{sec:results}
 %-----------------------------------------------------------------------------------
-En esta sección crucial de nuestra investigación, presentamos los resultados obtenidos a través de una serie de experimentos meticulosamente diseñados y ejecutados. Nuestro enfoque se centró en la exploración y optimización de diversos pipelines de procesamiento y clasificación de imágenes, cada uno configurado para evaluar distintos aspectos y técnicas dentro del amplio espectro del aprendizaje profundo y el análisis de imágenes.
+En esta sección presentamos los resultados obtenidos a través de una serie de experimentos meticulosamente diseñados y ejecutados. Nuestro enfoque se centró en la exploración y optimización de diversos pipelines de procesamiento y clasificación de imágenes, cada uno configurado para evaluar distintos aspectos y técnicas dentro del amplio espectro del aprendizaje profundo y el análisis de imágenes.
 
 Los experimentos se estructuraron con el objetivo de desentrañar las capacidades y limitaciones de varios modelos y técnicas en el contexto del procesamiento de imágenes. Cada experimento se diseñó con una configuración única, variando desde la selección de parámetros, la arquitectura de los modelos de aprendizaje profundo, hasta la técnica de preprocesamiento y aumento de datos. Este enfoque nos permitió observar los efectos específicos de cada variable en la precisión, eficiencia y efectividad de la clasificación.
 
-Tras la implementación del modelo, los resultados obtenidos de este modelo de aprendizaje automático son muy útiles y eficientes en el campo de la detección de melanomas. Con una eficacia de validación cercana al 78,9\%, el modelo es capaz de detectar la presencia de melanoma con una precisión razonable. Los resultados son un paso significativo hacia la automatización del diagnóstico del cáncer de piel, que tradicionalmente ha dependido de la inspección visual por parte de expertos humanos.
+Tras la implementación del modelo, los resultados obtenidos de este modelo de aprendizaje automático son muy útiles y eficientes en el campo de la detección de melanomas. Con una eficacia de validación cercana al 81,27\%, el modelo es capaz de detectar la presencia de melanoma con una precisión razonable. Los resultados son un paso significativo hacia la automatización del diagnóstico del cáncer de piel, que tradicionalmente ha dependido de la inspección visual por parte de expertos humanos.
 
 La eficacia del modelo también puede mejorarse aún más optimizando su consumo de tiempo y memoria. Esta optimización será esencial para convertir los resultados del modelo en una solución a gran escala que pueda ser utilizada por profesionales sanitarios y pacientes de todo el mundo. Es importante señalar que el entrenamiento inicial del modelo es un proceso que se realiza una sola vez y no necesita ejecutarse continuamente. Por lo tanto, si se optimiza el proceso de entrenamiento, la eficacia del modelo puede mejorar considerablemente.
 

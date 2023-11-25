@@ -37,13 +37,17 @@
 \contentsline {subsection}{\numberline {3.4.2}Arquitectura del modelo EfficientNet}{20}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}EfficientNetB1}{20}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Capas adicionales y regularización}{21}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Optimización}{21}{subsection.3.4.5}%
+\contentsline {subsubsection}{Normalización por lotes}{21}{section*.12}%
+\contentsline {subsubsection}{Capa densa}{21}{section*.13}%
+\contentsline {subsubsection}{Dropout}{22}{section*.14}%
+\contentsline {subsubsection}{Capa de salida}{22}{section*.15}%
+\contentsline {subsection}{\numberline {3.4.5}Optimización}{22}{subsection.3.4.5}%
 \contentsline {subsection}{\numberline {3.4.6}Ajuste dinámico de la tasa de aprendizaje}{22}{subsection.3.4.6}%
-\contentsline {section}{\numberline {3.5}Resultados}{22}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Resultados}{23}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Estadísticas básicas}{23}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Estadísticas de eficacia}{24}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Estadísticas de aprendizaje}{24}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Ventajas y Desventajas}{24}{section.3.6}%
-\contentsline {chapter}{Conclusiones}{26}{section*.15}%
-\contentsline {chapter}{Recomendaciones}{27}{section*.17}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{28}{chapter*.19}%
+\contentsline {subsection}{\numberline {3.5.3}Estadísticas de aprendizaje}{26}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Ventajas y Desventajas}{26}{section.3.6}%
+\contentsline {chapter}{Conclusiones}{27}{section*.19}%
+\contentsline {chapter}{Recomendaciones}{28}{section*.21}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{29}{chapter*.23}%

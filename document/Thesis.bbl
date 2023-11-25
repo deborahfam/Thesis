@@ -714,6 +714,34 @@
       \field{pages}{18134}
       \range{pages}{1}
     \endentry
+    \entry{vitalflux_categorical_crossentropy}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e17e7dfbbc9b0b54de35a893adcdc4fd}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
+      \strng{fullhash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
+      \strng{bibnamehash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
+      \strng{authorbibnamehash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
+      \strng{authornamehash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
+      \strng{authorfullhash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: [25 de noviembre de 2023]}
+      \field{title}{Keras - Categorical Cross Entropy Loss Function}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://vitalflux.com/keras-categorical-cross-entropy-loss-function/
+      \endverb
+      \verb{url}
+      \verb https://vitalflux.com/keras-categorical-cross-entropy-loss-function/
+      \endverb
+    \endentry
     \entry{tajerian2023design}{article}{}
       \name{author}{4}{}{%
         {{hash=1aa2ca9c5ae56e744b3e909a8b0f0bb0}{%
