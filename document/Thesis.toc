@@ -44,10 +44,15 @@
 \contentsline {subsection}{\numberline {3.4.5}Optimización}{22}{subsection.3.4.5}%
 \contentsline {subsection}{\numberline {3.4.6}Ajuste dinámico de la tasa de aprendizaje}{22}{subsection.3.4.6}%
 \contentsline {section}{\numberline {3.5}Resultados}{23}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Estadísticas básicas}{23}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Estadísticas de eficacia}{24}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Estadísticas de aprendizaje}{26}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Ventajas y Desventajas}{26}{section.3.6}%
-\contentsline {chapter}{Conclusiones}{27}{section*.19}%
-\contentsline {chapter}{Recomendaciones}{28}{section*.21}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{29}{chapter*.23}%
+\contentsline {subsection}{\numberline {3.5.1}Experimento 1}{24}{subsection.3.5.1}%
+\contentsline {subsubsection}{Estadísticas básicas}{24}{section*.16}%
+\contentsline {subsubsection}{Estadísticas de aprendizaje}{24}{section*.18}%
+\contentsline {subsubsection}{Estadísticas de eficacia}{25}{section*.20}%
+\contentsline {subsection}{\numberline {3.5.2}Experimento 2}{27}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Estadísticas básicas}{27}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Estadísticas de aprendizaje}{28}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Estadísticas de eficacia}{28}{subsection.3.5.5}%
+\contentsline {section}{\numberline {3.6}Ventajas y Desventajas}{28}{section.3.6}%
+\contentsline {chapter}{Conclusiones}{29}{section*.26}%
+\contentsline {chapter}{Recomendaciones}{30}{section*.28}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{31}{chapter*.30}%

@@ -255,73 +255,168 @@ La función de pérdida elegida es la \textit{categorical crossentropy} \brackci
 
 Un componente innovador de nuestro enfoque es el uso de un Callback personalizado para el ajuste dinámico del learning rate \brackcite{lr}, basado en la precisión del entrenamiento y la pérdida de validación. Este mecanismo adapta el learning rate durante el entrenamiento, reduciéndolo si el modelo no mejora a un ritmo esperado. Este ajuste es vital en la navegación de superficies de pérdida complejas, aumentando la probabilidad de que el modelo evite mínimos locales subóptimos y converja hacia soluciones más efectivas.
 
-Este enfoque puede ser especialmente útil cuando nos enfrentamos a superficies de pérdida complejas con múltiples mínimos locales; al variar la tasa de aprendizaje, es más probable que el modelo salga de mínimos locales subóptimos y encuentre una solución mejor.
-
 %-----------------------------------------------------------------------------------
 \section{Resultados}\label{sec:results}
 %-----------------------------------------------------------------------------------
-En esta sección presentamos los resultados obtenidos a través de una serie de experimentos meticulosamente diseñados y ejecutados. Nuestro enfoque se centró en la exploración y optimización de diversos pipelines de procesamiento y clasificación de imágenes, cada uno configurado para evaluar distintos aspectos y técnicas dentro del amplio espectro del aprendizaje profundo y el análisis de imágenes.
 
-Los experimentos se estructuraron con el objetivo de desentrañar las capacidades y limitaciones de varios modelos y técnicas en el contexto del procesamiento de imágenes. Cada experimento se diseñó con una configuración única, variando desde la selección de parámetros, la arquitectura de los modelos de aprendizaje profundo, hasta la técnica de preprocesamiento y aumento de datos. Este enfoque nos permitió observar los efectos específicos de cada variable en la precisión, eficiencia y efectividad de la clasificación.
+En esta sección presentamos los resultados obtenidos. Nuestro enfoque se centró en la exploración y optimización de dos pipelines de procesamiento y clasificación de imágenes. Los experimentos se estructuraron con el objetivo de evaluar mejoras de precisión en el modelo utilizando distintas aproximaciones de procesamiento y normalización de datos y optimizadores en el contexto del procesamiento de imágenes.
 
-Tras la implementación del modelo, los resultados obtenidos de este modelo de aprendizaje automático son muy útiles y eficientes en el campo de la detección de melanomas. Con una eficacia de validación cercana al 81,27\%, el modelo es capaz de detectar la presencia de melanoma con una precisión razonable. Los resultados son un paso significativo hacia la automatización del diagnóstico del cáncer de piel, que tradicionalmente ha dependido de la inspección visual por parte de expertos humanos.
+Tras la implementación del modelo, los resultados obtenidos superan las espectativas. El modelo con mayor eficiencia luego de varios ajustes tuvo una eficacia de validación cercana al 84\%. Los resultados son un paso significativo hacia la automatización del diagnóstico del cáncer de piel, que tradicionalmente ha dependido de la inspección visual por parte de expertos humanos. 
 
-La eficacia del modelo también puede mejorarse aún más optimizando su consumo de tiempo y memoria. Esta optimización será esencial para convertir los resultados del modelo en una solución a gran escala que pueda ser utilizada por profesionales sanitarios y pacientes de todo el mundo. Es importante señalar que el entrenamiento inicial del modelo es un proceso que se realiza una sola vez y no necesita ejecutarse continuamente. Por lo tanto, si se optimiza el proceso de entrenamiento, la eficacia del modelo puede mejorar considerablemente.
+En cada sección se muestran algunas métricas que muestran el desarrollo del modelo, con los siguientes parámetros:
+
+\begin{table}[ht]
+   \centering
+   \small
+   \begin{tabular}{|c|p{10cm}|}
+   \hline
+   \textbf{Término} & \textbf{Descripción} \\
+   \hline
+   Epoch & Es una iteración completa sobre todo el conjunto de datos de entrenamiento. \\
+   \hline
+   Loss (Pérdida) & Es una medida de cuán bien el modelo está realizando sus predicciones. Los valores decrecientes indican una mejora en el aprendizaje. \\
+   \hline
+   Accuracy (Precisión) & Muestra el porcentaje de etiquetas que el modelo predice correctamente para el conjunto de entrenamiento. \\
+   \hline
+   V loss (Pérdida de Validación) & Es similar a la pérdida, pero se calcula sobre un conjunto de datos que no se utiliza para el entrenamiento. \\
+   \hline
+   V acc (Precisión de Validación) & Muestra el porcentaje de etiquetas que el modelo predice correctamente para el conjunto de datos de validación. \\
+   \hline
+   LR (Learning Rate) & La tasa de aprendizaje dicta cuánto se ajustan los pesos del modelo en cada actualización. \\
+   \hline
+   Next LR (Próxima Learning Rate) & Indica la próxima tasa de aprendizaje planificada. La adaptación de la tasa de aprendizaje puede ayudar a evitar el estancamiento y mejorar la convergencia. \\
+   \hline
+   Monitor & Muestra la métrica que se está utilizando para monitorizar el rendimiento del modelo. Cambia de \textit{accuracy} a \textit{val loss}, lo que probablemente indica que el cambio se hizo para evitar el sobre'ajuste. \\
+   \hline
+   Duration (Duración) & Tiempo que tardó cada epoch en completarse. Importante para evaluar la eficiencia del entrenamiento. \\
+   \hline
+   \end{tabular}
+   \caption{Descripción de términos clave en el entrenamiento de modelos de aprendizaje automático.}
+   \label{table:terminology}
+   \end{table}
+   
+
+\subsection{Experimento 1}
 
 %-----------------------------------------------------------------------------------
-	\subsection{Estadísticas básicas}\label{sub:basic_statistics}
+	\subsubsection{Estadísticas básicas}\label{sub:basic_statistics_p1}
+%-----------------------------------------------------------------------------------
+    
+    Estos resultados de la tabla siguiente corresponden a la evaluación del modelo a lo largo de 40 epochs (o iteraciones) de entrenamiento.
+
+    \begin{figure}[ht]
+      \small
+      \begin{center}
+          \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+          E & Loss & Acc & V loss & V acc & LR & M & Batch \\ \hline
+          1 & 9.587 & 40.581 & 8.95658 & 56.800 & $10^{-2}$ & accuracy & 85.25 \\ \hline
+          2 & 7.798 & 67.615 & 7.67235 & 66.800 & $10^{-2}$ & accuracy & 21.72 \\ \hline
+          3 & 6.884 & 79.340 & 6.96014 & 69.600 & $10^{-2}$ & accuracy & 22.56 \\ \hline
+          4 & 6.214 & 87.365 & 6.35865 & 71.200 & $10^{-2}$ & accuracy & 25.81 \\ \hline
+          5 & 5.646 & 91.690 & 5.94812 & 75.200 & $10^{-2}$ & val\_loss & 23.08 \\ \hline
+          6 & 5.172 & 92.999 & 5.44954 & 76.800 & $10^{-2}$ & val\_loss & 23.23 \\ \hline
+          7 & 4.735 & 94.479 & 5.06016 & 76.400 & $10^{-2}$ & val\_loss & 23.19 \\ \hline
+          8 & 4.334 & 96.528 & 4.73837 & 76.800 & $10^{-2}$ & val\_loss & 22.90 \\ \hline
+          9 & 3.969 & 97.211 & 4.33689 & 77.200 & $10^{-2}$ & val\_loss & 22.74 \\ \hline
+          10 & 3.631 & 98.008 & 4.15826 & 74.000 & $10^{-2}$ & val\_loss & 22.56 \\ \hline
+          11 & 3.315 & 98.406 & 3.89153 & 73.600 & $10^{-2}$ & val\_loss & 23.11 \\ \hline
+          \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots \\ \hline
+          34 & 0.627 & 99.886 & 1.24470 & 76.800 & 0.00013 & val\_loss & 23.30 \\ \hline
+          \end{tabular}
+          \caption{Estadísticas básicas del modelo EfficientNetB1.}
+      \end{center}\label{fig:estadisticas_p1}
+  \end{figure}
+    
+  Aquí vemos que el entrenamiento se planeó para 40 epochs, pero se detuvo en el epoch 34, después de tres ajustes de la tasa de aprendizaje sin mejoras en la pérdida de validación. Esto ocurre dado que el modelo no estaba mejorando su capacidad de generalizar a datos no vistos y que continuar el entrenamiento probablemente habría resultado en un gasto innecesario de recursos y posiblemente en un mayor sobre-ajuste. 
+  
+  En la tabla se observa que la precisión de entrenamiento aumenta con cada epoch, la pérdida de entrenamiento disminuye consistentemente, la tasa de aprendizaje permanece constante al principio y luego disminuye para afinar el entrenamiento a medida que el modelo comienza a converger, todo lo anterior es indicador que el modelo esta entrenando de forma correcta.
+
+  En el monitor se muestra que cambia de \textit{accuracy} a \textit{val loss}, este cambio se hizo para evitar el sobre-ajuste.
+
+%-----------------------------------------------------------------------------------
+\subsubsection{Estadísticas de aprendizaje}\label{sub:learning_statistics_p1}
+%-----------------------------------------------------------------------------------
+		\begin{figure}[ht]%
+      \begin{center}
+      \includegraphics[width=1\textwidth]{./Graphics/training&validation_p1.png}
+      \caption{Estadísticas de aprendizaje a lo largo del proceso de entrenamiento.\label{fig:training_validation_loss}}
+      \end{center}
+		\end{figure}
+  
+La imagen anterior muestra dos gráficos, uno de pérdida y otro de precisión respectivamente, a lo largo de los epochs de entrenamiento y validación. El primero muestra una disminución constante de la pérdida tanto en el entrenamiento como en la validación, lo cual es indicativo de un buen aprendizaje. La pérdida de validación tiene un mínimo en el epoch 31, lo que sugiere que este podría ser el mejor modelo para evitar el sobre-ajuste. A partir de este punto, si la pérdida de validación comenzase a aumentar mientras la pérdida de entrenamiento sigue disminuyendo, indicaría sobre-ajuste.
+
+En el segundo se aprecia como la precisión de entrenamiento aumenta rápidamente y luego se estabiliza cerca del 100\%, mientras que la precisión de validación también aumenta pero con cierta variabilidad entre los epochs. El mejor epoch según la precisión de validación es el 29. Esta diferencia entre la precisión de entrenamiento y de validación sugiere que puede haber variabilidad en los datos de validación.
+
+%-----------------------------------------------------------------------------------
+	\subsubsection{Estadísticas de eficacia}\label{sub:accuracy_statistic_p1}
+%-----------------------------------------------------------------------------------
+    La matriz de confusión proporciona información valiosa sobre el rendimiento del modelo en relación de Actual/Predicho, en términos de su capacidad para clasificar correctamente cada una de las siete clases de cáncer de piel. La diagonal principal de la matriz representa los verdaderos positivos (TP), el número de casos en los que el modelo ha predicho correctamente la clase correspondiente. Los valores fuera de la diagonal principal indican errores de clasificación.
+
+    La clase 'NV' muestra una alta cantidad de clasificaciones correctas (134), pero también tiene errores significativos al ser confundida con otras clases (como 'BKL' y 'MEL'). La clase 'AKIEC' resultó la más difícil de predecir, con la mayoría de las muestras mal clasificadas. Esto puede deberse a la similitud entre las características de estas clases, pero sobre todo al desbalance en el conjunto de datos.
+    
+    \begin{figure}[ht]%
+		\begin{center}
+		\includegraphics[width=1\textwidth]{./Graphics/confussionmatrix_p1.png}
+		\caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\label{fig:confussion_matrix_p1}}
+		\end{center}
+		\end{figure}
+
+      \begin{figure}[ht]%
+         \begin{center}
+         \includegraphics[width=1\textwidth]{./Graphics/errorByClass_p1.png}
+         \caption{Gráfico de errores por clase en el conjunto de pruebas\label{fig:class_errors_p1}}
+         \end{center}
+         \end{figure}
+
+         Cada barra representa el número de muestras de una clase particular que fueron mal clasificadas.
+\subsection{Experimento 2}
+
+%-----------------------------------------------------------------------------------
+\subsection{Estadísticas básicas}\label{sub:basic_statistics_p2}
 %-----------------------------------------------------------------------------------
     
     Estos resultados de la tabla siguiente corresponden a la evaluación del modelo a lo largo de 40 epochs (o iteraciones) de entrenamiento. Cada fila representa una época y se presentan las siguientes métricas:
     
-    \begin{description}
-       \item [loss:] Es una medida de la diferencia entre las predicciones del modelo y los valores reales de los datos de entrenamiento en esa época. El objetivo del entrenamiento es minimizar esta métrica.
-       \item [acc (accuracy):] Es la proporción de predicciones correctas realizadas por el modelo sobre el conjunto de datos de entrenamiento en esa época.
-       \item [v loss (vl) (pérdida de validación):] Es la pérdida en el conjunto de datos de validación, que es un conjunto de datos independiente que no se utiliza para entrenar el modelo, sino para evaluar su generalizabilidad.
-       \item [v acc (precisión de validación):] Es la precisión en el conjunto de datos de validación.
-    \end{description}
-\begin{figure}[ht]
-        \small
-        \begin{center}
-            \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
-            E  & Loss  & Acc & V loss & V acc & LR             & M & Batch \\ \hline
-            1  & 9.535 & 37.735   & 9.396  & 38.4  & $10^{-2}$ & Acc     & 1337.97 \\ \hline
-            2  & 7.791 & 66.306   & 7.832  & 61.6  & $10^{-2}$ & Acc     & 414.44 \\ \hline
-            3  & 6.852 & 79.624   & 7.042  & 66.8  & $10^{-2}$ & Acc     & 291.03 \\ \hline
-            4  & 6.191 & 85.544   & 6.398  & 67.6  & $10^{-2}$ & Acc     & 281.46 \\ \hline
-            5  & 5.594 & 90.894   & 5.772  & 72.8  & $10^{-2}$ & Acc     & 288.00 \\ \hline
-            6  & 5.111 & 92.943   & 5.311  & 74.4  & $10^{-2}$ & Vl  & 280.35 \\ \hline
-            7  & 4.653 & 95.788   & 4.916  & 74.4  & $10^{-2}$ & Vl  & 274.80 \\ \hline
-            8  & 4.268 & 95.788   & 4.631  & 73.6  & $10^{-2}$ & Vl  & 280.88 \\ \hline
-            9  & 3.888 & 97.097   & 4.164  & 76.8  & $10^{-2}$ & Vl  & 302.48 \\ \hline
-            10 & 3.547 & 97.553   & 3.840  & 76.4  & $10^{-2}$ & Vl  & 275.76 \\ \hline
-            11 & 3.233 & 98.349   & 3.622  & 75.2  & $10^{-2}$ & Vl  & 281.52 \\ \hline
-            \dots   & \dots   & \dots      & \dots    & \dots   & \dots    & \dots     & \dots \\ \hline
-            31 & 0.592 & 99.488   & 1.133  & 77.2  & .00025 & Vl  & 420.26 \\ \hline
-            \end{tabular}
-            \caption{Estadísticas básicas de algunas iteraciones del modelo.}
-        \end{center}\label{fig:modelo}
-    \end{figure}
+    \begin{figure}[ht]
+      \small
+      \begin{center}
+          \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+          E & Loss & Acc & V loss & V acc & LR & M & Batch \\ \hline
+          1 & 9.587 & 40.581 & 8.95658 & 56.800 & $10^{-2}$ & accuracy & 85.25 \\ \hline
+          2 & 7.798 & 67.615 & 7.67235 & 66.800 & $10^{-2}$ & accuracy & 21.72 \\ \hline
+          3 & 6.884 & 79.340 & 6.96014 & 69.600 & $10^{-2}$ & accuracy & 22.56 \\ \hline
+          4 & 6.214 & 87.365 & 6.35865 & 71.200 & $10^{-2}$ & accuracy & 25.81 \\ \hline
+          5 & 5.646 & 91.690 & 5.94812 & 75.200 & $10^{-2}$ & val\_loss & 23.08 \\ \hline
+          6 & 5.172 & 92.999 & 5.44954 & 76.800 & $10^{-2}$ & val\_loss & 23.23 \\ \hline
+          7 & 4.735 & 94.479 & 5.06016 & 76.400 & $10^{-2}$ & val\_loss & 23.19 \\ \hline
+          8 & 4.334 & 96.528 & 4.73837 & 76.800 & $10^{-2}$ & val\_loss & 22.90 \\ \hline
+          9 & 3.969 & 97.211 & 4.33689 & 77.200 & $10^{-2}$ & val\_loss & 22.74 \\ \hline
+          10 & 3.631 & 98.008 & 4.15826 & 74.000 & $10^{-2}$ & val\_loss & 22.56 \\ \hline
+          11 & 3.315 & 98.406 & 3.89153 & 73.600 & $10^{-2}$ & val\_loss & 23.11 \\ \hline
+          \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots \\ \hline
+          34 & 0.627 & 99.886 & 1.24470 & 76.800 & 0.00013 & val\_loss & 23.30 \\ \hline
+          \end{tabular}
+          \caption{Estadísticas básicas de algunas iteraciones del modelo EfficientNetB5.}
+      \end{center}\label{fig:estadisticas_p2}
+  \end{figure}
     
     En general, los resultados muestran que el modelo mejora con el tiempo, ya que la pérdida disminuye y la precisión aumenta tanto en el conjunto de datos de entrenamiento como en el de validación.
 
 %-----------------------------------------------------------------------------------
-	\subsection{Estadísticas de eficacia}\label{sub:accuracy_statistic}
+\subsection{Estadísticas de aprendizaje}\label{sub:learning_statistics_p2}
 %-----------------------------------------------------------------------------------
-    La matriz de confusión proporciona información valiosa sobre el rendimiento del modelo en relacion de Actual/Predicho, en términos de su capacidad para clasificar correctamente cada una de las siete clases de cáncer de piel. 
-    La diagonal principal de la matriz representa los verdaderos positivos (TP), el número de casos en los que el modelo ha predicho correctamente la clase correspondiente. Los valores fuera de la diagonal principal indican errores de clasificación. 
-    Estos errores pueden ser falsos positivos (FP), falsos negativos (FN) o verdaderos negativos (TN), dependiendo de la posición en la matriz. 
-    AKIEC, BCC, BKL, DF, MEL, NV y VASC son los acrónimos de los distintos tipos de lesiones cutáneas utilizados en la tarea de clasificación multiclase.
+		\begin{figure}[ht]%
+      \begin{center}
+      \includegraphics[width=0.45\textwidth]{./Graphics/training_validation.png}
+      \caption{Estadísticas de aprendizaje a lo largo del proceso de entrenamiento (en rojo el proceso de entrenamiento en el conjunto de entrenamiento, en verde en el conjunto de validación).\label{fig:training_validation_loss_p2}}
+      \end{center}
+		\end{figure}
+  
+La imagen anterior muestra un gráfico del curso temporal de las épocas realizadas, mostrando cómo el algoritmo iba obteniendo resultados más precisos y disminuyendo el error.
 
-    Algunos patrones que pueden observarse en esta matriz son:
-
-    \begin{enumerate}
-       \item[.] El modelo parece tener dificultades para clasificar las muestras de la clase AKIEC, ya que sólo predice correctamente 5 de 7 casos. 
-       Además, en la fila AKIEC hay un falso positivo (el modelo predijo la clase BKL en un caso que en realidad era AKIEC) y un falso negativo (el modelo predijo la clase MEL en un caso que en realidad era AKIEC). 
-       \item[.] En la clase BCC, el modelo predice correctamente todos los casos.
-       \item[.] Las muestras de las clases BKL y MEL parecen ser las más difíciles de clasificar, ya que hay varios falsos positivos y falsos negativos en esos rangos.
-       \item[.] La mayoría de las predicciones se clasifican correctamente como NV, que es la clase más común en los datos.
-    \end{enumerate}
+%-----------------------------------------------------------------------------------
+	\subsection{Estadísticas de eficacia}\label{sub:accuracy_statistic_p2}
+%-----------------------------------------------------------------------------------
     
     \begin{figure}[ht]%
 		\begin{center}
@@ -332,32 +427,8 @@ La eficacia del modelo también puede mejorarse aún más optimizando su consumo
     
     
 
-%-----------------------------------------------------------------------------------
-	\subsection{Estadísticas de aprendizaje}\label{sub:learning_statistics}
-%-----------------------------------------------------------------------------------
-		\begin{figure}[ht]%
-      \begin{center}
-      \includegraphics[width=0.45\textwidth]{./Graphics/training_validation.png}
-      \caption{Estadísticas de aprendizaje a lo largo del proceso de entrenamiento (en rojo el proceso de entrenamiento en el conjunto de entrenamiento, en verde en el conjunto de validación).\label{fig:training_validation_loss}}
-      \end{center}
-		\end{figure}
-  
-La imagen anterior muestra un gráfico del curso temporal de las épocas realizadas, mostrando cómo el algoritmo iba obteniendo resultados más precisos y disminuyendo el error.
+
 
 %-----------------------------------------------------------------------------------
-\section{Ventajas y Desventajas}\label{sec:advantages_disadvantages}
+\section{Ventajas y Desventajas}\label{sec:advantages_disadvantages_p2}
 %-----------------------------------------------------------------------------------
-Las ventajas y desventajas del proceso son las siguientes. 
-Ventajas: 
-\begin{enumerate}
-   \item Selección y representación del problema y de los datos. 
-   Este proceso ayuda a comprender mejor el problema en cuestión y a identificar los datos relevantes necesarios para entrenar el modelo.
-   \item Preprocesamiento de datos e imágenes. 
-   Eliminar el ruido y los artefactos de las imágenes mejora la calidad de los datos y puede mejorar el rendimiento del modelo. 
-   La selección de canales adecuados y la reducción del ruido también pueden mejorar el rendimiento del modelo
-\end{enumerate}  
-Desventajas: 	
-\begin{enumerate}
-   \item Modificación y procesamiento de datos. Si se utilizan conjuntos de datos inadecuados o se normalizan incorrectamente, el modelo puede no ser preciso o útil.
-\end{enumerate} 
-
