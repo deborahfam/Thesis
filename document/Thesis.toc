@@ -52,7 +52,6 @@
 \contentsline {subsection}{\numberline {3.5.3}Estadísticas básicas}{27}{subsection.3.5.3}%
 \contentsline {subsection}{\numberline {3.5.4}Estadísticas de aprendizaje}{28}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Estadísticas de eficacia}{28}{subsection.3.5.5}%
-\contentsline {section}{\numberline {3.6}Ventajas y Desventajas}{28}{section.3.6}%
-\contentsline {chapter}{Conclusiones}{29}{section*.26}%
-\contentsline {chapter}{Recomendaciones}{30}{section*.28}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{31}{chapter*.30}%
+\contentsline {chapter}{Conclusiones}{32}{section*.28}%
+\contentsline {chapter}{Recomendaciones}{33}{section*.30}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{34}{chapter*.32}%

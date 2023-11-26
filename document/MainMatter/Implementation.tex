@@ -407,28 +407,44 @@ En el segundo se aprecia como la precisión de entrenamiento aumenta rápidament
 %-----------------------------------------------------------------------------------
 		\begin{figure}[ht]%
       \begin{center}
-      \includegraphics[width=0.45\textwidth]{./Graphics/training_validation.png}
-      \caption{Estadísticas de aprendizaje a lo largo del proceso de entrenamiento (en rojo el proceso de entrenamiento en el conjunto de entrenamiento, en verde en el conjunto de validación).\label{fig:training_validation_loss_p2}}
+      \includegraphics[width=1\textwidth]{./Graphics/training&validation_p2.png}
+      \caption{Estadísticas de aprendizaje a lo largo del proceso de entrenamiento.\label{fig:training_validation_loss_p2}}
       \end{center}
 		\end{figure}
   
-La imagen anterior muestra un gráfico del curso temporal de las épocas realizadas, mostrando cómo el algoritmo iba obteniendo resultados más precisos y disminuyendo el error.
+La época con la mejor pérdida de validación y la mejor precisión de validación no coinciden, sugiere un trade-off entre la optimización de la pérdida y la maximización de la precisión. La volatilidad en la precisión de validación sugiere que el modelo puede beneficiarse de un ajuste en el tamaño del lote para suavizar las actualizaciones de los pesos y mejorar la estabilidad del modelo.
+
+Dado lo anterior, se hizo una última iteración del modelo aumentando el volumen de muestras por clase a 500. Estos fueron los resultados. Se obtuvo una efectividad de aproximadamente 87\% (86.83\%).
+
+\begin{figure}[ht]%
+   \begin{center}
+   \includegraphics[width=1\textwidth]{./Graphics/training&validation_p3.png}
+   \caption{Estadísticas de aprendizaje a lo largo del proceso de entrenamiento.\label{fig:training_validation_loss_p3}}
+   \end{center}
+   \end{figure}
+
+La disminución continua en la pérdida de entrenamiento y la tendencia ascendente en la precisión de entrenamiento sugieren que el modelo está aprendiendo de manera efectiva y consistente. La pérdida de validación que converge con la de entrenamiento y la mejor época coincidente para pérdida y precisión de validación (época 19) indican que el modelo generaliza bien y no solo memoriza los datos de entrenamiento.
+
+En el gráfico actual, hay una mejor alineación entre la pérdida de entrenamiento y validación y menos volatilidad en la precisión de validación, lo que indica un modelo más estable.
 
 %-----------------------------------------------------------------------------------
 	\subsection{Estadísticas de eficacia}\label{sub:accuracy_statistic_p2}
 %-----------------------------------------------------------------------------------
     
-    \begin{figure}[ht]%
-		\begin{center}
-		\includegraphics[width=0.45\textwidth]{./Graphics/confussion_matrix.png}
-		\caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas.\label{fig:confussion_matrix}}
-		\end{center}
-		\end{figure}
-    
-    
+\begin{figure}[ht]%
+   \begin{center}
+   \includegraphics[width=1\textwidth]{./Graphics/confussionMatrix_p3.png}
+   \caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\label{fig:confussion_matrix_p3}}
+   \end{center}
+   \end{figure}
 
+   \begin{figure}[ht]%
+      \begin{center}
+      \includegraphics[width=1\textwidth]{./Graphics/errorByClass_p3.png}
+      \caption{Gráfico de errores por clase en el conjunto de pruebas\label{fig:class_errors_p3}}
+      \end{center}
+      \end{figure}
 
+NV muestra la mayoría de los errores, lo que puede deberse a una mayor prevalencia en el conjunto de datos.
 
-%-----------------------------------------------------------------------------------
-\section{Ventajas y Desventajas}\label{sec:advantages_disadvantages_p2}
-%-----------------------------------------------------------------------------------
+Comparando ambos gráficos, podemos identificar áreas específicas donde el modelo necesita mejora. Por ejemplo, la clase 'NV', a pesar de tener muchas predicciones correctas, tiene un número relativamente alto de falsos positivos y falsos negativos, lo que sugiere que puede haber características de las imágenes 'NV' que se confunden con otras clases. En cambio, 'BCC' y 'DF' parecen estar bien diferenciados del resto. Esto puede informar estrategias futuras para mejorar la precisión del modelo, como la recolección de más datos o la implementación de técnicas de aprendizaje más avanzadas para clases específicas.
