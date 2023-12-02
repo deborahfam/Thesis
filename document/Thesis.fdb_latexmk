@@ -4,7 +4,7 @@
   (generated)
   "Thesis.bbl"
   "Thesis.blg"
-["pdflatex"] 1701534677 "c:/Users/Jorge Carlos/Desktop/git-Thesis-test/Thesis/document/Thesis.tex" "Thesis.pdf" "Thesis" 1701534677
+["pdflatex"] 1701535326 "c:/Users/Jorge Carlos/Desktop/git-Thesis-test/Thesis/document/Thesis.tex" "Thesis.pdf" "Thesis" 1701535326
   "BackMatter/Bibliography.aux" 0 -1 0 "pdflatex"
   "BackMatter/Bibliography.tex" 1699546350 37 f06889da9859fc675d738515d865edd1 ""
   "BackMatter/Conclusions.aux" 0 -1 0 "pdflatex"
@@ -38,14 +38,14 @@
   "MainMatter/Introduction.tex" 1701531690 6531 bbc3ceb2dc31c414bd4e3590189d9718 ""
   "MainMatter/Proposal.aux" 0 -1 0 "pdflatex"
   "MainMatter/Proposal.tex" 1701110657 3386 f5bb955b305fa8384b9e7bd0e8746014 ""
-  "Thesis.aux" 1701534677 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "Thesis.bbl" 1701534665 62705 b739a4586ab34d7fc4c133cdd41fb16e "biber Thesis"
+  "Thesis.aux" 1701535326 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "Thesis.bbl" 1701535318 62705 b739a4586ab34d7fc4c133cdd41fb16e "biber Thesis"
   "Thesis.lol" 0 -1 0 "pdflatex"
   "Thesis.out" 0 -1 0 "pdflatex"
   "Thesis.run.xml" 0 -1 0 "pdflatex"
-  "Thesis.tex" 1699796324 3098 461deb0ad824bd9b2f57c09323a8bc7e ""
+  "Thesis.tex" 1701535311 3188 d96850e97c0107e9f5450f519bda25d2 ""
   "c:/Users/Jorge" 1701258599 18972 08aa046265db1c4235160d89421f6b52 ""
-  "c:/Users/Jorge Carlos/Desktop/git-Thesis-test/Thesis/document/Thesis.tex" 1699796324 3098 461deb0ad824bd9b2f57c09323a8bc7e ""
+  "c:/Users/Jorge Carlos/Desktop/git-Thesis-test/Thesis/document/Thesis.tex" 1701535311 3188 d96850e97c0107e9f5450f519bda25d2 ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1682525284 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1682525284 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1682525284 2840 216e6e45ad352e2456e1149f28885bee ""
