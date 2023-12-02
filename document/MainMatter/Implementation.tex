@@ -2,7 +2,8 @@
 
 \section{Dataset}
 
-El dataset utilizado como medio de aprendizaje para este proyecto es HAM1000-segmentation-and-classification \brackcite{ham10000}. Este conjunto de datos, acrónimo de Human Against Machine (Humano contra máquina) con 10000 imágenes de entrenamiento, es una amplia colección de imágenes dermatoscópicas. En concreto, contiene 10015 imágenes del archivo ISIC, que inicialmente formaban parte de un conjunto de entrenamiento creado por ISIC \brackcite{tschandl2018ham10000} con la siguiente distribución.\\
+El dataset utilizado como medio de aprendizaje para este proyecto es HAM1000-segmentation-and-classification \brackcite{ham10000}. Este conjunto de datos, acrónimo de Human Against Machine (Humano contra máquina) con 10000 imágenes de entrenamiento, es una amplia colección de imágenes dermatoscópicas. En concreto, contiene 10015 imágenes del archivo ISIC, que inicialmente formaban parte de un conjunto de entrenamiento creado por ISIC \brackcite{tschandl2018ham10000} con la siguiente distribución.
+
 
 \begin{tabular}{lrr}
    \hline
@@ -46,24 +47,24 @@ Inicialmente, el conjunto de datos, fue dividido en dos subconjuntos: \textit{tr
    
    Además se mezclan aleatoriamente los datos y se utiliza una variable fija para garantizar que la división sea reproducible. Aquí se utiliza \textit{dummy split} para mantener la proporción deseada entre validación y prueba.
 
-   \begin{table}[ht]
-      \centering
-      \begin{tabular}{lccc}
-      \hline
-      Diagnostic category & Training & Validation & Testing \\ \hline
-      AKIEC & 122 & 4 & 1 \\
-      BCC & 487 & 12 & 15 \\
-      BKL & 1045 & 31 & 23 \\
-      DF & 108 & 5 & 2 \\
-      MEL & 1036 & 38 & 39 \\
-      NV & 6389 & 154 & 162 \\
-      VASC & 137 & 1 & 4 \\ \hline
-      \end{tabular}
-      \caption{Experimento 1: Distribución de imágenes de cáncer de piel en Entrenamiento, Test, y Validación Datasets}
-      \label{tab:train_test_validate_e1}
-      \end{table}
+   % \begin{table}[ht]
+   %    \centering
+   %    \begin{tabular}{lccc}
+   %    \hline
+   %    Diagnostic category & Training & Validation & Testing \\ \hline
+   %    AKIEC & 122 & 4 & 1 \\
+   %    BCC & 487 & 12 & 15 \\
+   %    BKL & 1045 & 31 & 23 \\
+   %    DF & 108 & 5 & 2 \\
+   %    MEL & 1036 & 38 & 39 \\
+   %    NV & 6389 & 154 & 162 \\
+   %    VASC & 137 & 1 & 4 \\ \hline
+   %    \end{tabular}
+   %    \caption{Experimento 1: Distribución de imágenes de cáncer de piel en Entrenamiento, Test, y Validación Datasets}
+   %    \label{tab:train_test_validate_e1}
+   %    \end{table}
 
-Por lo que este experimento tiene 9514 datos de entrenamiento, 251 de test y 250 de validación.
+Por lo que este experimento tiene $9514$ datos de entrenamiento, $251$ de test y $250$ de validación.
 
 \subsubsection{Experimento 2}
 
@@ -81,28 +82,47 @@ Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución 
    \centering
    \begin{tabular}{lccc}
    \hline
-   Diagnostic category & Training & Validation & Testing \\ \hline
-   AKIEC & 88 & 19 & 19 \\
-   BCC & 359 & 77 & 77 \\
-   BKL & 769 & 164 & 164 \\
-   DF & 80 & 17 & 17 \\
-   MEL & 779 & 166 & 166 \\
-   NV & 4693 & 1005 & 1005 \\
-   VASC & 99 & 21 & 21 \\ \hline
+   \textbf{Diagnostic category} & \textbf{Training} & \textbf{Validation} & \textbf{Testing} \\
+   \hline
+   NV       & 300 & 158 & 163 \\
+   MEL      & 300 & 25  & 35  \\
+   BKL      & 300 & 34  & 30  \\
+   DF       & 115 & 5   & 3   \\
+   AKIEC    & 300 & 11  & 7   \\
+   BCC      & 300 & 16  & 10  \\
+   VASC     & 142 & 1   & 3   \\ \hline
    \end{tabular}
    \caption{Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de Entrenamiento, Test y Validación}
-   \label{tab:train_test_validate_e2}
-\end{table}
+   \label{table:train_test_validate_e2}
+   \end{table}
+   
 
-Luego este quedaría distribuido en 7010 datos de entrenamiento, 1503 de test y 1502 de validación.
+% \begin{table}[ht]
+%    \centering
+%    \begin{tabular}{lccc}
+%    \hline
+%    Diagnostic category & Training & Validation & Testing \\ \hline
+%    AKIEC & 300 & 19 & 19 \\
+%    BCC & 359 & 77 & 77 \\
+%    BKL & 769 & 164 & 164 \\
+%    DF & 80 & 17 & 17 \\
+%    MEL & 779 & 166 & 166 \\
+%    NV & 4693 & 1005 & 1005 \\
+%    VASC & 99 & 21 & 21 \\ \hline
+%    \end{tabular}
+%    \caption{Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de Entrenamiento, Test y Validación}
+%    \label{tab:train_test_validate_e2}
+% \end{table}
+
+Luego este quedaría distribuido en $7010$ datos de entrenamiento, $1503$ de test y $1502$ de validación.
 
 \section{Generadores de datos y preprocesamiento}
 
-Uno de los principales problemas del dataset, es el desequilibrio en la representación de las clases, un problema habitual en los conjuntos de datos médicos en los que algunas enfermedades son más raras que otras. Para solucionar este problema, el conjunto de datos se equilibra meticulosamente limitando el número máximo de muestras por clase (300). Esto garantiza que el modelo no esté sesgado hacia las clases más comunes y pueda generalizar mejor entre varios tipos de lesiones cutáneas.
+Uno de los principales problemas del dataset, es el desequilibrio en la representación de las clases, un problema habitual en los conjuntos de datos médicos en los que algunas enfermedades son más raras que otras. Para solucionar este problema, el conjunto de datos se equilibra meticulosamente limitando el número máximo de muestras por clase ($300$). Esto garantiza que el modelo no esté sesgado hacia las clases más comunes y pueda generalizar mejor entre varios tipos de lesiones cutáneas.
 
 \subsection{Experimento 1}
 
-Se establece para este un tamaño objetivo de muestras por clase (300 en este caso), y se utiliza un bucle para iterar a través de cada clase única. Se realiza un remuestreo con reemplazo para clases con un número de muestras menor al objetivo (300), y sin reemplazo para clases con un número igual o mayor al tamaño objetivo.
+Se establece para este un tamaño objetivo de muestras por clase ($300$ en este caso), y se utiliza un bucle para iterar a través de cada clase única. Se realiza un re-muestreo con reemplazo para clases con un número de muestras menor al objetivo ($300$), y sin reemplazo para clases con un número igual o mayor al tamaño objetivo.
 
 \begin{table}[ht]
    \centering
@@ -143,7 +163,7 @@ Como se evidencia anteriormente, al separar la data en clases el conjunto se man
 
 \subsection{Experimento 2}
 
-Se establece también un tamaño objetivo de muestras por clase (300). Se utiliza la función \textit{groupby} para agrupar el dataFrame por la etiqueta de clase. Se itera sobre cada grupo, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado.
+Se establece también un tamaño objetivo de muestras por clase ($300$). Se utiliza la función \textit{groupby} para agrupar el dataFrame por la etiqueta de clase. Se itera sobre cada grupo, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado.
 
 En este, a diferencia del primero, en cada clase se alcanza la misma cantidad de muestras, por lo que no es necesario aplicar \textit{Class Weighting}.
 
@@ -205,11 +225,11 @@ La relevancia de ImageNet para el aprendizaje profundo se puso de manifiesto con
 
 La familia de arquitecturas EfficientNet, desarrollada por los autores en \brackcite{tan2019efficientnet}, surgió con el objetivo de hallar un método adecuado para escalar las CNNs de manera que mejoraran tanto en precisión (i.e., rendimiento del modelo) como en eficiencia (es decir, en términos de parámetros del modelo y FLOPS). Estos autores propusieron un método de escalado compuesto que utiliza un conjunto fijo de coeficientes para escalar de manera uniforme el ancho, la profundidad y la resolución de la red. El método les permitió desarrollar una arquitectura de CNN eficiente, a la que denominaron EfficientNet B0. Posteriormente, crearon las variantes EfficientNets B1-B7 escalando la red base (EfficientNet B0).
 
-Mientras que la arquitectura EfficientNet B0 tiene 5.3 millones de parámetros y acepta imágenes de entrada de 224x224, EfficientNet B7 cuenta con 66 millones de parámetros y acepta imágenes de 600x600. \brackcite{Tan2019EfficientNetRM}
+Mientras que la arquitectura EfficientNet B0 tiene $5.3$ millones de parámetros y acepta imágenes de entrada de $224x224$, EfficientNet B7 cuenta con $66$ millones de parámetros y acepta imágenes de $600x600$. \brackcite{Tan2019EfficientNetRM}
 
 \begin{figure}[ht]%
    \begin{center}
-   \includegraphics[width=0.45\textwidth]{./Graphics/efficientnet_performance.png}
+   \includegraphics[width=1\textwidth]{./Graphics/efficientnet_performance.png}
    \caption{Estadísticas del rendimiento de los modelos de EfficientNet}
    \label{fig:efficientnet_performance}
    \end{center}

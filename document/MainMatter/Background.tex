@@ -1,113 +1,94 @@
 \chapter{Estado del Arte}\label{chapter:state-of-the-art}
 
-El cáncer de piel es el más frecuente del mundo \textit{annadir cita} . A diferencia de muchos otros tipos de cáncer que se 
-desarrollan internamente, el cáncer de piel se forma externamente y suele ser visible, lo que lo convierte en el "cáncer que se ve". Esta visibilidad subraya 
-la importancia de los exámenes de la piel, tanto realizados por uno mismo como por dermatólogos.El diagnóstico y el tratamiento oportunos son primordiales. 
-La mayoría de los casos de cáncer de piel son tratables si se detectan precozmente, lo que subraya la necesidad de identificar la enfermedad con prontitud. 
-La detección precoz no sólo salva vidas, sino que también evita que la enfermedad se vuelva peligrosa, desfigurante o incluso mortal.
+En las últimas décadas, los avances en potencia computacional han permitido un progreso significativo en el análisis automatizado de imágenes. Se ha pasado del análisis básico de imágenes digitales a sofisticados algoritmos capaces de identificar patrones sutiles en las imágenes de lesiones cutáneas. Los progresos en el reconocimiento de melanomas a partir de imágenes dermatológicas, han demostrado que los sistemas automatizados pueden lograr un diagnóstico comparable al de los expertos humanos \brackcite{DuHarpur2020}.   
 
 \section{Teledermatología}
 
-Las imágenes dermatológicas se utilizan para detectar el cáncer de piel, mediante el análisis de las lesiones cutáneas y la pigmentación. Esta es una técnica 
-utilizada para examinar las lesiones cutáneas mediante un instrumento manual denominado dermatoscopio, que amplía la piel hasta 10 veces. Con el avance de la 
-tecnología, la atención sanitaria ha experimentado una transformación. Se ha producido un aumento de dispositivos de diagnóstico y se ha desplazado hacia el 
-desarrollo de nuevas competencias en estadística y psicología de la toma de decisiones médicas.
+La teledermatología, una rama emergente de la telemedicina, ha revolucionizado el campo de la atención dermatológica. Impulsada por el auge de las tecnologías digitales a finales del siglo XX, esta modalidad se ha consolidado como una herramienta vital en el diagnóstico y manejo de afecciones cutáneas. Desde la década de 2000, la teledermatología ha permitido consultas dermatológicas remotas, ampliando significativamente el alcance de los servicios de salud \brackcite{romero2018practice}.
 
-La teledermatología comenzó a ganar terreno en la década de 2000 como una manera de proporcionar consulta dermatológica a distancia. Un trabajo pionero 
-es el de Whited et al \brackcite{whited2002teledermatology}, que exploró la eficacia de la teledermatología en 2002. El estudio constató que la teledermatología 
-reducía significativamente el tiempo de intervención de los pacientes, con una mediana de 5 días para las derivaciones teledermatológicas frente a 28 días para 
-las derivaciones tradicionales. El estudio también constató que la teledermatología era especialmente eficaz para pacientes con afecciones urgentes o semi-urgentes. 
-El artículo destaca las posibles ventajas de la teledermatología para mejorar el acceso a la asistencia y reducir los tiempos de espera de los pacientes.
+La investigación de Whited et al. en 2002 fue pionera en demostrar la efectividad de esta práctica \brackcite{whited2002teledermatology}. El estudio resaltó una reducción notable en los tiempos de respuesta, con una mediana de 5 días para consultas teledermatológicas, en contraste con los 28 días de los métodos tradicionales. Además, se enfatizó su utilidad en casos urgentes o semi-urgentes.
 
+Paralelamente, la teledermatopatología ha mostrado su potencial, ofreciendo una fiabilidad comparable a la evaluación histológica tradicional \brackcite{romero2018practice}. Uno de los usos importantes de esta técnica fue detectar cáncer de piel. Un estudio Piccolo et al., \brackcite{piccolo2002concordance} publicado en 2002, se centró en la concordancia entre los diagnósticos telepatológicos e histopatológicos convencionales, indicando contribuciones significativas en el campo de la teledermatopatología. Por término medio, el 78\% de los telediagnósticos fueron correctos (intervalo, 60\%-95\%), mientras que el 85\% de los diagnósticos convencionales fueron correctos (intervalo, 60\%-95\%). Se obtuvo una concordancia diagnóstica perfecta en 7 (35\%) de los 20 casos, y sólo se identificó una diferencia significativa en 1 caso.
+
+Este avance en la teledermatología ha sentado las bases para la siguiente etapa en la medicina digital: el desarrollo de algoritmos computarizados que puedan detectar características en las imágenes, imitando el comportamiento humano, para luego a partir de estos obtener resultados.
 
 \section{Técnicas tempranas de clasificación de imágenes} 
 
-Antes del auge de las redes neuronales y del aprendizaje profundo, había varias técnicas tradicionales utilizadas para la clasificación de imágenes. Estas técnicas se 
-basaban en la extracción manual de características y en métodos de aprendizaje automático clásicos. La clave de la clasificación tradicional de imágenes radica en la 
-extracción efectiva de características. Estas características deberían ser invariantes a pequeñas transformaciones y variaciones en las imágenes. Principalmente se tenía en cuenta:
+Cuando se trata de la clasificación de imágenes, es esencial considerar que nuestro sistema visual humano (SVH) primero recibe las ondas electromagnéticas que pertenecen al espectro visible y luego las interpreta en el cerebro. Sin embargo, en el campo de la visión artificial, cuando introducimos una imagen en un ordenador, lo que se interpreta es una matriz de números generalmente en el rango de [0,255] y con tres dimensiones en caso de que sea una imagen a color (RGB). Como resultado, se puede notar una gran brecha entre el significado semántico de la clase asociada a una imagen y los valores de píxeles que la componen, lo que hace que la tarea de clasificación sea compleja para sistemas artificiales. \brackcite{unal2023doc}
 
+El reconocimiento de imágenes es una faceta de la inteligencia artificial que posibilita que los sistemas informáticos analicen e interpreten el contenido visual en imágenes. Esto se consigue detectando patrones y características distintivas que luego se emplean para clasificar y etiquetar objetos. Su propósito es automatizar el análisis visual, optimizando tiempo y recursos en diversas aplicaciones \brackcite{Qindel2023}. Esta tecnología se sustenta en algoritmos de aprendizaje automático, que entrenan a las máquinas para reconocer patrones visuales. Mediante el uso de bases de datos de imágenes etiquetadas para el entrenamiento, los algoritmos aprenden a identificar objetos y patrones. Una vez completado el entrenamiento, el modelo puede identificar automáticamente estos elementos en nuevas imágenes.
 
-\begin{enumerate}
-    \item El Histograma de Gradientes Orientados (HOG): Esta técnica captura la distribución de direcciones de gradientes (orientaciones) en una imagen. \textit{add reference}
-    
-    \item Scale-Invariant Feature Transform (SIFT): Es utilizado para la detección y descripción de características locales en imágenes. El descriptor SIFT es invariante a cambios de escala, rotación y parcialmente invariante a cambios de punto de vista y afín. \textit{add reference}
-    
-    \item Binary Robust Independent Elementary Features (BRIEF): Es un descriptor de características que utiliza un conjunto de pruebas binarias para describir una región de interés en una imagen. \textit{add reference}
-    
-    \item Color Histograms: describen la distribución de colores en una imagen y son útiles para tareas en las que el color es un indicador importante. \textit{add reference}
-\end{enumerate}
+Desde finales del siglo XX, los ingenieros han dedicado esfuerzos significativos al desarrollo de técnicas y algoritmos para la categorización y reconocimiento de eventos a través de datos. Inicialmente, esto se centró en el procesamiento de texto para la clasificación automática de documentos, seguido por el tratamiento de sonidos e imágenes en diversos formatos. 
 
-En 1974, se publicó un artículo en "IEEE Transactions on Automatic Control" \brackcite{1100578}
-relacionado con el reconocimiento de patrones y el aprendizaje automático, lo que indica que ya en la década de 1970 se estaban explorando estas técnicas para el reconocimiento de patrones en datos.
+Un hito importante fue la publicación de un artículo sobre reconocimiento de patrones en 1974 en \textit{IEEE Transactions on Automatic Control} \brackcite{1100578}, evidenciando que ya en la década de $1970$ se estaban implementando estas técnicas en el reconocimiento de patrones. Los trabajos de este enfatizaron avances teóricos y experimentales significativos que impulsaron el progreso en el reconocimiento automático de patrones y el aprendizaje automático.
 
-Con el tiempo, los investigadores comenzaron a aplicar algoritmos de aprendizaje automático tradicionales como Máquinas de Soporte Vectorial (SVM) y 
-Árboles de Decisión para clasificar imágenes \brackcite{lorente2021image} 
-basándose en características extraídas manualmente. Esta ha logrado grandes avances en las últimas décadas en las siguientes tres áreas: (1) desarrollo y uso de algoritmos de clasificación avanzados, como algoritmos de clasificación de subpíxeles, por campo y basados en el conocimiento; (2) uso de múltiples funciones de teledetección, incluida información espectral, espacial, multitemporal y multisensor; y (3) incorporación de datos auxiliares en los procedimientos de clasificación, incluidos datos como topografía, suelo, carreteras y datos censales. La evaluación de la precisión es una parte integral de un procedimiento de clasificación de imágenes. La evaluación de la precisión basada en la matriz de errores es el enfoque más comúnmente empleado para evaluar la clasificación por píxel, mientras que los enfoques difusos están ganando atención para evaluar los resultados de la clasificación difusa. \brackcite{lu2007survey}.
+\subsection{Clasificación y reconocimiento de patrones en imágenes médicas}  
 
-Otro algoritmo de machine learning utilizado en las primeras etapas de la clasificación de imágenes es el árbol de decisión. Los árboles de decisión son un tipo de algoritmo de aprendizaje supervisado que se utiliza para la clasificación y la regresión. En el contexto de la clasificación de imágenes, un árbol de decisión podría usarse para tomar decisiones basadas en ciertos criterios, como el color, la forma, el tamaño, etc., para clasificar una imagen en una categoría específica.
+En el ámbito de la medicina, se ha observado que la mayoría de los sistemas artificiales de diagnóstico, en un punto, toman decisiones que están cada vez menos relacionadas con la apariencia física de la imagen tal como la vería un radiólogo. En su lugar, estos sistemas se basan en los detalles del patrón matemático de las características físicas individuales de la imagen, que son extraídas por un sistema de visión artificial o un radiólogo, para tomar su decisión final. Estos patrones matemáticos han sido objeto de estudio durante décadas por científicos que han utilizado diversos métodos analíticos, incluyendo las redes neuronales \brackcite{unal2023doc}.
 
-Con el tiempo, se introdujeron otros algoritmos de aprendizaje automático como los Clasificadores de Bosques Aleatorios, y Clasificadores de Bayes Ingenuos, que 
-también se aplicaron a la clasificación de imágenes utilizando características manuales.A medida que se avanzaba, se desarrollaron técnicas más avanzadas como las Redes Neuronales Artificiales y, eventualmente, las Redes Neuronales Convolucionales (CNN), que mostraron una capacidad significativa para aprender características directamente de los datos, reduciendo así la necesidad de extracción manual de características 
-%\brackcite{ml-techniques}.
+Para abordar esta brecha entre la representación de la imagen y su significado, se han desarrollado varios tipos de algoritmos de clasificación. Algunos de estos algoritmos se basan en la detección de bordes, como el algoritmo de Canny \brackcite{datamount2023}. Sin embargo, estos algoritmos son robustos cuando se trata de identificar una clase específica, pero si se desea clasificar una clase diferente, es necesario crear un nuevo modelo desde cero \brackcite{rong2014improved}.
 
-\section{Introducción y Desarrollo de Redes Neuronales}
+Esta serie de limitaciones restringieron su capacidad para abordar tareas complejas y desafiantes. La escasez de datos adecuados, la falta de recursos computacionales avanzados, arquitecturas simples, dificultades en el entrenamiento, generalización limitada, problemas de gradiente, falta de interpretabilidad y largos tiempos de entrenamiento fueron obstáculos clave en su desarrollo inicial.
+
+Técnicas utilizadas en los inicios para la clasificación de patrones rompieron con alugnas de las barreras de desarrollo: histograma de gradientes orientados (HOG) \brackcite{datasmarts_hog_scikit_image_2020}, Scale-Invariant Feature Transform (SIFT) \brackcite{lindeberg2012scale}, Binary Robust Independent Elementary Features (BRIEF) \brackcite{calonder2010brief}, Color Histograms \brackcite{pinecone_color_histograms}, entre otras. Sin embargo no nos fue suficiente. Luego, con el avance de la tecnología y la llegada del machine learning el aprendizaje profundo (deep learning) también desarrolló métodos de esta índole. En la bibliografía encontramos métodos de bajo nivel como son segmentación de la imagen por niveles grises, bordes o formas, entre otras y métodos de alto nivel como clasificadores basados en redes neuronales, máquinas de soporte vectorial (SVM), árbol de decisiones, entre otros \brackcite{leiva2019tecnicas}. 
+
+Se destaca además que las tres técnicas más usadas en la clasificación automática de imágenes son árboles de decisiones, redes neuronales y máquinas de vectores de soporte siendo las redes neuronales una de las más utilizadas en campo del aprendizaje profundo \brackcite{leiva2019tecnicas}. 
+
+\section{Introducción y desarrollo de machine learning en el campo médico}
 
 Las primeras aplicaciones de redes neuronales en imágenes médicas se orientaron hacia el análisis y clasificación de dichas imágenes para apoyar 
 en diagnósticos y tratamientos. 
 
 \subsection{Análisis de imágenes médicas}
 
-El análisis de imágenes médicas mediante redes neuronales se ha enfocado en campos como ultrasonido, resonancia magnética, medicina nuclear y radiología, permitiendo la identificación y clasificación de patologías o condiciones específicas. Además, estas tecnologías han encontrado aplicaciones en áreas como la oftalmología, para el diagnóstico de enfermedades oculares a partir de imágenes de retina, y en la cardiología, para la evaluación de imágenes de ecocardiogramas. \brackcite{unal2023doc}
+El análisis de imágenes médicas mediante redes neuronales se ha enfocado en campos de la medicina como resonancia magnética, medicina nuclear y radiología, permitiendo la identificación y clasificación de patologías o condiciones específicas. Además, estas tecnologías han encontrado aplicaciones en áreas como la oftalmología, para el diagnóstico de enfermedades oculares a partir de imágenes de retina, y en la cardiología, para la evaluación de imágenes de ecocardiogramas \brackcite{unal2023doc}.
 
-\begin{description}
-    \item[Ultrasonido]: La aplicación de redes neuronales en el ultrasonido ha mejorado significativamente la detección y caracterización de lesiones. Mediante el análisis automatizado de imágenes, se pueden identificar patrones sutiles que podrían pasarse por alto en la evaluación humana.
+\begin{description}   
+    \item Resonancia Magnética: En el contexto de la esclerosis múltiple, se han explorado soluciones de segmentación basadas en redes neuronales convolucionales (CNNs) para segmentaciones rápidas y fiables de lesiones y estructuras de materia gris en imágenes de resonancia magnética multimodal \brackcite{lee2022analysis}.
     
-    \item[Resonancia Magnética (RM)]: En el ámbito de la RM, las redes neuronales han permitido un avance en la segmentación de imágenes, mejorando la precisión en la identificación de estructuras anatómicas y patológicas. Esto es especialmente relevante en la neurología, donde se utilizan para detectar y monitorizar enfermedades como la esclerosis múltiple.
+    \item Medicina Nuclear:  En este campo un estudio demuestra cómo el aprendizaje profundo puede restaurar la calidad de imagen diagnóstica y mantener la precisión de la cuantificación de SUV para exploraciones PET con un conteo reducido, lo que podría aumentar la seguridad y reducir el costo de las imágenes PET \brackcite{chaudhari2021low}.
     
-    \item[Medicina Nuclear]: La aplicación de redes neuronales en medicina nuclear, como en la tomografía por emisión de positrones (PET), ha mejorado la interpretación de los estudios, permitiendo una detección más temprana y precisa de diversas patologías, incluyendo el cáncer.
-    
-    \item[Radiología]: En radiología, las redes neuronales han permitido el desarrollo de sistemas de ayuda al diagnóstico, especialmente en la detección de patologías pulmonares y mamarias. Estos sistemas pueden identificar anomalías en las radiografías y mamografías con un nivel de precisión que se acerca al de los especialistas humanos.
+    \item Radiología: En radiología, la aplicación de la inteligencia artificial en el análisis de imágenes de cáncer, con un enfoque en radiomía y representaciones derivadas del aprendizaje profundo, y su uso para el soporte de decisiones en la gestión del cáncer \brackcite{bera2022predicting}.
 \end{description}
-    
-\subsection{Clasificación y reconocimiento de patrones en imágenes médicas}  
 
-Cuando se trata de la clasificación de imágenes, es esencial considerar que nuestro sistema visual humano (SVH) primero recibe las ondas electromagnéticas que pertenecen al espectro visible y luego las interpreta en el cerebro. Sin embargo, en el campo de la visión artificial, cuando introducimos una imagen en un ordenador, lo que se interpreta es una matriz de números generalmente en el rango de [0,255] y con tres dimensiones en caso de que sea una imagen a color (RGB). Como resultado, se puede notar una gran brecha entre el significado semántico de la clase asociada a una imagen y los valores de píxeles que la componen, lo que hace que la tarea de clasificación sea compleja para sistemas artificiales. 
+Por lo que el análisis de imágenes médicas a través de redes neuronales representa un avance significativo en diversas áreas de la medicina. Las aplicaciones van desde la identificación de patologías en resonancia magnética, medicina nuclear y radiología, hasta el diagnóstico de enfermedades oculares y la evaluación cardíaca. Estas tecnologías no solo mejoran la precisión en la detección y clasificación de condiciones específicas, sino que también optimizan la eficiencia de los procesos diagnósticos y terapéuticos, destacando el papel crucial de la inteligencia artificial en el futuro de la medicina.
 
-En el ámbito de la medicina, se ha observado que la mayoría de los sistemas artificiales de diagnóstico, en un punto, toman decisiones que están cada vez menos relacionadas con la apariencia física de la imagen tal como la vería un radiólogo. En su lugar, estos sistemas se basan en los detalles del patrón matemático de las características físicas individuales de la imagen, que son extraídas por un sistema de visión artificial o un radiólogo, para tomar su decisión final. Estos patrones matemáticos han sido objeto de estudio durante décadas por científicos que han utilizado diversos métodos analíticos, incluyendo las redes neuronales. \brackcite{unal2023doc}
-
-Para abordar esta brecha entre la representación de la imagen y su significado, se han desarrollado varios tipos de algoritmos de clasificación. Algunos de estos algoritmos se basan en la detección de bordes, como el algoritmo de Canny \textit{add citations}. 
-Sin embargo, estos algoritmos son robustos cuando se trata de identificar una clase específica, pero si se desea clasificar una clase diferente, es necesario crear un nuevo modelo desde cero.
-
-Otros algoritmos, como el k-Nearest Neighbors (KNN), se basan en medir la diferencia entre los valores de píxeles o distancias para comparar la similitud entre imágenes. Este enfoque es simple, pero requiere una configuración óptima de los hiperparámetros para obtener buenos resultados, lo que hace que estos algoritmos sean dependientes del problema que se está abordando.
-
-
-Sin embargo, enfrentaron una serie de limitaciones significativas que restringieron su capacidad para abordar tareas complejas y desafiantes. La escasez de datos adecuados, la falta de recursos computacionales avanzados, arquitecturas simples, dificultades en el entrenamiento, generalización limitada, problemas de gradiente, falta de interpretabilidad y largos tiempos de entrenamiento fueron obstáculos clave en su desarrollo inicial.
-
-
-
-Estas limitaciones condujeron a la necesidad de innovación y evolución en el campo de las redes neuronales. Esta necesidad llevó al surgimiento de un enfoque revolucionario en la forma de las Redes Neuronales Convolucionales (CNN), que abordaron muchas de estas limitaciones de manera efectiva.
-
-\section{Advenimiento de las redes neuronales convolucionales (CNN)}   
-
-Mediante el uso de redes neuronales convolucionales, para facilitar la identificación de características relevantes en las imágenes médicas que pudieran ser indicativas de alguna condición médica particular las redes neuronales convolucionales han probado ser muy eficientes. Estas aprovecharon estructuras específicas de datos, como imágenes, para capturar patrones con mayor precisión, redujeron la carga computacional y mejoraron la generalización y la interpretabilidad. Gracias a estas mejoras, las CNN han sido fundamentales en el avance de la visión por computadora y han demostrado ser herramientas poderosas en una amplia variedad de aplicaciones, desde reconocimiento de objetos hasta diagnóstico médico. 
+\section{Redes neuronales convolucionales en la medicina}   
 
 Una red neuronal convolucional está formada por diferentes capas, entre ellas las principales son las capas convolucionales, las capas de max-pooling, y las capas completamente conectadas.La capa convolucional tiene como objetivo realizar la convolución a la imagen de entrada, para extraer sus características. Realizar una convolución a una imagen, consiste en filtrar dicha imagen utilizando una máscara o ventana. La máscara se va desplazando por toda la imagen, multiplicándose de forma matricial. \brackcite{unal2023doc}
 
-Una revisión sistemática de 2018 destacó el uso de CNNs para clasificar lesiones cutáneas. En este estudio, se revisaron 13 artículos que utilizaban CNNs para la clasificación de lesiones cutáneas, y se encontró que los métodos más comunes eran aquellos que usaban una CNN ya entrenada con otro gran conjunto de datos y luego optimizaban sus parámetros para la clasificación de lesiones cutáneas. Las CNNs mostraron un alto rendimiento como clasificadores de lesiones cutáneas, aunque se señaló la dificultad de comparar diferentes métodos de clasificación debido a la utilización de conjuntos de datos no públicos en algunos casos. \brackcite{brinker2018skin} 
+En el campo de la medicina, estas facilitan la identificación de características relevantes en las imágenes médicas que pudieran ser indicativas de alguna condición médica particular. Se aprovechan de estructuras específicas de datos, como imágenes, para capturar patrones con mayor precisión, reducir la carga computacional y mejorar la generalización y la interpretabilidad. 
 
-Sin embargo, las técnicas de aprendizaje automático, incluidos los modelos de aprendizaje profundo, han surgido como herramientas prometedoras para el análisis 
-de imágenes médicas, especialmente imágenes de lesiones cutáneas, para la detección del cáncer de piel melanoma. "A Deep Learning Approach to Skin Cancer Detection in Dermoscopy Images" \brackcite{ameri2020deep} 
-es un proyecto que sugiere un modelo de aprendizaje profundo para identificar cáncer de piel usando imágenes de lesiones en la piel. En esta investigación, se utilizaron 3400 imágenes de la colección de fotos dermatoscópicas HAM10000, que incluyen lesiones tanto melanoma como no melanoma. Se armó una red neuronal convolucional profunda para separar las imágenes en benignas y malignas. Se aplicó una técnica de aprendizaje transferido usando AlexNet como el modelo ya entrenado. El modelo sugerido toma la imagen tal cual es como entrada y descubre por su cuenta características valiosas en la imagen para clasificarla. Así, se salta los procesos complicados de segmentación de lesiones y extracción de características.
+La evolución en la clasificación de lesiones cutáneas ha estado marcada por el uso innovador de redes neuronales convolucionales (CNNs). Una revisión sistemática en 2018 por Brinker et al. \brackcite{brinker2018skin} analizó 13 artículos que implementaban CNNs para esta tarea, destacando su alto rendimiento. Los enfoques más comunes involucraron la reutilización de CNNs ya entrenadas con grandes conjuntos de datos, optimizadas posteriormente para la clasificación específica de lesiones cutáneas. Esta metodología, aunque efectiva, enfrentó retos como la dificultad de comparar distintos métodos debido a la variabilidad en los conjuntos de datos.
 
-Un notable estudio publicado el 28 de octubre de 2022 publicado en Nature "Skin lesion classification of dermoscopic images using machine learning and convolutional neural network" \brackcite{shetty2022skin}
-se utilizó un subconjunto del conjunto de datos HAM10000 para clasificar lesiones cutáneas de imágenes dermatoscópicas y demostró la eficacia del uso de aprendizaje automático y redes neuronales convolucionales (CNN) en la clasificación de lesiones cutáneas a partir de imágenes dermatoscópicas. 
-La metodología propuesta mostró resultados prometedores a la hora de distinguir entre lesiones malignas y benignas. El estudio compara la precisión de clasificación de distintos algoritmos de aprendizaje automático y modelos CNN. Se concluye que los modelos CNN proporcionan una mayor precisión en comparación con otros algoritmos de aprendizaje automático. En el sistema propuesto, alcanzan una precisión del 95,18\% con el modelo CNN.
+Posteriormente, las técnicas de aprendizaje automático, y en particular los modelos de aprendizaje profundo, emergieron como herramientas poderosas para el análisis de imágenes médicas. Un proyecto clave fue \textit{A Deep Learning Approach to Skin Cancer Detection in Dermoscopy Images} \brackcite{ameri2020deep}, donde se utilizó un conjunto de 3400 imágenes dermatoscópicas del HAM10000, incluyendo lesiones melanoma y no melanoma. Se implementó una red neuronal convolucional profunda que procesaba imágenes directamente, identificando características valiosas sin necesidad de segmentación previa, lo cual representó un avance significativo en la simplificación y eficacia del proceso de clasificación.
 
+En 2022, el estudio \textit{Skin lesion classification of dermoscopic images using machine learning and convolutional neural network} \brackcite{shetty2022skin}, publicado en Nature, utilizó un subconjunto del HAM10000 para clasificar lesiones cutáneas mediante aprendizaje automático y CNN. Este enfoque ofreció resultados prometedores en la distinción entre lesiones malignas y benignas, logrando una precisión del 95,18\% con el modelo CNN. La comparación con otros algoritmos de aprendizaje automático resaltó la superioridad de los modelos CNN en términos de precisión.
 
-Un artículo publicado en PubMed "An efficient deep learning-based skin cancer classifier for an imbalanced dataset" \brackcite{alam2022efficient} 
-propuso un eficaz clasificador de cáncer de piel basado en el aprendizaje profundo empleando el conjunto de datos HAM10000. Se utilizaron varios modelos de aprendizaje profundo como AlexNet, InceptionV3 y RegNetY-320 para clasificar el cáncer de piel. El rendimiento del marco propuesto fue mejor que el de los métodos convencionales. La precisión, la puntuación F1 y el valor de la curva ROC obtenidos con el marco propuesto fueron del 91\%, el 88,1\% y el 0,95. 
+Tajerian et al. \brackcite{tajerian2023design} presentó un enfoque metodológico para mejorar el diagnóstico de la lesiones cutáneas pigmentadas utilizando imágenes dermatoscópicas del conjunto de datos HAM10000. Este conjunto de datos, una colección de 10015 imágenes dermatoscópicas recogidas a lo largo de 20 años, se utilizó para analizar lesiones cutáneas pigmentadas. El modelo obtiene los mejores resultados en la detección de lesiones de nevos melanocíticos,con una puntuación F1 de 0,93.
 
-\section{Técnicas modernas y avances recientes}
+Un artículo publicado 2023 \brackcite{adegun2021deep} recoge un conjunto de artículos además de los anteriormente mencionados:
+\begin{enumerate}
+    \item Majtner et al. usaron técnicas de CNN para la extracción de características y preprocesamiento, utilizando el conjunto de datos ISIC con 900 muestras de entrenamiento y 379 de prueba, clasificadas en benignas y malignas. 
+
+    \item Vipin et al.  implementaron un sistema de dos etapas, segmentación y clasificación, utilizando un conjunto de datos ISIC de 13,000 imágenes, reducido a 7,353 tras eliminar imágenes no utilizables. 
+
+    \item Nasr-Esfahani et al.  desarrollaron su propia CNN para preprocesar, extraer características y clasificar imágenes, con un conjunto de 170 imágenes no dermatoscópicas del UMCG, aumentado a 6,120 imágenes. 
+
+    \item Attia et al. usaron una CNN completamente conectada con arquitecturas de autoencoder-decoder, alcanzando una precisión del 98\% y una especificidad del 94\%. 
+
+    \item Mukherjee et al. desarrollaron una arquitectura CNN para la detección de lesiones malignas, logrando precisiones de 90.14\% y 90.58\% en los conjuntos de datos MEDNODE y Dermofit. 
+
+    \item Sanketh et al. propusieron una CNN para la detección temprana de cáncer de piel, obteniendo un resultado óptimo del 98\%. 
+
+    \item Rahi et al. propusieron un modelo CNN con varias capas convolucionales y de agrupación máxima, logrando una precisión del 84.76\% y una especificidad del 78.81\%. 
+
+    \item Gulati et al. emplearon redes preentrenadas como AlexNet y VGG16, obteniendo mejores resultados con VGG16 en modo de aprendizaje transferido.
+    \item Daghrir et al. combinaron una CNN con técnicas de aprendizaje automático clásicas, alcanzando una precisión individual del 85.5\% con CNN. 
+
+    \item Acosta et al. incorporaron técnicas de CNN basadas en máscaras y regiones con una estructura ResNet152 preentrenada, logrando una precisión del 90.4\% y una especificidad del 92.5\%.
+
+\end{enumerate}
 
 El avance en la detección de cáncer mediante el uso de la inteligencia artificial (IA) y el aprendizaje automático (ML) ha sido significativo en 
 las últimas décadas, el mismo, ha demostrado un rendimiento excepcional en tareas de reconocimiento de imágenes, que es fundamental en la detección 
@@ -115,15 +96,17 @@ del cáncer de piel. Se llevó a cabo una revisión exhaustiva para evaluar el i
 en la que se analizaron diversos resultados de investigación y se presentaron mediante herramientas, gráficos, tablas y marcos para comprender mejor 
 las técnicas predominantes en este campo \brackcite{dildar2021skin}
 
+\section*{Datasets de Cáncer de Piel}
 
-Además, se introdujo un enfoque innovador de combinación de técnicas de aprendizaje automático y aprendizaje profundo para abordar el 
-problema de la detección del cáncer de piel \brackcite{tembhurne2023skin}.
- El modelo de aprendizaje profundo en este estudio empleó redes neuronales de última generación para extraer características de las imágenes, mientras que el modelo de aprendizaje automático procesó estas características de la imagen para clasificar las lesiones cutáneas.
+En el campo de la dermatología, la generación de imágenes clínicas y dermatoscópicas es una práctica común para supervisar los cambios en las condiciones de la piel. Estas imágenes se han vuelto un recurso crucial para el avance de algoritmos de aprendizaje automático, especialmente en el desarrollo de Redes Neuronales Convolucionales (CNN). Existen varios conjuntos de datos accesibles para la investigación en este ámbito.
 
+Das et al. \brackcite{das2021machine} recoge en su estudio un conjunto de los dataset de imágenes dermatologicas más utilizados en algoritmos de clasificación que se exponen a continuación:
 
-En otro artículo publicado en PubMed "Design and validation of a new machine-learning-based diagnostic tool for the differentiation of dermatoscopic skin cancer images" \brackcite{tajerian2023design}
- se presentó un enfoque metodológico para mejorar el diagnóstico de la lesiones cutáneas pigmentadas utilizando imágenes dermatoscópicas del conjunto de datos HAM10000. Este conjunto de datos, una colección de 10015 imágenes dermatoscópicas recogidas a lo largo de 20 años, se utilizó para analizar lesiones cutáneas pigmentadas. l modelo obtiene los mejores resultados en la detección de lesiones de nevos melanocíticos,con una puntuación F1 de 0,93. La puntuación F1 para queratosis actínica, carcinoma basocelular, queratosis benigna, dermatofibroma, melanoma y lesiones vasculares fue consecutivamente de 0,63, 0,72, 0,70, 0,54, 0,58 y 0,80.
+Entre los más destacados, se encuentra el archivo ISIC, que agrupa varios datasets de lesiones de piel clínicas y dermatoscópicas, incluidos los Desafíos ISIC, HAM10000 y BCN20000. Otros conjuntos de datos relevantes incluyen el Atlas Interactivo de Dermoscopia con 1000 ejemplos clínicos, la Biblioteca de Imágenes Dermofit con 1300 fotografías de alta resolución, el conjunto de datos PH2 con 200 imágenes dermatoscópicas, y el MED-NODE con 170 fotos clínicas.
 
+El conjunto de datos de Asan, con 17,125 fotos clínicas, y el Hallym, con 125 fotos de casos de carcinoma basocelular, también son significativos. Además, los conjuntos de datos SD-198 y SD-260 ofrecen una amplia gama de imágenes clínicas de diversas enfermedades de la piel. Dermnet NZ y Derm7pt proporcionan colecciones extensas de fotografías clínicas, dermatoscópicas e histológicas, y The Cancer Genome Atlas presenta una de las mayores colecciones de diapositivas de lesiones cutáneas patológicas.
+
+Entre todos estos conjuntos de datos, el HAM10000 se destaca por su amplia utilización en la investigación del cáncer de piel. Este conjunto de datos es particularmente valioso debido a su extensa colección de imágenes de lesiones de piel, que incluye una variedad de tipos de cáncer de piel. Su uso generalizado en la comunidad científica y su relevancia en estudios recientes lo convierten en el dataset ideal para el desarrollo de esta tesis. La riqueza y diversidad de las imágenes en HAM10000 proporcionan una base sólida para entrenar y evaluar algoritmos de machine learning.
 
 \section{Retos y limitaciones actuales}
 
