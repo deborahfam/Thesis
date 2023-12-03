@@ -53,9 +53,22 @@ El análisis de imágenes médicas mediante redes neuronales se ha enfocado en c
 
 Por lo que el análisis de imágenes médicas a través de redes neuronales representa un avance significativo en diversas áreas de la medicina. Las aplicaciones van desde la identificación de patologías en resonancia magnética, medicina nuclear y radiología, hasta el diagnóstico de enfermedades oculares y la evaluación cardíaca. Estas tecnologías no solo mejoran la precisión en la detección y clasificación de condiciones específicas, sino que también optimizan la eficiencia de los procesos diagnósticos y terapéuticos, destacando el papel crucial de la inteligencia artificial en el futuro de la medicina.
 
+\section{Datasets de cáncer de piel}
+
+En el campo de la dermatología, la generación de imágenes clínicas y dermatoscópicas es una práctica común para supervisar los cambios en las condiciones de la piel. Estas imágenes se han vuelto un recurso crucial para el avance de algoritmos de aprendizaje automático, especialmente en el desarrollo de Redes Neuronales Convolucionales (CNN). Existen varios conjuntos de datos accesibles para la investigación en este ámbito.
+
+Das et al. \brackcite{das2021machine} recoge en su estudio un conjunto de los dataset de imágenes dermatologicas más utilizados en algoritmos de clasificación que se exponen a continuación:
+
+Entre los más destacados, se encuentra el archivo ISIC, que agrupa varios datasets de lesiones de piel clínicas y dermatoscópicas, incluidos los Desafíos ISIC, HAM10000 y BCN20000. Otros conjuntos de datos relevantes incluyen el Atlas Interactivo de Dermoscopia con 1000 ejemplos clínicos, la Biblioteca de Imágenes Dermofit con 1300 fotografías de alta resolución, el conjunto de datos PH2 con 200 imágenes dermatoscópicas, y el MED-NODE con 170 fotos clínicas.
+
+El conjunto de datos de Asan, con 17,125 fotos clínicas, y el Hallym, con 125 fotos de casos de carcinoma basocelular, también son significativos. Además, los conjuntos de datos SD-198 y SD-260 ofrecen una amplia gama de imágenes clínicas de diversas enfermedades de la piel. Dermnet NZ y Derm7pt proporcionan colecciones extensas de fotografías clínicas, dermatoscópicas e histológicas, y The Cancer Genome Atlas presenta una de las mayores colecciones de diapositivas de lesiones cutáneas patológicas.
+
+Entre todos estos conjuntos de datos, el HAM10000 se destaca por su amplia utilización en la investigación del cáncer de piel. Este conjunto de datos es particularmente valioso debido a su extensa colección de imágenes de lesiones de piel, que incluye una variedad de tipos de cáncer de piel. Su uso generalizado en la comunidad científica y su relevancia en estudios recientes lo convierten en el dataset ideal para el desarrollo de esta tesis. La riqueza y diversidad de las imágenes en HAM10000 proporcionan una base sólida para entrenar y evaluar algoritmos de machine learning.
+
+
 \section{Redes neuronales convolucionales en la medicina}   
 
-Una red neuronal convolucional está formada por diferentes capas, entre ellas las principales son las capas convolucionales, las capas de max-pooling, y las capas completamente conectadas.La capa convolucional tiene como objetivo realizar la convolución a la imagen de entrada, para extraer sus características. Realizar una convolución a una imagen, consiste en filtrar dicha imagen utilizando una máscara o ventana. La máscara se va desplazando por toda la imagen, multiplicándose de forma matricial. \brackcite{unal2023doc}
+Una red neuronal convolucional está formada por diferentes capas, entre ellas las principales son las capas convolucionales, las capas de max-pooling, y las capas completamente conectadas.La capa convolucional tiene como objetivo realizar la convolución a la imagen de entrada, para extraer sus características. Realizar una convolución a una imagen, consiste en filtrar dicha imagen utilizando una máscara o ventana. La máscara se va desplazando por toda la imagen, multiplicándose de forma matricial \brackcite{unal2023doc}.
 
 En el campo de la medicina, estas facilitan la identificación de características relevantes en las imágenes médicas que pudieran ser indicativas de alguna condición médica particular. Se aprovechan de estructuras específicas de datos, como imágenes, para capturar patrones con mayor precisión, reducir la carga computacional y mejorar la generalización y la interpretabilidad. 
 
@@ -65,9 +78,10 @@ Posteriormente, las técnicas de aprendizaje automático, y en particular los mo
 
 En 2022, el estudio \textit{Skin lesion classification of dermoscopic images using machine learning and convolutional neural network} \brackcite{shetty2022skin}, publicado en Nature, utilizó un subconjunto del HAM10000 para clasificar lesiones cutáneas mediante aprendizaje automático y CNN. Este enfoque ofreció resultados prometedores en la distinción entre lesiones malignas y benignas, logrando una precisión del 95,18\% con el modelo CNN. La comparación con otros algoritmos de aprendizaje automático resaltó la superioridad de los modelos CNN en términos de precisión.
 
-Tajerian et al. \brackcite{tajerian2023design} presentó un enfoque metodológico para mejorar el diagnóstico de la lesiones cutáneas pigmentadas utilizando imágenes dermatoscópicas del conjunto de datos HAM10000. Este conjunto de datos, una colección de 10015 imágenes dermatoscópicas recogidas a lo largo de 20 años, se utilizó para analizar lesiones cutáneas pigmentadas. El modelo obtiene los mejores resultados en la detección de lesiones de nevos melanocíticos,con una puntuación F1 de 0,93.
+Tajerian et al. \brackcite{tajerian2023design} presentó un enfoque metodológico para mejorar el diagnóstico de la lesiones cutáneas pigmentadas utilizando imágenes dermatoscópicas del conjunto de datos HAM10000. Este conjunto de datos se utilizó para analizar lesiones cutáneas pigmentadas. El modelo obtiene los mejores resultados en la detección de lesiones de nevos melanocíticos,con una puntuación F1 de 0,93.
 
-Un artículo publicado 2023 \brackcite{adegun2021deep} recoge un conjunto de artículos además de los anteriormente mencionados:
+Adegun et al. \brackcite{adegun2021deep} recoge un conjunto de artículos que contribuyeron al desarrollo de algoritmos además de los anteriormente mencionados:
+
 \begin{enumerate}
     \item Majtner et al. usaron técnicas de CNN para la extracción de características y preprocesamiento, utilizando el conjunto de datos ISIC con 900 muestras de entrenamiento y 379 de prueba, clasificadas en benignas y malignas. 
 
@@ -94,35 +108,24 @@ El avance en la detección de cáncer mediante el uso de la inteligencia artific
 las últimas décadas, el mismo, ha demostrado un rendimiento excepcional en tareas de reconocimiento de imágenes, que es fundamental en la detección 
 del cáncer de piel. Se llevó a cabo una revisión exhaustiva para evaluar el impacto de las técnicas de aprendizaje profundo en la detección precoz, 
 en la que se analizaron diversos resultados de investigación y se presentaron mediante herramientas, gráficos, tablas y marcos para comprender mejor 
-las técnicas predominantes en este campo \brackcite{dildar2021skin}
+las técnicas predominantes en este campo \brackcite{dildar2021skin}.
 
-\section*{Datasets de Cáncer de Piel}
-
-En el campo de la dermatología, la generación de imágenes clínicas y dermatoscópicas es una práctica común para supervisar los cambios en las condiciones de la piel. Estas imágenes se han vuelto un recurso crucial para el avance de algoritmos de aprendizaje automático, especialmente en el desarrollo de Redes Neuronales Convolucionales (CNN). Existen varios conjuntos de datos accesibles para la investigación en este ámbito.
-
-Das et al. \brackcite{das2021machine} recoge en su estudio un conjunto de los dataset de imágenes dermatologicas más utilizados en algoritmos de clasificación que se exponen a continuación:
-
-Entre los más destacados, se encuentra el archivo ISIC, que agrupa varios datasets de lesiones de piel clínicas y dermatoscópicas, incluidos los Desafíos ISIC, HAM10000 y BCN20000. Otros conjuntos de datos relevantes incluyen el Atlas Interactivo de Dermoscopia con 1000 ejemplos clínicos, la Biblioteca de Imágenes Dermofit con 1300 fotografías de alta resolución, el conjunto de datos PH2 con 200 imágenes dermatoscópicas, y el MED-NODE con 170 fotos clínicas.
-
-El conjunto de datos de Asan, con 17,125 fotos clínicas, y el Hallym, con 125 fotos de casos de carcinoma basocelular, también son significativos. Además, los conjuntos de datos SD-198 y SD-260 ofrecen una amplia gama de imágenes clínicas de diversas enfermedades de la piel. Dermnet NZ y Derm7pt proporcionan colecciones extensas de fotografías clínicas, dermatoscópicas e histológicas, y The Cancer Genome Atlas presenta una de las mayores colecciones de diapositivas de lesiones cutáneas patológicas.
-
-Entre todos estos conjuntos de datos, el HAM10000 se destaca por su amplia utilización en la investigación del cáncer de piel. Este conjunto de datos es particularmente valioso debido a su extensa colección de imágenes de lesiones de piel, que incluye una variedad de tipos de cáncer de piel. Su uso generalizado en la comunidad científica y su relevancia en estudios recientes lo convierten en el dataset ideal para el desarrollo de esta tesis. La riqueza y diversidad de las imágenes en HAM10000 proporcionan una base sólida para entrenar y evaluar algoritmos de machine learning.
 
 \section{Retos y limitaciones actuales}
 
 \subsection{Dificultades en la interpretación de resultados y la falta de explicabilidad de los modelos}
 
-Uno de los desafíos más significativos en el uso de algoritmos avanzados de aprendizaje automático y aprendizaje profundo es la interpretación y explicabilidad de sus resultados. Aunque estos modelos pueden lograr un alto grado de precisión, a menudo operan como "cajas negras", lo que significa que sus procesos internos y la forma en que llegan a una conclusión específica no son transparentes ni fácilmente comprensibles para los humanos. Esta falta de transparencia puede ser un obstáculo importante en el ámbito clínico, donde los profesionales de la salud necesitan comprender el razonamiento detrás de un diagnóstico para confiar y actuar según los resultados proporcionados por estos sistemas. \brackcite{uam2023doc}
+Uno de los desafíos más significativos en el uso de algoritmos avanzados de aprendizaje automático y aprendizaje profundo es la interpretación y explicabilidad de sus resultados. Aunque estos modelos pueden lograr un alto grado de precisión, a menudo operan como "cajas negras", lo que significa que sus procesos internos y la forma en que llegan a una conclusión específica no son transparentes ni fácilmente comprensibles para los humanos. Esta falta de transparencia puede ser un obstáculo importante en el ámbito clínico, donde los profesionales de la salud necesitan comprender el razonamiento detrás de un diagnóstico para confiar y actuar según los resultados proporcionados por estos sistemas \brackcite{uam2023doc}.
 
 
 \subsection{Problemas relacionados con el sobreajuste y la generalización de los modelos}
-Otro reto importante es el sobre-ajuste y la generalización de los modelos. El sobre-ajuste ocurre cuando un modelo se ajusta demasiado a los datos de entrenamiento, perdiendo la capacidad de generalizar a nuevos datos. Este problema es particularmente prevalente en situaciones donde los conjuntos de datos de entrenamiento son limitados o no representativos de la variabilidad real de casos clínicos. Por ejemplo, la falta de diversidad en los tipos de piel y las características de las lesiones en los conjuntos de datos puede llevar a modelos que no se desempeñan bien en poblaciones no representadas durante el entrenamiento. \brackcite{uam2023doc}
+Otro reto importante es el sobre-ajuste y la generalización de los modelos. El sobre-ajuste ocurre cuando un modelo se ajusta demasiado a los datos de entrenamiento, perdiendo la capacidad de generalizar a nuevos datos. Este problema es particularmente prevalente en situaciones donde los conjuntos de datos de entrenamiento son limitados o no representativos de la variabilidad real de casos clínicos. Por ejemplo, la falta de diversidad en los tipos de piel y las características de las lesiones en los conjuntos de datos puede llevar a modelos que no se desempeñan bien en poblaciones no representadas durante el entrenamiento \brackcite{uam2023doc}.
 
 \subsection{Limitaciones de los métodos tradicionales de aprendizaje automático en diagnóstico clínico}
-Aunque los métodos tradicionales de aprendizaje automático, como las Máquinas de Vectores de Soporte (SVM), XGBoost y árboles de decisión, han sido útiles en la clasificación del cáncer de piel, enfrentan limitaciones significativas en el contexto clínico. Estos métodos requieren la extracción manual de características de las imágenes de enfermedades de la piel, un proceso que puede ser subjetivo y limitante. Además, la selección restringida de características puede impedir que estos algoritmos capturen la complejidad y variabilidad de las lesiones cutáneas, limitando su capacidad para generalizar a un espectro más amplio de tipos de cáncer de piel. \brackcite{uam2023doc}
+Aunque los métodos tradicionales de aprendizaje automático, como las Máquinas de Vectores de Soporte (SVM), XGBoost y árboles de decisión, han sido útiles en la clasificación del cáncer de piel, enfrentan limitaciones significativas en el contexto clínico. Estos métodos requieren la extracción manual de características de las imágenes de enfermedades de la piel, un proceso que puede ser subjetivo y limitante. Además, la selección restringida de características puede impedir que estos algoritmos capturen la complejidad y variabilidad de las lesiones cutáneas, limitando su capacidad para generalizar a un espectro más amplio de tipos de cáncer de piel \brackcite{uam2023doc}.
 
 \subsection{Escasez de datos y variedad limitada en categorías de cáncer de piel}
-La escasez de datos y la limitada variedad en las categorías de cáncer de piel presentes en los conjuntos de datos disponibles son problemas centrales en el desarrollo de algoritmos efectivos para la clasificación del melanoma. Esta limitación en los datos disponibles afecta negativamente la capacidad de los modelos para aprender y reconocer una amplia gama de manifestaciones del cáncer de piel, lo que puede resultar en un rendimiento deficiente al enfrentarse a casos menos comunes o atípicos en la práctica clínica real. \brackcite{uam2023doc}
+La escasez de datos y la limitada variedad en las categorías de cáncer de piel presentes en los conjuntos de datos disponibles son problemas centrales en el desarrollo de algoritmos efectivos para la clasificación del melanoma. Esta limitación en los datos disponibles afecta negativamente la capacidad de los modelos para aprender y reconocer una amplia gama de manifestaciones del cáncer de piel, lo que puede resultar en un rendimiento deficiente al enfrentarse a casos menos comunes o atípicos en la práctica clínica real \brackcite{uam2023doc}.
 
 \section{Conclusión del estado del arte}
 

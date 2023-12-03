@@ -1,5 +1,22 @@
 \chapter{Detalles de implementación y experimentos}\label{chapter:implementation}
 
+Para la implementación del modelo y con el objetivo de lograr mejor precisión y generalización, se llevaron a cabo varios experimentos. La metodología de los experimentos fue la misma. Dado que el conjunto de datos utilizado para la validación del modelo está desbalanceado la cantidad de imágenes por clase, en los distintos experimentos se modificó la distribución de datos para aprendizaje, test y validación. Se exponen durante el capítulo 2 de los experimentos que mostraron tener mejores resultados en cuanto a precisión y recobrado. 
+
+\section{Herramientas y Tecnologías}
+
+La implementación del modelo se llevará a cabo utilizando las siguientes herramientas:
+
+\begin{itemize}
+    \item \textbf{Lenguajes de Programación:} Python será utilizado por su rica biblioteca de paquetes de aprendizaje automático, incluyendo TensorFlow y Keras para la construcción y entrenamiento del modelo.
+    \item \textbf{Frameworks de Aprendizaje Profundo:} TensorFlow y Keras proporcionan las funcionalidades necesarias para diseñar, entrenar y validar modelos de aprendizaje profundo con alta eficiencia y flexibilidad.
+    \item \textbf{Técnicas de Preprocesamiento:} Herramientas para la normalización de imágenes, el aumento de datos, y el balanceo de clases serán utilizadas para preparar el dataset para el entrenamiento del modelo.
+    \item \textbf{Optimización y Regularización:} Se integrarán técnicas como el ajuste dinámico del learning rate y la regularización L1 y L2 para optimizar el rendimiento del modelo y prevenir el sobre-ajuste.
+    \item \textbf{Hardware y Recursos Computacionales:} Se utilizó Google Collab para acelerar el proceso de entrenamiento del modelo, permitiendo la experimentación con diferentes híper-parámetros y arquitecturas de forma eficiente.
+\end{itemize}
+
+\section{Enfoque de Implementación}
+
+La implementación seguirá un enfoque modular y escalable. Comenzará con la selección del modelo y su personalización para el contexto específico del cáncer de piel. El preprocesamiento de datos y el balanceo de clases asegurarán la calidad del entrenamiento y la generalización del modelo. La arquitectura del modelo será iterativamente refinada y evaluada, utilizando un algoritmo propio de ajuste de precisión Además se utilizan capas adicionales de ajuste y optimización para lograr mejores resultados.
 \section{Dataset}
 
 El dataset utilizado como medio de aprendizaje para este proyecto es HAM1000-segmentation-and-classification \brackcite{ham10000}. Este conjunto de datos, acrónimo de Human Against Machine (Humano contra máquina) con 10000 imágenes de entrenamiento, es una amplia colección de imágenes dermatoscópicas. En concreto, contiene 10015 imágenes del archivo ISIC, que inicialmente formaban parte de un conjunto de entrenamiento creado por ISIC \brackcite{tschandl2018ham10000} con la siguiente distribución.
@@ -21,13 +38,13 @@ El dataset utilizado como medio de aprendizaje para este proyecto es HAM1000-seg
 
 \section{Preparación y carga de datos}
 
-Los datos utilizados como medio de aprendizaje para este proyecto son imágenes y metadatos. El dataset HAM10000 contiene imágenes tomadas de varios tipos de cáncer de piel y un archivo de metadatos que contienen información relacionada con cada imagen en formato \textit{one hot encoding}. Esta una técnica de procesamiento de datos en la cual cada valor categórico se representa mediante un vector binario cuyo tamaño corresponde al número de categorías posibles. En dicho vector, todos los elementos son cero, salvo el correspondiente a la categoría del valor, que es uno \brackcite{ohe}
+Los datos utilizados como medio de aprendizaje para este proyecto son imágenes y metadatos. El dataset HAM10000 contiene imágenes tomadas de varios tipos de cáncer de piel y un archivo de metadatos que contienen información relacionada con cada imagen en formato \textit{one hot encoding}. Esta una técnica de procesamiento de datos en la cual cada valor categórico se representa mediante un vector binario cuyo tamaño corresponde al número de categorías posibles. En dicho vector, todos los elementos son cero, salvo el correspondiente a la categoría del valor, que es uno \brackcite{ohe}.
 
 \subsection{Transformación de datos}
 
 Para optimizar la eficiencia del algoritmo, se procesan las imágenes realizando diversas modificaciones, que incluyen: eliminación de cabello, luces y sombras, división de canales y aplicación de un leve desenfoque.
 
-Los metadatos asociados a la clasificación, etiquetados con método mencionado, fueron convertidos a un formato \textit{categórico} \textit{add citation} para su procesamiento. Se define \textit{categórico} como el formato en el que a cada elemento se le asigna el nombre de una categoría como propiedad.
+Los metadatos asociados a la clasificación, etiquetados con método mencionado, fueron convertidos a un formato \textit{categórico} \brackcite{vitalflux_categorical_crossentropy} para su procesamiento. Se define \textit{categórico} como el formato en el que a cada elemento se le asigna el nombre de una categoría como propiedad.
 
 \subsection{Modelación y división del conjunto de datos}
 
@@ -45,7 +62,7 @@ Inicialmente, el conjunto de datos, fue dividido en dos subconjuntos: \textit{tr
       \item El 2.5\% restante se destina al conjunto de pruebas.
    \end{enumerate}
    
-   Además se mezclan aleatoriamente los datos y se utiliza una variable fija para garantizar que la división sea reproducible. Aquí se utiliza \textit{dummy split} para mantener la proporción deseada entre validación y prueba.
+   Además se mezclan aleatoriamente los datos y se utiliza una variable fija para garantizar que la división sea reproducible. Aquí se utiliza \textit{dummy split} para mantener la proporción deseada entre validación y prueba. Por lo que este experimento tiene $9514$ datos de entrenamiento, $251$ de test y $250$ de validación.
 
    \begin{table}[ht]
       \centering
@@ -61,12 +78,12 @@ Inicialmente, el conjunto de datos, fue dividido en dos subconjuntos: \textit{tr
       BCC      & 300 & 16  & 10  \\
       VASC     & 142 & 1   & 3   \\ \hline
       \end{tabular}
-      \caption{Experimento 1: Distribución de imágenes de cáncer de piel en los conjuntos de Entrenamiento, Test y Validación}
+      \caption{Experimento 1: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación}
       \label{table:train_test_validate_e1}
       \end{table}
    
 
-Por lo que este experimento tiene $9514$ datos de entrenamiento, $251$ de test y $250$ de validación.
+
 
 \subsubsection{Experimento 2}
 
@@ -95,7 +112,7 @@ Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución 
       VASC  & 300 & 21   & 22   \\
       \hline
       \end{tabular}
-      \caption{Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de Entrenamiento, Test y Validación}
+      \caption{Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación}
       \label{tab:train_test_validate_e2}
       \end{table}
       
@@ -124,7 +141,7 @@ Se establece para este un tamaño objetivo de muestras por clase ($300$ en este 
    VASC & 142 \\ \hline
    \end{tabular}
    \caption{Distribución de muestras por categoría después del sobre-muestreo}
-   \label{tab:sampling_distribution}
+   \label{tab:sampling_distribution_1}
    \end{table}
 
 
@@ -143,7 +160,7 @@ Como se evidencia anteriormente, al separar la data en clases el conjunto se man
    NV & 300 & 1.00\\
    VASC & 142 & 2.11\\ \hline
    \end{tabular}
-   \caption{Distribución de Muestras con peso asignado}
+   \caption{Distribución de muestras con peso asignado}
    \label{tab:weighting_distribution}
    \end{table}
 
@@ -199,7 +216,7 @@ Se utiliza la arquitectura de red neural denominada \textit{EfficientNetB1} \bra
 
 Para aprovechar los conocimientos previos y acelerar el entrenamiento, se carga el modelo \textit{EfficientNetB1} pre-entrenado con los pesos obtenidos al procesar el dataset \textit{ImageNet}. El mismo consiste en una amplia base de datos de imágenes utilizada comúnmente para entrenamiento y \textit{benchmarking} en tareas de visión por computadora. Utilizar este modelo pre-entrenado permite aprovechar las características que ya ha aprendido de este amplio conjunto de datos, facilitando su adaptación al dataset HAM10000.
 
-Se utiliza el \textit{EfficientNetB5} sin incluir su capa superior, con el objetivo de añadir y personalizar capas adicionales. Tras obtener la salida del modelo base, se aplica una serie de transformaciones, incluyendo normalización por lotes, una capa densa con regularizaciones, una técnica de \textit{Dropout} para prevenir el sobre-ajuste y una capa de optimización. 
+Se utiliza el \textit{EfficientNetB1} sin incluir su capa superior, con el objetivo de añadir y personalizar capas adicionales. Tras obtener la salida del modelo base, se aplica una serie de transformaciones, incluyendo normalización por lotes, una capa densa con regularizaciones, una técnica de \textit{Dropout} para prevenir el sobre-ajuste y una capa de optimización. 
 
 \subsection{ImageNet}
 
@@ -211,7 +228,7 @@ La relevancia de ImageNet para el aprendizaje profundo se puso de manifiesto con
 
 La familia de arquitecturas EfficientNet, desarrollada por los autores en \brackcite{tan2019efficientnet}, surgió con el objetivo de hallar un método adecuado para escalar las CNNs de manera que mejoraran tanto en precisión (i.e., rendimiento del modelo) como en eficiencia (es decir, en términos de parámetros del modelo y FLOPS). Estos autores propusieron un método de escalado compuesto que utiliza un conjunto fijo de coeficientes para escalar de manera uniforme el ancho, la profundidad y la resolución de la red. El método les permitió desarrollar una arquitectura de CNN eficiente, a la que denominaron EfficientNet B0. Posteriormente, crearon las variantes EfficientNets B1-B7 escalando la red base (EfficientNet B0).
 
-Mientras que la arquitectura EfficientNet B0 tiene $5.3$ millones de parámetros y acepta imágenes de entrada de $224x224$, EfficientNet B7 cuenta con $66$ millones de parámetros y acepta imágenes de $600x600$. \brackcite{Tan2019EfficientNetRM}
+Mientras que la arquitectura EfficientNet B0 tiene $5.3$ millones de parámetros y acepta imágenes de entrada de $224x224$, EfficientNet B7 cuenta con $66$ millones de parámetros y acepta imágenes de $600x600$ \brackcite{Tan2019EfficientNetRM}.
 
 \begin{figure}[ht]%
    \begin{center}
@@ -233,11 +250,11 @@ Para ajustar el modelo de EfficientNetB1 a nuestras necesidades, se añaden capa
 
 Para mejorar la estabilidad y eficiencia del modelo EfficientNetB1, se incorpora una capa de Normalización por lotes. La normalización por lotes es crucial para estabilizar las \textit{activaciones} a lo largo de las capas del modelo. Al estandarizar las activaciones por lote, mejora la eficiencia del entrenamiento y permite el uso de tasas de aprendizaje más altas. Esta técnica contribuye significativamente a la regularización del modelo, reduciendo el riesgo de sobre-ajuste y facilitando un aprendizaje más rápido y estable.
 
-Esta capa se define con un \textit{eje de normalización establecido en -1}, lo que indica que la normalización se aplica a lo largo del último eje en el tensor de entrada. Además, se configura un \textit{momentum} de $0.99$ y un valor de \textit{epsilon} de $0.001$. El alto valor de momentum ayuda a mantener la estabilidad de las medias y varianzas móviles a lo largo del entrenamiento, mientras que el pequeño valor de epsilon evita divisiones por cero, asegurando así cálculos numéricos estables. [\brackcite{regularization}]
+Esta capa se define con un \textit{eje de normalización} establecido en $-1$, lo que indica que la normalización se aplica a lo largo del último eje en el tensor de entrada. Además, se configura un \textit{momentum} de $0.99$ y un valor de \textit{epsilon} de $0.001$. El alto valor de momentum ayuda a mantener la estabilidad de las medias y varianzas móviles a lo largo del entrenamiento, mientras que el pequeño valor de epsilon evita divisiones por cero, asegurando así cálculos numéricos estables \brackcite{regularization}.
 
 \subsubsection{Capa densa}
 
-Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador \textit{L2} con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador \textit{L1} con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características. \brackcite{dense}
+Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador \textit{L2} con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador \textit{L1} con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características \brackcite{dense}.
 
 \subsubsection{Dropout}
 
@@ -245,7 +262,7 @@ En la arquitectura del modelo, se integra una capa de dropout para aumentar la r
 
 En una primera iteración del algoritmo tuvo una tasa de desactivación más baja. Luego de varias iteraciones se concluyó que se necesitaba un algoritmo de clasificación que estudiara más a detalle la data fomentando así una mejor generalización y reduciendo el riesgo de sobre-ajuste en el proceso de aprendizaje. Basándonos en esto aumentamos la tasa y obtuvimos mejores resultados.
 
-Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica. \brackcite{dropout}
+Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica \brackcite{dropout}.
 
 \subsubsection{Capa de salida}
 
@@ -356,25 +373,26 @@ En el segundo se aprecia como la precisión de entrenamiento aumenta rápidament
 %-----------------------------------------------------------------------------------
 	\subsubsection{Estadísticas de eficacia}\label{sub:accuracy_statistic_p1}
 %-----------------------------------------------------------------------------------
-    La matriz de confusión proporciona información valiosa sobre el rendimiento del modelo en relación de Actual/Predicho, en términos de su capacidad para clasificar correctamente cada una de las siete clases de cáncer de piel. La diagonal principal de la matriz representa los verdaderos positivos (TP), el número de casos en los que el modelo ha predicho correctamente la clase correspondiente. Los valores fuera de la diagonal principal indican errores de clasificación.
+\begin{figure}[ht]%
+   \begin{center}
+   \includegraphics[width=1\textwidth]{./Graphics/confussionmatrix_p1.png}
+   \caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\label{fig:confussion_matrix_p1}}
+   \end{center}
+   \end{figure}
+
+   \begin{figure}[ht]%
+      \begin{center}
+      \includegraphics[width=1\textwidth]{./Graphics/errorByClass_p1.png}
+      \caption{Gráfico de errores por clase en el conjunto de pruebas\label{fig:class_errors_p1}}
+      \end{center}
+      \end{figure} 
+
+
+La matriz de confusión proporciona información valiosa sobre el rendimiento del modelo en relación de Actual/Predicho, en términos de su capacidad para clasificar correctamente cada una de las siete clases de cáncer de piel. La diagonal principal de la matriz representa los verdaderos positivos (TP), el número de casos en los que el modelo ha predicho correctamente la clase correspondiente. Los valores fuera de la diagonal principal indican errores de clasificación.
 
     La clase 'NV' muestra una alta cantidad de clasificaciones correctas (134), pero también tiene errores significativos al ser confundida con otras clases (como 'BKL' y 'MEL'). La clase 'AKIEC' resultó la más difícil de predecir, con la mayoría de las muestras mal clasificadas. Esto puede deberse a la similitud entre las características de estas clases, pero sobre todo al desbalance en el conjunto de datos.
     
-    \begin{figure}[ht]%
-		\begin{center}
-		\includegraphics[width=1\textwidth]{./Graphics/confussionmatrix_p1.png}
-		\caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\label{fig:confussion_matrix_p1}}
-		\end{center}
-		\end{figure}
-
-      \begin{figure}[ht]%
-         \begin{center}
-         \includegraphics[width=1\textwidth]{./Graphics/errorByClass_p1.png}
-         \caption{Gráfico de errores por clase en el conjunto de pruebas\label{fig:class_errors_p1}}
-         \end{center}
-         \end{figure}
-
-         Cada barra representa el número de muestras de una clase particular que fueron mal clasificadas.
+    Cada barra representa el número de muestras de una clase particular que fueron mal clasificadas.
 \subsection{Experimento 2}
 
 %-----------------------------------------------------------------------------------

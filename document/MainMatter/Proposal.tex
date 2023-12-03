@@ -1,13 +1,13 @@
-\chapter{Propuesta}\label{chapter:proposal}
+\chapter{Propuesta de solución}\label{chapter:proposal}
 
-Para abordar el problema de clasificación de tumores de cáncer de piel, se han implementado varias estructuras y técnicas de Machine Learning. Estas elecciones demostraron ser un enfoque equilibrado entre precisión, eficiencia y capacidad de generalización. A continuación, se describen las estructuras utilizadas y se proporcionan explicaciones sobre su elección.
+Este capítulo presenta una propuesta integral para abordar el desafío de la detección automática del cáncer de piel utilizando técnicas de aprendizaje profundo. La estrategia consiste en la utilización  de los pesos obtenidos de una red neuronal pre-entrenada y un algoritmo de ajuste de precisión, capaz de interpretar y clasificar imágenes dermatológicas. A continuación, se esbozan los enfoques metodológicos y las herramientas tecnológicas seleccionadas para llevar a cabo este proyecto.
 
-\section{Metodología}\label{sec:method}
+\section{Desarrollo del modelo y estrategias de optimización}\label{sec:method}
 %-----------------------------------------------------------------------------------
 
 \subsection{Selección del modelo y transferencia de aprendizaje}
 
-Se optó por EfficientNetB1, una Red Neuronal Convolucional (CNN) pre-entrenada, como piedra angular del modelo. Esta elección se basa en la eficiencia de EfficientNet en términos de precisión y consumo de recursos computacionales \brackcite{tan2019efficientnet}. Al aprovechar un modelo pre-entrenado, se utilizan pesos obtenidos de extensos conjuntos de datos de imágenes, lo que facilita la adaptación a nuestro conjunto de datos específico. La omisión de la última capa de clasificación permite una personalización más profunda, adaptando el modelo para identificar con precisión las variadas presentaciones de tumores cutáneos presentes en el HAM1000.
+Como se explico anteriormente, el modelo consiste en utilizar los pesos obtenidos de una red neuronal convolucional pre-entrenada. Se optó por EfficientNetB1, una Red Neuronal Convolucional (CNN) pre-entrenada, como piedra angular del modelo. Esta elección se basa en la eficiencia de EfficientNet en términos de precisión y consumo de recursos computacionales \brackcite{tan2019efficientnet}. Al aprovechar un modelo pre-entrenado, se utilizan pesos obtenidos de extensos conjuntos de datos de imágenes, lo que facilita la adaptación a nuestro conjunto de datos específico. La omisión de la última capa de clasificación permite una personalización más profunda, adaptando el modelo para identificar con precisión las variadas presentaciones de tumores cutáneos presentes en el HAM1000.
 
 \subsection{Preprocesamiento de datos y balanceo de clases}
 

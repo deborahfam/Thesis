@@ -466,10 +466,10 @@
            familyi={P\bibinitperiod},
            given={Anant},
            giveni={A\bibinitperiod}}}%
-        {{hash=f0bef6a013d5ca91330d6aa2057f8b7f}{%
+        {{hash=15e04a02fdc22bdd49bd75de136e19a1}{%
            family={Pietkiewicz},
            familyi={P\bibinitperiod},
-           given={Pawe{ł}},
+           given={Pawel},
            giveni={P\bibinitperiod}}}%
         {{hash=12aa84ab8a61389c41bab457f89bcae3}{%
            family={Giulini},
@@ -491,11 +491,11 @@
         {MDPI}%
       }
       \strng{namehash}{a375b3f759153d1c5cc39cea1d775ad7}
-      \strng{fullhash}{5009ae45dbd54cef9d08ce48b64159f3}
+      \strng{fullhash}{02274ba006f5546a92fc5f544351670f}
       \strng{bibnamehash}{a375b3f759153d1c5cc39cea1d775ad7}
       \strng{authorbibnamehash}{a375b3f759153d1c5cc39cea1d775ad7}
       \strng{authornamehash}{a375b3f759153d1c5cc39cea1d775ad7}
-      \strng{authorfullhash}{5009ae45dbd54cef9d08ce48b64159f3}
+      \strng{authorfullhash}{02274ba006f5546a92fc5f544351670f}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -541,6 +541,30 @@
       \verb{url}
       \verb https://medium.com/@datamount/what-canny-edge-detection-algorithm-is-all-about-103d94553d21
       \endverb
+    \endentry
+    \entry{fundacionpielsana_dermatologia}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ca8df7c39af52de71645429a4cd3b057}{%
+           family={Dermatología\bibnamedelimb y\bibnamedelima Venereología},
+           familyi={D\bibinitperiod\bibinitdelim y\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Fundación\bibnamedelimb Piel\bibnamedelimb Sana\bibnamedelimb -\bibnamedelimb Academia\bibnamedelima Española},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim E\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca8df7c39af52de71645429a4cd3b057}
+      \strng{fullhash}{ca8df7c39af52de71645429a4cd3b057}
+      \strng{bibnamehash}{ca8df7c39af52de71645429a4cd3b057}
+      \strng{authorbibnamehash}{ca8df7c39af52de71645429a4cd3b057}
+      \strng{authornamehash}{ca8df7c39af52de71645429a4cd3b057}
+      \strng{authorfullhash}{ca8df7c39af52de71645429a4cd3b057}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://aedv.fundacionpielsana.es/piel-sana/que-es-la-dermatologia/}}
+      \field{note}{Último acceso: 19 de noviembre de 2023}
+      \field{title}{¿Qué es la Dermatología?}
     \endentry
     \entry{dildar2021skin}{article}{}
       \name{author}{10}{}{%
@@ -647,26 +671,6 @@
       \verb{url}
       \verb https://www.cancer.org/es/cancer/tipos/cancer-de-piel-tipo-melanoma/acerca/estadisticas-clave.html
       \endverb
-    \endentry
-    \entry{fundacionpielsana_dermatologia}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=0fb93c83ab79495609620af8500b4807}{%
-           family={{Fundación Piel Sana - Academia Española de Dermatología y Venereología}},
-           familyi={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{0fb93c83ab79495609620af8500b4807}
-      \strng{fullhash}{0fb93c83ab79495609620af8500b4807}
-      \strng{bibnamehash}{0fb93c83ab79495609620af8500b4807}
-      \strng{authorbibnamehash}{0fb93c83ab79495609620af8500b4807}
-      \strng{authornamehash}{0fb93c83ab79495609620af8500b4807}
-      \strng{authorfullhash}{0fb93c83ab79495609620af8500b4807}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://aedv.fundacionpielsana.es/piel-sana/que-es-la-dermatologia/}}
-      \field{note}{Último acceso: 19 de noviembre de 2023}
-      \field{title}{¿Qué es la Dermatología?}
     \endentry
     \entry{1100578}{article}{}
       \name{author}{1}{}{%
@@ -831,23 +835,23 @@
            familyi={L\bibinitperiod},
            given={Isidoro\bibnamedelima Gil},
            giveni={I\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=4fd754b155613342ed50edc4c85b42ff}{%
+        {{hash=cfca15f5bd915e23d2c261284ec646c8}{%
            family={Ortuño},
            familyi={O\bibinitperiod},
-           given={Pedro\bibnamedelima Dı́az},
+           given={Pedro\bibnamedelima Díaz},
            giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=8211d6327c5ec07751a9b74f4fc04901}{%
+        {{hash=a1fb3fd43c5d39a5a21ff43d0af576c1}{%
            family={Muñoz},
            familyi={M\bibinitperiod},
-           given={José\bibnamedelimb Vicente\bibnamedelima Rodrı́guez},
+           given={José\bibnamedelimb Vicente\bibnamedelima Rodríguez},
            giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
       }
-      \strng{namehash}{47bce1e038eacf605a4fc558c74cbf5b}
-      \strng{fullhash}{47bce1e038eacf605a4fc558c74cbf5b}
-      \strng{bibnamehash}{47bce1e038eacf605a4fc558c74cbf5b}
-      \strng{authorbibnamehash}{47bce1e038eacf605a4fc558c74cbf5b}
-      \strng{authornamehash}{47bce1e038eacf605a4fc558c74cbf5b}
-      \strng{authorfullhash}{47bce1e038eacf605a4fc558c74cbf5b}
+      \strng{namehash}{15f80ca984b0e555a7d0533b83057478}
+      \strng{fullhash}{15f80ca984b0e555a7d0533b83057478}
+      \strng{bibnamehash}{15f80ca984b0e555a7d0533b83057478}
+      \strng{authorbibnamehash}{15f80ca984b0e555a7d0533b83057478}
+      \strng{authornamehash}{15f80ca984b0e555a7d0533b83057478}
+      \strng{authorfullhash}{15f80ca984b0e555a7d0533b83057478}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
@@ -1043,8 +1047,8 @@
            familyi={S\bibinitperiod},
            given={MP},
            giveni={M\bibinitperiod}}}%
-        {{hash=1e8093babbd5e0c2c424173325bdb103}{%
-           family={Vañó},
+        {{hash=8c12163e4285d0f6dcf605ab26fc3afa}{%
+           family={Vañós},
            familyi={V\bibinitperiod},
            given={S},
            giveni={S\bibinitperiod}}}%
@@ -1078,11 +1082,11 @@
         {Elsevier}%
       }
       \strng{namehash}{280fa5df0d06123662a191b72d959471}
-      \strng{fullhash}{c486ecd1ecacbb11e39a6a9279bbc368}
+      \strng{fullhash}{c7b851104c8bd5ca9b3bca9d6d3f364f}
       \strng{bibnamehash}{280fa5df0d06123662a191b72d959471}
       \strng{authorbibnamehash}{280fa5df0d06123662a191b72d959471}
       \strng{authornamehash}{280fa5df0d06123662a191b72d959471}
-      \strng{authorfullhash}{c486ecd1ecacbb11e39a6a9279bbc368}
+      \strng{authorfullhash}{c7b851104c8bd5ca9b3bca9d6d3f364f}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
