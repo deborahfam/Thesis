@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber Thesis"] 1701696962 "Thesis.bcf" "Thesis.bbl" "Thesis" 1701696965
-  "Bibliography.bib" 1701696961 20474 41002cee85fe6ea3802dc18fd1c429d0 ""
+["biber Thesis"] 1701697201 "Thesis.bcf" "Thesis.bbl" "Thesis" 1701697204
+  "Bibliography.bib" 1701697200 17947 242751b6babb018691855ee6d5d967c2 ""
   "Thesis.bcf" 1701696783 114461 98b38bcdac8b9b82cc6935a09a43ccf3 "pdflatex"
   (generated)
   "Thesis.bbl"
   "Thesis.blg"
-["pdflatex"] 1701696778 "c:/Users/Jorge Carlos/Desktop/git-Thesis-test/Thesis/document/Thesis.tex" "Thesis.pdf" "Thesis" 1701696965
+["pdflatex"] 1701696778 "c:/Users/Jorge Carlos/Desktop/git-Thesis-test/Thesis/document/Thesis.tex" "Thesis.pdf" "Thesis" 1701697204
   "BackMatter/Bibliography.aux" 1701696783 4519 7caf0562663e5b7618e9d4ed2b1b27b0 "pdflatex"
   "BackMatter/Bibliography.tex" 1699546350 37 f06889da9859fc675d738515d865edd1 ""
   "BackMatter/Conclusions.aux" 1701696783 4511 48b138a10f39e06ac796cbbca0d62ae1 "pdflatex"
@@ -40,7 +40,7 @@
   "MainMatter/Proposal.aux" 1701696781 5746 20f71b22ade2a9dc18e9f529f03d96c1 "pdflatex"
   "MainMatter/Proposal.tex" 1701636682 3703 f28be3098d07d6253d86689b7d5d9cbd ""
   "Thesis.aux" 1701696783 14213 8629f931874865e6c4f62757747b2af1 "pdflatex"
-  "Thesis.bbl" 1701696965 69702 caa88ddc1dece76366c5670aa3b8a9e0 "biber Thesis"
+  "Thesis.bbl" 1701697204 69702 caa88ddc1dece76366c5670aa3b8a9e0 "biber Thesis"
   "Thesis.lof" 1701696783 1655 99e379604952d4f3c791b4d8155b819f "pdflatex"
   "Thesis.lol" 0 -1 0 "pdflatex"
   "Thesis.out" 1701696783 11403 a2ac852e700f3474d1a9d93dc4f5271f "pdflatex"
