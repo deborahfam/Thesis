@@ -1395,7 +1395,6 @@ INPUT ./MainMatter/Introduction.tex
 INPUT MainMatter/Introduction.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmro12.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT ./MainMatter/Background.tex
 INPUT ./MainMatter/Background.tex
 INPUT ./MainMatter/Background.tex
@@ -1407,6 +1406,7 @@ INPUT MainMatter/Background.tex
 INPUT ./MainMatter/Background.tex
 INPUT MainMatter/Background.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmro10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT ./MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
@@ -1527,6 +1527,11 @@ INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
+INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ts1-lmri12.tfm
 INPUT Thesis.aux
 INPUT ./FrontMatter/Dedication.aux
 INPUT FrontMatter/Dedication.aux
@@ -1568,6 +1573,7 @@ INPUT ./Thesis.out
 INPUT ./Thesis.out
 INPUT Thesis.run.xml
 OUTPUT Thesis.run.xml
+INPUT c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc

@@ -28,8 +28,8 @@
 \contentsline {section}{\numberline {3.4}Preparación y carga de datos}{17}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Transformación de datos}{18}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Modelación y división del conjunto de datos}{18}{subsection.3.4.2}%
-\contentsline {subsubsection}{Experimento 1}{18}{section*.16}%
-\contentsline {subsubsection}{Experimento 2}{19}{section*.17}%
+\contentsline {subsubsection}{Experimento 1}{18}{section*.15}%
+\contentsline {subsubsection}{Experimento 2}{19}{section*.16}%
 \contentsline {section}{\numberline {3.5}Generadores de datos y preprocesamiento}{20}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Experimento 1}{20}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Experimento 2}{20}{subsection.3.5.2}%
@@ -39,21 +39,21 @@
 \contentsline {subsection}{\numberline {3.6.2}Arquitectura del modelo EfficientNet}{23}{subsection.3.6.2}%
 \contentsline {subsection}{\numberline {3.6.3}EfficientNetB1}{23}{subsection.3.6.3}%
 \contentsline {subsection}{\numberline {3.6.4}Capas adicionales y regularización}{23}{subsection.3.6.4}%
-\contentsline {subsubsection}{Normalización por lotes}{23}{section*.19}%
-\contentsline {subsubsection}{Capa densa}{25}{section*.20}%
-\contentsline {subsubsection}{Dropout}{25}{section*.21}%
-\contentsline {subsubsection}{Capa de salida}{25}{section*.22}%
+\contentsline {subsubsection}{Normalización por lotes}{23}{section*.18}%
+\contentsline {subsubsection}{Capa densa}{25}{section*.19}%
+\contentsline {subsubsection}{Dropout}{25}{section*.20}%
+\contentsline {subsubsection}{Capa de salida}{25}{section*.21}%
 \contentsline {subsection}{\numberline {3.6.5}Optimización}{25}{subsection.3.6.5}%
 \contentsline {subsection}{\numberline {3.6.6}Ajuste dinámico de la tasa de aprendizaje}{26}{subsection.3.6.6}%
 \contentsline {section}{\numberline {3.7}Resultados}{26}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Experimento 1}{26}{subsection.3.7.1}%
-\contentsline {subsubsection}{Estadísticas básicas}{26}{section*.23}%
-\contentsline {subsubsection}{Estadísticas de aprendizaje}{27}{section*.25}%
-\contentsline {subsubsection}{Estadísticas de eficacia}{29}{section*.27}%
+\contentsline {subsubsection}{Estadísticas básicas}{26}{section*.22}%
+\contentsline {subsubsection}{Estadísticas de aprendizaje}{27}{section*.24}%
+\contentsline {subsubsection}{Estadísticas de eficacia}{29}{section*.26}%
 \contentsline {subsection}{\numberline {3.7.2}Experimento 2}{30}{subsection.3.7.2}%
 \contentsline {subsection}{\numberline {3.7.3}Estadísticas básicas}{30}{subsection.3.7.3}%
 \contentsline {subsection}{\numberline {3.7.4}Estadísticas de aprendizaje}{30}{subsection.3.7.4}%
 \contentsline {subsection}{\numberline {3.7.5}Estadísticas de eficacia}{32}{subsection.3.7.5}%
-\contentsline {chapter}{Conclusiones}{35}{section*.35}%
-\contentsline {chapter}{Recomendaciones}{36}{section*.37}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{37}{chapter*.39}%
+\contentsline {chapter}{Conclusiones}{35}{section*.34}%
+\contentsline {chapter}{Recomendaciones}{36}{section*.36}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{37}{chapter*.38}%

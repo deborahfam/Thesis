@@ -144,23 +144,6 @@
       \field{title}{Aumentación de datos}
       \field{year}{2023}
     \endentry
-    \entry{cesuma_avances_aplicaciones_2023}{misc}{}
-      \list{organization}{1}{%
-        {CESUMA}%
-      }
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labeltitlesource}{title}
-      \field{note}{Último acceso: 2023-11-27}
-      \field{title}{Avances y aplicaciones del aprendizaje profundo}
-      \field{year}{2023}
-      \verb{urlraw}
-      \verb https://www.cesuma.mx/blog/avances-y-aplicaciones-del-aprendizaje-profundo.html
-      \endverb
-      \verb{url}
-      \verb https://www.cesuma.mx/blog/avances-y-aplicaciones-del-aprendizaje-profundo.html
-      \endverb
-    \endentry
     \entry{bera2022predicting}{article}{}
       \name{author}{5}{}{%
         {{hash=e065910227531fb77e7014e37f728cbf}{%
@@ -283,6 +266,43 @@
       \field{year}{2018}
       \field{pages}{e11936}
       \range{pages}{-1}
+    \endentry
+    \entry{cai2020review}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6b114db5a86624e87ca131340ac8b429}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=19e47d1e63ddae1fd14dffd779178213}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Jingyang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5fa1a595ff097762c6f5dc8135c64e1a}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AME Publications}%
+      }
+      \strng{namehash}{1e0f6b02879790a136bccf152d601d44}
+      \strng{fullhash}{1e0f6b02879790a136bccf152d601d44}
+      \strng{bibnamehash}{1e0f6b02879790a136bccf152d601d44}
+      \strng{authorbibnamehash}{1e0f6b02879790a136bccf152d601d44}
+      \strng{authornamehash}{1e0f6b02879790a136bccf152d601d44}
+      \strng{authorfullhash}{1e0f6b02879790a136bccf152d601d44}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of translational medicine}
+      \field{number}{11}
+      \field{title}{A review of the application of deep learning in medical image classification and segmentation}
+      \field{volume}{8}
+      \field{year}{2020}
     \endentry
     \entry{calonder2010brief}{inproceedings}{}
       \name{author}{4}{}{%
@@ -542,6 +562,42 @@
       \verb https://medium.com/@datamount/what-canny-edge-detection-algorithm-is-all-about-103d94553d21
       \endverb
     \endentry
+    \entry{deng2014deep}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=2f5fbdc5c3cf91f62a64663cd72397b3}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=93509a9a7ccede33feb1e702b5a8bb9f}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Now Publishers, Inc.}%
+      }
+      \strng{namehash}{dd1cf37f77546eba5f478e1defb71ff1}
+      \strng{fullhash}{dd1cf37f77546eba5f478e1defb71ff1}
+      \strng{bibnamehash}{dd1cf37f77546eba5f478e1defb71ff1}
+      \strng{authorbibnamehash}{dd1cf37f77546eba5f478e1defb71ff1}
+      \strng{authornamehash}{dd1cf37f77546eba5f478e1defb71ff1}
+      \strng{authorfullhash}{dd1cf37f77546eba5f478e1defb71ff1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations and trends{®} in signal processing}
+      \field{number}{3--4}
+      \field{title}{Deep learning: methods and applications}
+      \field{volume}{7}
+      \field{year}{2014}
+      \field{pages}{197\bibrangedash 387}
+      \range{pages}{191}
+    \endentry
     \entry{fundacionpielsana_dermatologia}{misc}{}
       \name{author}{1}{}{%
         {{hash=ca8df7c39af52de71645429a4cd3b057}{%
@@ -783,6 +839,45 @@
       \verb{url}
       \verb http://hdl.handle.net/10486/688150
       \endverb
+    \endentry
+    \entry{lecun2015deep}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{nature}
+      \field{number}{7553}
+      \field{title}{Deep learning}
+      \field{volume}{521}
+      \field{year}{2015}
+      \field{pages}{436\bibrangedash 444}
+      \range{pages}{9}
     \endentry
     \entry{lee2022analysis}{article}{}
       \name{author}{4}{}{%
@@ -1223,6 +1318,38 @@
       \verb https://vitalflux.com/keras-categorical-cross-entropy-loss-function/
       \endverb
     \endentry
+    \entry{song2013hierarchical}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=935639200bb1666c57c1741ac401b3d4}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Hyun\bibnamedelima Ah},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e1edd35d707a2979376c4cacb4a1537d}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Soo-Young},
+           giveni={S\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d26411c70d5a41e5256aa944e31a5354}
+      \strng{fullhash}{d26411c70d5a41e5256aa944e31a5354}
+      \strng{bibnamehash}{d26411c70d5a41e5256aa944e31a5354}
+      \strng{authorbibnamehash}{d26411c70d5a41e5256aa944e31a5354}
+      \strng{authornamehash}{d26411c70d5a41e5256aa944e31a5354}
+      \strng{authorfullhash}{d26411c70d5a41e5256aa944e31a5354}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Neural Information Processing: 20th International Conference, ICONIP 2013, Daegu, Korea, November 3-7, 2013. Proceedings, Part I 20}
+      \field{title}{Hierarchical representation using NMF}
+      \field{year}{2013}
+      \field{pages}{466\bibrangedash 473}
+      \range{pages}{8}
+    \endentry
     \entry{tajerian2023design}{article}{}
       \name{author}{4}{}{%
         {{hash=1aa2ca9c5ae56e744b3e909a8b0f0bb0}{%
@@ -1411,6 +1538,36 @@
       \verb https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/
       \endverb
     \endentry
+    \entry{automata_celular_thesis}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=70d047338dca7b548e25f39435752a04}{%
+           family={Viera\bibnamedelima Barredo},
+           familyi={V\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Darien},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidad de la Habana}%
+      }
+      \list{location}{1}{%
+        {Habana, Cuba}%
+      }
+      \strng{namehash}{70d047338dca7b548e25f39435752a04}
+      \strng{fullhash}{70d047338dca7b548e25f39435752a04}
+      \strng{bibnamehash}{70d047338dca7b548e25f39435752a04}
+      \strng{authorbibnamehash}{70d047338dca7b548e25f39435752a04}
+      \strng{authornamehash}{70d047338dca7b548e25f39435752a04}
+      \strng{authorfullhash}{70d047338dca7b548e25f39435752a04}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Tesis de Licenciatura}
+      \field{title}{Autómata celular estocástico en redes complejas para el estudio de la invasión, migración y metástasis del cancer}
+      \field{type}{phdthesis}
+      \field{year}{2019}
+      \keyw{palabra_clave1,palabra_clave2}
+    \endentry
     \entry{whited2002teledermatology}{article}{}
       \name{author}{9}{}{%
         {{hash=0c476985149ab0d628dc113fe9c7ba9e}{%
@@ -1481,6 +1638,7 @@
       \range{pages}{9}
     \endentry
   \enddatalist
+  \missing{zhang2017基于深度学习的医学影像诊断综述}
 \endrefsection
 \endinput
 
