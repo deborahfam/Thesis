@@ -975,6 +975,34 @@
       \field{title}{Scale invariant feature transform}
       \field{year}{2012}
     \endentry
+    \entry{ensemble_thesis}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=253e2ceda3728ad5e3b187d3cefcd460}{%
+           family={Olavarrieta\bibnamedelima Martínez},
+           familyi={O\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidad de la Habana}%
+      }
+      \list{location}{1}{%
+        {Habana, Cuba}%
+      }
+      \strng{namehash}{253e2ceda3728ad5e3b187d3cefcd460}
+      \strng{fullhash}{253e2ceda3728ad5e3b187d3cefcd460}
+      \strng{bibnamehash}{253e2ceda3728ad5e3b187d3cefcd460}
+      \strng{authorbibnamehash}{253e2ceda3728ad5e3b187d3cefcd460}
+      \strng{authornamehash}{253e2ceda3728ad5e3b187d3cefcd460}
+      \strng{authorfullhash}{253e2ceda3728ad5e3b187d3cefcd460}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Tesis de Licenciatura}
+      \field{title}{Ensemble de redes convolucionales para la clasificación de lesiones de cáncer de piel}
+      \field{year}{2022}
+    \endentry
     \entry{ohe}{misc}{}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
@@ -1058,31 +1086,6 @@
       \field{year}{2002}
       \field{pages}{53\bibrangedash 58}
       \range{pages}{6}
-    \endentry
-    \entry{Pinecone2021ImageNet}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=f6af38c920e468b8adbdd5793a09b4ca}{%
-           family={Pinecone},
-           familyi={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \strng{fullhash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \strng{bibnamehash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \strng{authorbibnamehash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \strng{authornamehash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \strng{authorfullhash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{ImageNet - The Dataset that Transformed Image Classification}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://www.pinecone.io/learn/series/image-search/imagenet/
-      \endverb
-      \verb{url}
-      \verb https://www.pinecone.io/learn/series/image-search/imagenet/
-      \endverb
     \endentry
     \entry{Qindel2023}{misc}{}
       \name{author}{1}{}{%
@@ -1564,7 +1567,6 @@
       \field{labeltitlesource}{title}
       \field{note}{Tesis de Licenciatura}
       \field{title}{Autómata celular estocástico en redes complejas para el estudio de la invasión, migración y metástasis del cancer}
-      \field{type}{phdthesis}
       \field{year}{2019}
       \keyw{palabra_clave1,palabra_clave2}
     \endentry
@@ -1638,7 +1640,6 @@
       \range{pages}{9}
     \endentry
   \enddatalist
-  \missing{zhang2017基于深度学习的医学影像诊断综述}
 \endrefsection
 \endinput
 

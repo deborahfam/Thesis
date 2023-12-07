@@ -1,3 +1,23 @@
 \begin{recomendations}
-    Recomendaciones
+    \subsection*{Datos: procesamiento y estrategias de normalización}
+
+\begin{enumerate}
+    \item Enriquecimiento de Datos: Complementar el conjunto de datos con imágenes adicionales de fuentes confiables para mejorar la robustez del modelo.
+    \item Aumentar la Diversidad de Datos: Utilizar técnicas de aumento de datos para generar variantes adicionales de las imágenes existentes, como rotaciones, zoom, o cambios en el brillo, para mejorar la capacidad del modelo de generalizar a partir de nuevos datos.
+    \item Balance de Clases mediante Aumento: Para categorías con menos ejemplos, aplicar técnicas de aumento de datos de manera selectiva para equilibrar la distribución de clases y reducir el sesgo del modelo.
+    \item Estratificación Mejorada: Asegurarse de que la estratificación de datos se aplique de manera que todas las particiones (entrenamiento, validación, prueba) tengan una distribución representativa de cada clase.
+    \item Conjuntos de Validación y Prueba Independientes: Considerar el uso de conjuntos de validación y prueba completamente independientes para obtener una evaluación más realista del rendimiento del modelo.
+\end{enumerate}
+
+\subsection*{Modelo: optimización y ajuste de hiperparámetros}
+
+\begin{enumerate}
+    \item Selección de Características: Investigar técnicas de selección de características para identificar y utilizar solo los aspectos más relevantes de los datos de imagen para la clasificación.
+    \item Regularización y Arquitectura de Red: Explorar diferentes métodos de regularización, como dropout o penalizaciones L1/L2, y arquitecturas de red para encontrar el mejor equilibrio entre el rendimiento y la prevención del sobre-ajuste.
+    \item Tuning de Hiperparámetros: Realizar una búsqueda en cuadrícula o aleatoria más extensa para optimizar hiperparámetros como la tasa de aprendizaje, el tamaño del lote y el número de epochs.
+    \item Learning Rate Scheduling: Implementar un programa de ajuste de tasa de aprendizaje que disminuya la tasa basándose en el rendimiento del modelo durante el entrenamiento para mejorar la convergencia.
+    \item Análisis de Errores: Realizar un análisis de errores en profundidad para entender las causas de las clasificaciones incorrectas y abordarlas específicamente.
+    \item Presición y sesgos: Implementar modelos más complejos de clasificación para las clases menos representadas.
+\end{enumerate}
+
 \end{recomendations}
