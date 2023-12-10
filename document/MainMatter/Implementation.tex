@@ -230,13 +230,13 @@ Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución 
       \hline
       \textbf{Diagnostic category} & \textbf{Training} & \textbf{Validation} & \textbf{Testing} \\
       \hline
-      NV    & 300 & 1006 & 1006 \\
-      MEL   & 300 & 167  & 167  \\
-      BKL   & 300 & 165  & 165  \\
-      DF    & 300 & 17   & 17   \\
-      AKIEC & 300 & 49   & 49   \\
-      BCC   & 300 & 77   & 77   \\
-      VASC  & 300 & 21   & 22   \\
+      NV    & 500 & 1006 & 1006 \\
+      MEL   & 500 & 167  & 167  \\
+      BKL   & 500 & 165  & 165  \\
+      DF    & 500 & 17   & 17   \\
+      AKIEC & 500 & 49   & 49   \\
+      BCC   & 500 & 77   & 77   \\
+      VASC  & 500 & 21   & 22   \\
       \hline
       \end{tabular}
       \caption{Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación}
@@ -248,7 +248,7 @@ Luego este quedaría distribuido en $7010$ datos de entrenamiento, $1503$ de tes
 
 \subsubsection*{Generadores de datos y preprocesamiento}
 
-Se establece también un tamaño objetivo de muestras por clase ($300$). Se utiliza la función \textit{groupby} para agrupar el dataFrame por la etiqueta de clase. Se itera sobre cada grupo, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado.
+Se establece también un tamaño objetivo de muestras por clase ($500$). Se utiliza la función \textit{groupby} para agrupar el dataFrame por la etiqueta de clase. Se itera sobre cada grupo, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado.
 
 En este, a diferencia del primero, en cada clase se alcanza la misma cantidad de muestras, por lo que no es necesario aplicar \textit{Class Weighting}.
 
@@ -257,19 +257,14 @@ En este, a diferencia del primero, en cada clase se alcanza la misma cantidad de
    \begin{tabular}{lccc}
    \hline
    Diagnostic category & Sampling  \\ \hline
-   AKIEC & 300 \\
-   BCC & 300 \\
-   BKL & 300 \\
-   DF & 300 \\
-   MEL & 300 \\
-   NV & 300 \\
-   VASC & 300 \\ \hline
+   AKIEC & 500 \\
+   BCC & 500 \\
+   BKL & 500 \\
+   DF & 500 \\
+   MEL & 500 \\
+   NV & 500 \\
+   VASC & 500 \\ \hline
    \end{tabular}
    \caption{Distribución de muestras por categoría después del sobre-muestreo}
    \label{tab:sampling_distribution}
    \end{table}
-
-
-
-
-

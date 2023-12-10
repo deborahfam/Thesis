@@ -1,15 +1,12 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Estadísticas del rendimiento de los modelos de EfficientNet\relax }}{15}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Estadísticas del rendimiento de los modelos de EfficientNet\relax }}{15}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Estadísticas básicas del modelo EfficientNetB1.\relax }}{29}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Estadísticas de aprendizaje a lo largo del proceso de entrenamiento.\relax }}{29}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\relax }}{30}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas\relax }}{31}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Estadísticas básicas de algunas iteraciones del modelo EfficientNetB1.\relax }}{32}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Estadísticas de aprendizaje a lo largo del proceso de entrenamiento.\relax }}{33}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Estadísticas de aprendizaje a lo largo del proceso de entrenamiento.\relax }}{33}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\relax }}{34}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas\relax }}{35}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 1.\relax }}{29}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 2.\relax }}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\relax }}{31}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas\relax }}{31}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas\relax }}{31}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas\relax }}{32}{figure.caption.31}%

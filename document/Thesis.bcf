@@ -163,7 +163,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nty</bcf:value>
+      <bcf:value>none</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -2392,63 +2392,63 @@
     <bcf:citekey order="46">tajerian2023design</bcf:citekey>
     <bcf:citekey order="47">adegun2021deep</bcf:citekey>
     <bcf:citekey order="48">dildar2021skin</bcf:citekey>
-    <bcf:citekey order="49">uam2023doc</bcf:citekey>
-    <bcf:citekey order="50">uam2023doc</bcf:citekey>
-    <bcf:citekey order="51">uam2023doc</bcf:citekey>
-    <bcf:citekey order="52">uam2023doc</bcf:citekey>
-    <bcf:citekey order="53">tan2019efficientnet</bcf:citekey>
-    <bcf:citekey order="54">tan2019efficientnet</bcf:citekey>
-    <bcf:citekey order="55">Tan2019EfficientNetRM</bcf:citekey>
-    <bcf:citekey order="56">ham10000</bcf:citekey>
-    <bcf:citekey order="57">ham10000</bcf:citekey>
-    <bcf:citekey order="58">tschandl2018ham10000</bcf:citekey>
-    <bcf:citekey order="59">ohe</bcf:citekey>
-    <bcf:citekey order="60">vitalflux_categorical_crossentropy</bcf:citekey>
-    <bcf:citekey order="61">pandas</bcf:citekey>
-    <bcf:citekey order="62">img_gen</bcf:citekey>
-    <bcf:citekey order="63">augmentation</bcf:citekey>
-    <bcf:citekey order="64">efficientnet</bcf:citekey>
-    <bcf:citekey order="65">regularization</bcf:citekey>
-    <bcf:citekey order="66">dense</bcf:citekey>
-    <bcf:citekey order="67">dropout</bcf:citekey>
-    <bcf:citekey order="68">adamax</bcf:citekey>
-    <bcf:citekey order="69">vitalflux_categorical_crossentropy</bcf:citekey>
-    <bcf:citekey order="70">lr</bcf:citekey>
-    <bcf:citekey order="71">analyticsvidhya2020classweight</bcf:citekey>
-    <bcf:citekey order="72">Iberdrola2023MachineLearning</bcf:citekey>
-    <bcf:citekey order="73">lecun2015deep</bcf:citekey>
-    <bcf:citekey order="74">deng2014deep</bcf:citekey>
-    <bcf:citekey order="75">cai2020review</bcf:citekey>
-    <bcf:citekey order="76">song2013hierarchical</bcf:citekey>
-    <bcf:citekey order="77">american_cancer_society_estadisticas_2023</bcf:citekey>
-    <bcf:citekey order="78">fundacionpielsana_dermatologia</bcf:citekey>
-    <bcf:citekey order="79">das2021machine</bcf:citekey>
-    <bcf:citekey order="80">unal2023doc</bcf:citekey>
-    <bcf:citekey order="81">brinker2018skin</bcf:citekey>
-    <bcf:citekey order="82">ameri2020deep</bcf:citekey>
-    <bcf:citekey order="83">shetty2022skin</bcf:citekey>
-    <bcf:citekey order="84">tajerian2023design</bcf:citekey>
-    <bcf:citekey order="85">adegun2021deep</bcf:citekey>
-    <bcf:citekey order="86">automata_celular_thesis</bcf:citekey>
-    <bcf:citekey order="87">ensemble_thesis</bcf:citekey>
-    <bcf:citekey order="88">DuHarpur2020</bcf:citekey>
-    <bcf:citekey order="89">romero2018practice</bcf:citekey>
-    <bcf:citekey order="90">whited2002teledermatology</bcf:citekey>
-    <bcf:citekey order="91">piccolo2002concordance</bcf:citekey>
-    <bcf:citekey order="92">Qindel2023</bcf:citekey>
-    <bcf:citekey order="93">1100578</bcf:citekey>
-    <bcf:citekey order="94">datamount2023</bcf:citekey>
-    <bcf:citekey order="95">rong2014improved</bcf:citekey>
-    <bcf:citekey order="96">datasmarts_hog_scikit_image_2020</bcf:citekey>
-    <bcf:citekey order="97">lindeberg2012scale</bcf:citekey>
-    <bcf:citekey order="98">calonder2010brief</bcf:citekey>
-    <bcf:citekey order="99">pinecone_color_histograms</bcf:citekey>
-    <bcf:citekey order="100">leiva2019tecnicas</bcf:citekey>
-    <bcf:citekey order="101">lee2022analysis</bcf:citekey>
-    <bcf:citekey order="102">chaudhari2021low</bcf:citekey>
-    <bcf:citekey order="103">bera2022predicting</bcf:citekey>
-    <bcf:citekey order="104">dildar2021skin</bcf:citekey>
-    <bcf:citekey order="105">uam2023doc</bcf:citekey>
+    <bcf:citekey order="49">ali2022multiclass</bcf:citekey>
+    <bcf:citekey order="50">papiththira2021melanoma</bcf:citekey>
+    <bcf:citekey order="51">tan2019efficientnet</bcf:citekey>
+    <bcf:citekey order="52">tan2019efficientnet</bcf:citekey>
+    <bcf:citekey order="53">Tan2019EfficientNetRM</bcf:citekey>
+    <bcf:citekey order="54">ham10000</bcf:citekey>
+    <bcf:citekey order="55">ham10000</bcf:citekey>
+    <bcf:citekey order="56">tschandl2018ham10000</bcf:citekey>
+    <bcf:citekey order="57">ohe</bcf:citekey>
+    <bcf:citekey order="58">vitalflux_categorical_crossentropy</bcf:citekey>
+    <bcf:citekey order="59">pandas</bcf:citekey>
+    <bcf:citekey order="60">img_gen</bcf:citekey>
+    <bcf:citekey order="61">augmentation</bcf:citekey>
+    <bcf:citekey order="62">efficientnet</bcf:citekey>
+    <bcf:citekey order="63">regularization</bcf:citekey>
+    <bcf:citekey order="64">dense</bcf:citekey>
+    <bcf:citekey order="65">dropout</bcf:citekey>
+    <bcf:citekey order="66">adamax</bcf:citekey>
+    <bcf:citekey order="67">vitalflux_categorical_crossentropy</bcf:citekey>
+    <bcf:citekey order="68">lr</bcf:citekey>
+    <bcf:citekey order="69">analyticsvidhya2020classweight</bcf:citekey>
+    <bcf:citekey order="70">ali2022multiclass</bcf:citekey>
+    <bcf:citekey order="71">Iberdrola2023MachineLearning</bcf:citekey>
+    <bcf:citekey order="72">lecun2015deep</bcf:citekey>
+    <bcf:citekey order="73">deng2014deep</bcf:citekey>
+    <bcf:citekey order="74">cai2020review</bcf:citekey>
+    <bcf:citekey order="75">song2013hierarchical</bcf:citekey>
+    <bcf:citekey order="76">american_cancer_society_estadisticas_2023</bcf:citekey>
+    <bcf:citekey order="77">fundacionpielsana_dermatologia</bcf:citekey>
+    <bcf:citekey order="78">das2021machine</bcf:citekey>
+    <bcf:citekey order="79">unal2023doc</bcf:citekey>
+    <bcf:citekey order="80">brinker2018skin</bcf:citekey>
+    <bcf:citekey order="81">ameri2020deep</bcf:citekey>
+    <bcf:citekey order="82">shetty2022skin</bcf:citekey>
+    <bcf:citekey order="83">tajerian2023design</bcf:citekey>
+    <bcf:citekey order="84">adegun2021deep</bcf:citekey>
+    <bcf:citekey order="85">automata_celular_thesis</bcf:citekey>
+    <bcf:citekey order="86">ensemble_thesis</bcf:citekey>
+    <bcf:citekey order="87">DuHarpur2020</bcf:citekey>
+    <bcf:citekey order="88">romero2018practice</bcf:citekey>
+    <bcf:citekey order="89">whited2002teledermatology</bcf:citekey>
+    <bcf:citekey order="90">piccolo2002concordance</bcf:citekey>
+    <bcf:citekey order="91">Qindel2023</bcf:citekey>
+    <bcf:citekey order="92">1100578</bcf:citekey>
+    <bcf:citekey order="93">datamount2023</bcf:citekey>
+    <bcf:citekey order="94">rong2014improved</bcf:citekey>
+    <bcf:citekey order="95">datasmarts_hog_scikit_image_2020</bcf:citekey>
+    <bcf:citekey order="96">lindeberg2012scale</bcf:citekey>
+    <bcf:citekey order="97">calonder2010brief</bcf:citekey>
+    <bcf:citekey order="98">pinecone_color_histograms</bcf:citekey>
+    <bcf:citekey order="99">leiva2019tecnicas</bcf:citekey>
+    <bcf:citekey order="100">lee2022analysis</bcf:citekey>
+    <bcf:citekey order="101">chaudhari2021low</bcf:citekey>
+    <bcf:citekey order="102">bera2022predicting</bcf:citekey>
+    <bcf:citekey order="103">dildar2021skin</bcf:citekey>
+    <bcf:citekey order="104">ali2022multiclass</bcf:citekey>
+    <bcf:citekey order="105">papiththira2021melanoma</bcf:citekey>
     <bcf:citekey order="106">tan2019efficientnet</bcf:citekey>
     <bcf:citekey order="107">Tan2019EfficientNetRM</bcf:citekey>
     <bcf:citekey order="108">ham10000</bcf:citekey>
@@ -2467,39 +2467,16 @@
     <bcf:citekey order="121">analyticsvidhya2020classweight</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nty">
+  <bcf:sortingtemplate name="none">
     <bcf:sort order="1">
-      <bcf:sortitem order="1">presort</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="2" final="1">
-      <bcf:sortitem order="1">sortkey</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="3">
-      <bcf:sortitem order="1">sortname</bcf:sortitem>
-      <bcf:sortitem order="2">author</bcf:sortitem>
-      <bcf:sortitem order="3">editor</bcf:sortitem>
-      <bcf:sortitem order="4">translator</bcf:sortitem>
-      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="6">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nty/global//global/global"
+                name="none/global//global/global"
                 type="entry"
-                sortingtemplatename="nty"
+                sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"
