@@ -2408,13 +2408,13 @@
     <bcf:citekey order="62">tan2019efficientnet</bcf:citekey>
     <bcf:citekey order="63">Tan2019EfficientNetRM</bcf:citekey>
     <bcf:citekey order="64">ham10000</bcf:citekey>
-    <bcf:citekey order="65">img_gen</bcf:citekey>
-    <bcf:citekey order="66">regularization</bcf:citekey>
-    <bcf:citekey order="67">dense</bcf:citekey>
-    <bcf:citekey order="68">dropout</bcf:citekey>
-    <bcf:citekey order="69">adamax</bcf:citekey>
-    <bcf:citekey order="70">vitalflux_categorical_crossentropy</bcf:citekey>
-    <bcf:citekey order="71">lr</bcf:citekey>
+    <bcf:citekey order="65">lr</bcf:citekey>
+    <bcf:citekey order="66">img_gen</bcf:citekey>
+    <bcf:citekey order="67">regularization</bcf:citekey>
+    <bcf:citekey order="68">dense</bcf:citekey>
+    <bcf:citekey order="69">dropout</bcf:citekey>
+    <bcf:citekey order="70">adamax</bcf:citekey>
+    <bcf:citekey order="71">vitalflux_categorical_crossentropy</bcf:citekey>
     <bcf:citekey order="72">ali2022multiclass</bcf:citekey>
     <bcf:citekey order="73">Iberdrola2023MachineLearning</bcf:citekey>
     <bcf:citekey order="74">lecun2015deep</bcf:citekey>
@@ -2462,12 +2462,12 @@
     <bcf:citekey order="116">Pinecone2021ImageNet</bcf:citekey>
     <bcf:citekey order="117">Tan2019EfficientNetRM</bcf:citekey>
     <bcf:citekey order="118">ham10000</bcf:citekey>
-    <bcf:citekey order="119">img_gen</bcf:citekey>
-    <bcf:citekey order="120">regularization</bcf:citekey>
-    <bcf:citekey order="121">dense</bcf:citekey>
-    <bcf:citekey order="122">dropout</bcf:citekey>
-    <bcf:citekey order="123">adamax</bcf:citekey>
-    <bcf:citekey order="124">lr</bcf:citekey>
+    <bcf:citekey order="119">lr</bcf:citekey>
+    <bcf:citekey order="120">img_gen</bcf:citekey>
+    <bcf:citekey order="121">regularization</bcf:citekey>
+    <bcf:citekey order="122">dense</bcf:citekey>
+    <bcf:citekey order="123">dropout</bcf:citekey>
+    <bcf:citekey order="124">adamax</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

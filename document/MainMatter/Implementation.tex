@@ -1,26 +1,34 @@
 \chapter{Detalles de implementación y experimentos}\label{chapter:implementation}
 
-Para la implementación del modelo y con el objetivo de lograr mejor precisión y generalización, se llevaron a cabo varios experimentos. La metodología de los experimentos fue la misma. Dado que el conjunto de datos utilizado para la validación del modelo está desbalanceado la cantidad de imágenes por clase, en los distintos experimentos se modificó la distribución de datos para aprendizaje, test y validación. Se exponen durante el capítulo 2 de los experimentos que mostraron tener mejores resultados en cuanto a precisión y recobrado. 
+Este capítulo presenta los métodos, técnicas, detalles e hiperparámetros utilizados en la implementación general del modelo y especifica de cada experimento.
 
-\section{Enfoque de Implementación}
+\section{Herramientas y Tecnologías}
 
-La implementación seguirá un enfoque modular y escalable. Comenzará con la selección del modelo y su personalización para el contexto específico del cáncer de piel. El preprocesamiento de datos y el balanceo de clases asegurarán la calidad del entrenamiento y la generalización del modelo. La arquitectura del modelo será iterativamente refinada y evaluada, utilizando un algoritmo propio de ajuste de precisión Además se utilizan capas adicionales de ajuste y optimización para lograr mejores resultados.
-
-\subsection{Herramientas y Tecnologías}
-
-La implementación del modelo se llevará a cabo utilizando las siguientes herramientas:
+La implementación del modelo se llevó a cabo utilizando las siguientes herramientas:
 
 \begin{itemize}
-    \item \textbf{Lenguajes de Programación:} Python será utilizado por su rica biblioteca de paquetes de aprendizaje automático, incluyendo TensorFlow y Keras para la construcción y entrenamiento del modelo.
+    \item \textbf{Lenguajes de Programación:} Python: utilizado por su rica biblioteca de paquetes de aprendizaje automático, incluyendo TensorFlow y Keras para la construcción y entrenamiento del modelo.
     \item \textbf{Frameworks de Aprendizaje Profundo:} TensorFlow y Keras proporcionan las funcionalidades necesarias para diseñar, entrenar y validar modelos de aprendizaje profundo con alta eficiencia y flexibilidad.
     \item \textbf{Técnicas de Preprocesamiento:} Herramientas para la normalización de imágenes, el aumento de datos, y el balanceo de clases serán utilizadas para preparar el dataset para el entrenamiento del modelo.
     \item \textbf{Optimización y Regularización:} Se integrarán técnicas como el ajuste dinámico del learning rate y la regularización L1 y L2 para optimizar el rendimiento del modelo y prevenir el sobre-ajuste.
     \item \textbf{Hardware y Recursos Computacionales:} Se utilizó Google Collab para acelerar el proceso de entrenamiento del modelo, permitiendo la experimentación con diferentes híper-parámetros y arquitecturas de forma eficiente.
 \end{itemize}
 
+\section*{Implementación del modelo}
+\subsection*{Hiperparámetros y configuración}
+
+\begin{enumerate}
+   \item Modelo Base: EfficientNetB1 con pesos de ImageNet.
+   \item Tasa de Aprendizaje Inicial: $0.001$.
+   \item Regularizadores: L2 con $\lambda=0.016$ y L1 con $\lambda = 0.006$.
+   \item Tasa de Dropout: 45\%.
+   \item Epochs: $40$
+   \item Callback: Incluye el LRA con parámetros específicos de paciencia, umbral, factor de reducción, y control de \textit{dwell}.
+\end{enumerate}
+
 \subsection{Aumento y división de datos}
 
-Para la carga y procesamiento de imágenes se utilizó la clase ImageDataGenerator de Keras \brackcite{img_gen}. Esta clase es una parte integral de la biblioteca Keras y proporciona una forma eficiente de manipular imágenes para tareas de aprendizaje automático. Su principal función es facilitar la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
+Para la carga y procesamiento de imágenes se utilizó la clase \textit{ImageDataGenerator} de Keras \brackcite{img_gen}. Esta clase es una parte integral de la biblioteca Keras y proporciona una forma eficiente de manipular imágenes para tareas de aprendizaje automático. Su principal función es facilitar la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
 
 Las transformaciones aplicadas fueron las siguientes
 
@@ -40,20 +48,8 @@ Las transformaciones aplicadas fueron las siguientes
    \caption{Parámetros de aumento de datos}
    \label{tab:data_augmentation_params}
    \end{table}
-
-   \section{EfficientNetB1}
-
-   % Base del Modelo: Se utiliza EfficientNetB1 preentrenado con pesos de ImageNet, sin incluir la capa superior ($include\_top=False$), lo cual permite personalizar la red para el problema específico de detección de cáncer de piel.
-
-   % Normalización por Lotes: Una capa de normalización por lotes se añade después de la salida del modelo base. Esta técnica ayuda a mejorar la estabilidad y velocidad de entrenamiento del modelo.
-
-   % Capas Densas y Regularización: Se añade una capa densa con 256 unidades, utilizando regularizadores L2 y L1 para controlar el sobre-ajuste. La activación \textit{relu} se utiliza para introducir no linealidad.
-
-   % Dropout: Para evitar el sobreajuste, se aplica una técnica de Dropout con una tasa del 45\%.
-
-   % Capa de Salida: La capa de salida es una capa densa con una activación \textit{softmax}, adecuada para clasificación multiclase, donde el número de unidades corresponde al número de clases ($class\_count$).
-      
-   \subsection{Capas adicionales y regularización}
+     
+\section{Capas adicionales y regularización}
    
    Para ajustar el modelo de EfficientNetB1 a nuestras necesidades, se añaden capas adicionales:
    
@@ -82,16 +78,10 @@ Las transformaciones aplicadas fueron las siguientes
    Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \brackcite{adamax}. Este es una variante del conocido optimizador Adam, que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en entornos con gradientes dispersos, lo cual es común en imágenes médicas 
    
    La función de pérdida elegida es la \textit{categorical crossentropy} \brackcite{vitalflux_categorical_crossentropy}, idónea para problemas de clasificación multi-clase. Se configura el modelo para minimizarla y se rastrea la precisión como métrica principal.
-   
-   \subsection{Ajuste dinámico de la tasa de aprendizaje}
-   
-   Un componente innovador de nuestro enfoque es el uso de un Callback personalizado para el ajuste dinámico del learning rate \brackcite{lr}, basado en la precisión del entrenamiento y la pérdida de validación. Este mecanismo adapta el learning rate durante el entrenamiento, reduciéndolo si el modelo no mejora a un ritmo esperado. Este ajuste es vital en la navegación de superficies de pérdida complejas, aumentando la probabilidad de que el modelo evite mínimos locales subóptimos y converja hacia soluciones más efectivas.
 
-\section{Experimentos}
+\section{Distribución de datos}
 
 \subsection{Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}
-
-Este experimento se centra en una división de datos altamente asimétrica, con un enfoque predominante en el conjunto de entrenamiento. La técnica de \textit{dummy split} se emplea para mantener proporciones consistentes entre los conjuntos de validación y prueba. Esta metodología es relevante para evaluar el impacto de un extenso conjunto de entrenamiento en la precisión y el rendimiento del modelo.
 
    La distribución de datos fue la siguiente:
 

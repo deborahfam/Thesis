@@ -1664,6 +1664,14 @@
       \field{title}{Conjunto de datos HAM10000}
       \field{year}{2023}
     \endentry
+    \entry{lr}{misc}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.jeremyjordan.me/nn-learning-rate/}}
+      \field{title}{Tasa de aprendizaje}
+      \field{year}{2023}
+    \endentry
     \entry{img_gen}{misc}{}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
@@ -1697,19 +1705,11 @@
       \field{year}{2023}
     \endentry
     \entry{adamax}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://keras.io/api/optimizers/adamax/}}
-      \field{title}{Adamax}
-      \field{year}{2023}
-    \endentry
-    \entry{lr}{misc}{}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.jeremyjordan.me/nn-learning-rate/}}
-      \field{title}{Tasa de aprendizaje}
+      \field{howpublished}{\url{https://keras.io/api/optimizers/adamax/}}
+      \field{title}{Adamax}
       \field{year}{2023}
     \endentry
   \enddatalist
