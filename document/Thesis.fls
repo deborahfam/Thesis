@@ -1420,6 +1420,8 @@ INPUT ./MainMatter/Proposal.tex
 INPUT MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
 INPUT MainMatter/Proposal.tex
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT ./Graphics/efficientnet_performance.png
 INPUT ./Graphics/efficientnet_performance.png
 INPUT ./Graphics/efficientnet_performance.png
@@ -1487,7 +1489,6 @@ INPUT ./Graphics/confussionMatrix_p3.png
 INPUT ./Graphics/confussionMatrix_p3.png
 INPUT ./Graphics/confussionMatrix_p3.png
 INPUT ./Graphics/confussionMatrix_p3.png
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT ./Graphics/errorByClass_p1.png
 INPUT ./Graphics/errorByClass_p1.png
 INPUT ./Graphics/errorByClass_p1.png

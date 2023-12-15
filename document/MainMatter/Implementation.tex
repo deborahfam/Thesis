@@ -18,51 +18,11 @@ La implementación del modelo se llevará a cabo utilizando las siguientes herra
     \item \textbf{Hardware y Recursos Computacionales:} Se utilizó Google Collab para acelerar el proceso de entrenamiento del modelo, permitiendo la experimentación con diferentes híper-parámetros y arquitecturas de forma eficiente.
 \end{itemize}
 
-
-\section{Preparación y carga de datos}
-
-\subsection{Dataset}
-
-El dataset utilizado como medio de aprendizaje para este proyecto es HAM1000-segmentation-and-classification \brackcite{ham10000}. Este conjunto de datos, acrónimo de Human Against Machine (Humano contra máquina) con 10000 imágenes de entrenamiento, es una amplia colección de imágenes dermatoscópicas. En concreto, contiene 10015 imágenes del archivo ISIC, que inicialmente formaban parte de un conjunto de entrenamiento creado por ISIC \brackcite{tschandl2018ham10000} con la siguiente distribución.
-
-\begin{tabular}{lrr}
-   \hline
-   \textbf{Categoría Diagnóstica} & \textbf{Número de Imágenes} & \textbf{Porcentaje} \\
-   \hline
-   Melanocytic nevi               & 6705                        & 66.95\%             \\
-   Melanoma                       & 1113                        & 11.11\%             \\
-   Benign keratosis-like lesions  & 1099                        & 10.97\%             \\
-   Basal cell carcinoma           & 514                         & 5.13\%              \\
-   Actinic keratoses              & 327                         & 3.27\%              \\
-   Vascular lesions               & 142                         & 1.42\%              \\
-   Dermatofibroma                 & 115                         & 1.15\%              \\
-   \hline
-   \end{tabular}
-
-
-Los datos utilizados como medio de aprendizaje para este proyecto son imágenes y metadatos. El dataset HAM10000 contiene imágenes tomadas de varios tipos de cáncer de piel y un archivo de metadatos que contienen información relacionada con cada imagen en formato \textit{one hot encoding}. Esta una técnica de procesamiento de datos en la cual cada valor categórico se representa mediante un vector binario cuyo tamaño corresponde al número de categorías posibles. En dicho vector, todos los elementos son cero, salvo el correspondiente a la categoría del valor, que es uno \brackcite{ohe}.
-
-\subsection{Transformación de datos}
-
-Para optimizar la eficiencia del algoritmo, se procesan las imágenes realizando diversas modificaciones, que incluyen: eliminación de cabello, luces y sombras, división de canales y aplicación de un leve desenfoque.
-
-Los metadatos asociados a la clasificación, etiquetados con método mencionado, fueron convertidos a un formato \textit{categórico} \brackcite{vitalflux_categorical_crossentropy} para su procesamiento. Se define \textit{categórico} como el formato en el que a cada elemento se le asigna el nombre de una categoría como propiedad.
-
-\subsection{Modelación y división del conjunto de datos}
-
-Los datos se modelan a partir de un dataframe de Pandas \brackcite{pandas}. Estos son divididos en 3 conjuntos: Entrenamiento, Validación y Prueba, utilizando un enfoque simple de division de datos en porcentaje. Estas divisiones son necesarias para que el modelo pueda aprender y ser evaluado correctamente.
-
-Inicialmente, el conjunto de datos, fue dividido en dos subconjuntos: \textit{train}, que se destinó para el entrenamiento, y \textit{dummy}, que fue utilizado como una combinación temporal para los conjuntos de validación y prueba. Luego el segundo conjunto fue separado en \textit{valid}, destinado a la validación y \textit{test}, utilizado para las pruebas.
-
-\subsection{Generadores de datos y preprocesamiento}
-
-Uno de los principales problemas del dataset, es el desequilibrio en la representación de las clases, un problema habitual en los conjuntos de datos médicos en los que algunas enfermedades son más raras que otras. Para solucionar este problema, el conjunto de datos se equilibra meticulosamente limitando el número máximo de muestras por clase ($300$). Esto garantiza que el modelo no esté sesgado hacia las clases más comunes y pueda generalizar mejor entre varios tipos de lesiones cutáneas.
-
 \subsection{Aumento y división de datos}
 
 Para la carga y procesamiento de imágenes se utilizó la clase ImageDataGenerator de Keras \brackcite{img_gen}. Esta clase es una parte integral de la biblioteca Keras y proporciona una forma eficiente de manipular imágenes para tareas de aprendizaje automático. Su principal función es facilitar la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
 
-Se inicializa con varias transformaciones (como rotación, desplazamiento y zoom) aplicadas automáticamente a las imágenes a medida que se cargan, para devolver lotes de imágenes listos para el entrenamiento o la evaluación del modelo \brackcite{augmentation}.
+Las transformaciones aplicadas fueron las siguientes
 
 \begin{table}[ht]
    \centering
@@ -81,36 +41,31 @@ Se inicializa con varias transformaciones (como rotación, desplazamiento y zoom
    \label{tab:data_augmentation_params}
    \end{table}
 
-   \section{Diseño y entrenamiento del modelo}
+   \section{EfficientNetB1}
 
-   Se utiliza la arquitectura de red neural denominada \textit{EfficientNetB1} \brackcite{efficientnet}. Esta arquitectura forma parte de la familia EfficientNet, que está diseñada para proporcionar alta precisión mientras se mantiene un tamaño de modelo y una complejidad computacional eficientes.
-   
-   Para aprovechar los conocimientos previos y acelerar el entrenamiento, se carga el modelo \textit{EfficientNetB1} pre-entrenado con los pesos obtenidos al procesar el dataset \textit{ImageNet}. El mismo consiste en una amplia base de datos de imágenes utilizada comúnmente para entrenamiento y \textit{benchmarking} en tareas de visión por computadora. Utilizar este modelo pre-entrenado permite aprovechar las características que ya ha aprendido de este amplio conjunto de datos, facilitando su adaptación al dataset HAM10000.
-   
-   Se utiliza el \textit{EfficientNetB1} sin incluir su capa superior, con el objetivo de añadir y personalizar capas adicionales. Tras obtener la salida del modelo base, se aplica una serie de transformaciones, incluyendo normalización por lotes, una capa densa con regularizaciones, una técnica de \textit{Dropout} para prevenir el sobre-ajuste y una capa de optimización. 
-   
-   % \subsection{ImageNet}
-   
-   % ImageNet es un proyecto de base de datos visual extenso, diseñado principalmente para la investigación en reconocimiento visual de objetos. Contiene más de 14 millones de imágenes, anotadas manualmente para indicar qué objetos se muestran, y más de 20,000 categorías, cada una con cientos o miles de imágenes. Este proyecto ha sido fundamental en el avance de la visión por computadora y el aprendizaje profundo, proporcionando un recurso de datos inmenso y diverso para entrenar algoritmos de inteligencia artificial.
-   
-   % La relevancia de ImageNet para el aprendizaje profundo se puso de manifiesto con el éxito de AlexNet en el desafío ImageNet 2012 \brackcite{Pinecone2021ImageNet}, donde logró una tasa de error top-5 del 15.3\%, notablemente inferior a la de sus competidores. Este hito marcó un punto de inflexión en el campo, demostrando la viabilidad y la potencia de las redes neuronales convolucionales (CNN) cuando se combinan con unidades de procesamiento gráfico (GPU) para el entrenamiento.
-   
-   
+   % Base del Modelo: Se utiliza EfficientNetB1 preentrenado con pesos de ImageNet, sin incluir la capa superior ($include\_top=False$), lo cual permite personalizar la red para el problema específico de detección de cáncer de piel.
+
+   % Normalización por Lotes: Una capa de normalización por lotes se añade después de la salida del modelo base. Esta técnica ayuda a mejorar la estabilidad y velocidad de entrenamiento del modelo.
+
+   % Capas Densas y Regularización: Se añade una capa densa con 256 unidades, utilizando regularizadores L2 y L1 para controlar el sobre-ajuste. La activación \textit{relu} se utiliza para introducir no linealidad.
+
+   % Dropout: Para evitar el sobreajuste, se aplica una técnica de Dropout con una tasa del 45\%.
+
+   % Capa de Salida: La capa de salida es una capa densa con una activación \textit{softmax}, adecuada para clasificación multiclase, donde el número de unidades corresponde al número de clases ($class\_count$).
+      
    \subsection{Capas adicionales y regularización}
    
    Para ajustar el modelo de EfficientNetB1 a nuestras necesidades, se añaden capas adicionales:
    
-   \subsubsection{Normalización por lotes}
-   
-   Para mejorar la estabilidad y eficiencia del modelo EfficientNetB1, se incorpora una capa de Normalización por lotes. La normalización por lotes es crucial para estabilizar las \textit{activaciones} a lo largo de las capas del modelo. Al estandarizar las activaciones por lote, mejora la eficiencia del entrenamiento y permite el uso de tasas de aprendizaje más altas. Esta técnica contribuye significativamente a la regularización del modelo, reduciendo el riesgo de sobre-ajuste y facilitando un aprendizaje más rápido y estable.
+   \subsection{Normalización por lotes}
    
    Esta capa se define con un \textit{eje de normalización} establecido en $-1$, lo que indica que la normalización se aplica a lo largo del último eje en el tensor de entrada. Además, se configura un \textit{momentum} de $0.99$ y un valor de \textit{epsilon} de $0.001$. El alto valor de momentum ayuda a mantener la estabilidad de las medias y varianzas móviles a lo largo del entrenamiento, mientras que el pequeño valor de epsilon evita divisiones por cero, asegurando así cálculos numéricos estables \brackcite{regularization}.
    
-   \subsubsection{Capa densa}
+   \subsection{Capa densa}
    
    Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador \textit{L2} con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador \textit{L1} con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características \brackcite{dense}.
    
-   \subsubsection{Dropout}
+   \subsection{Dropout}
    
    En la arquitectura del modelo, se integra una capa de dropout para aumentar la robustez y prevenir el sobre-ajuste. Esta capa se configura con una tasa de desactivación del 45\% , lo que significa que, durante el entrenamiento, el 45\% de las neuronas se desactivarán aleatoriamente en cada paso. 
    
@@ -118,7 +73,7 @@ Se inicializa con varias transformaciones (como rotación, desplazamiento y zoom
    
    Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica \brackcite{dropout}.
    
-   \subsubsection{Capa de salida}
+   \subsection{Capa de salida}
    
    La capa de salida utiliza una activación \textit{softmax} para transformar las salidas del modelo en probabilidades de pertenencia a cada clase. Esto, clasifica las entradas en categorías distintas, proporcionando probabilidades para cada clase, lo cual es esencial en la clasificación multi-clase.
    
@@ -168,8 +123,6 @@ Este experimento se centra en una división de datos altamente asimétrica, con 
    
 \subsubsection*{Generadores de datos y preprocesamiento}
 
-Uno de los principales problemas del dataset, es el desequilibrio en la representación de las clases, un problema habitual en los conjuntos de datos médicos en los que algunas enfermedades son más raras que otras. Para solucionar este problema, el conjunto de datos se equilibra meticulosamente limitando el número máximo de muestras por clase ($300$). Esto garantiza que el modelo no esté sesgado hacia las clases más comunes y pueda generalizar mejor entre varios tipos de lesiones cutáneas.
-
 Se establece para este un tamaño objetivo de muestras por clase ($300$ en este caso), y se utiliza un bucle para iterar a través de cada clase única. Se realiza un re-muestreo con reemplazo para clases con un número de muestras menor al objetivo ($300$), y sin reemplazo para clases con un número igual o mayor al tamaño objetivo.
 
 \begin{table}[ht]
@@ -190,7 +143,7 @@ Se establece para este un tamaño objetivo de muestras por clase ($300$ en este 
    \end{table}
 
 
-Como se evidencia anteriormente, al separar la data en clases el conjunto se mantiene desbalanceado. Se hace necesario aplicar un método llamado \textit{Class Weighting} \brackcite{analyticsvidhya2020classweight}. Este método se refiere a la asignación de pesos diferenciados a cada clase durante el proceso de entrenamiento del modelo, con el objetivo de reforzar la señal de entrenamiento de las clases menos representadas, o sea, las clases/categorías con menos cantidad de datos:
+Como se evidencia anteriormente, al separar la data en clases el conjunto se mantiene desbalanceado. Se hace necesario aplicar un método llamado \textit{Class Weighting} para compensar este desbalanceo. Este método consiste en asignar un peso a cada clase inversamente proporcional a su frecuencia. De esta manera, las clases con menor representación tendrán un mayor peso y las clases con mayor representación tendrán un menor peso. Esto permite que el modelo se entrene de manera más equilibrada y que no se sesgue hacia las clases con mayor representación.
 
 \begin{table}[ht]
    \centering

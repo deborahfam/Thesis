@@ -11,36 +11,37 @@
 \contentsline {section}{\numberline {1.6}Relacionado con EfficientNet}{12}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Conclusión del estado del arte}{12}{section.1.7}%
 \contentsline {chapter}{\numberline {2}Propuesta de solución}{14}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Desarrollo del modelo y estrategias de optimización}{14}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Selección del modelo y transferencia de aprendizaje}{14}{subsection.2.1.1}%
-\contentsline {subsubsection}{Arquitectura del modelo EfficientNet}{14}{section*.15}%
-\contentsline {subsubsection}{EfficientNetB1}{16}{section*.17}%
-\contentsline {subsection}{\numberline {2.1.2}Preprocesamiento de datos y balanceo de clases}{16}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Arquitectura del Modelo y Regularización}{16}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Ajuste dinámico del learning rate}{16}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Diversidad en propuestas de soluciones}{17}{subsection.2.1.5}%
-\contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Enfoque de Implementación}{18}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Herramientas y Tecnologías}{18}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Preparación y carga de datos}{19}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Dataset}{19}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Transformación de datos}{20}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Modelación y división del conjunto de datos}{20}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Generadores de datos y preprocesamiento}{20}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Aumento y división de datos}{20}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Diseño y entrenamiento del modelo}{21}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Capas adicionales y regularización}{21}{subsection.3.3.1}%
-\contentsline {subsubsection}{Normalización por lotes}{21}{section*.18}%
-\contentsline {subsubsection}{Capa densa}{22}{section*.19}%
-\contentsline {subsubsection}{Dropout}{22}{section*.20}%
-\contentsline {subsubsection}{Capa de salida}{23}{section*.21}%
-\contentsline {subsection}{\numberline {3.3.2}Optimización}{23}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Ajuste dinámico de la tasa de aprendizaje}{23}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Experimentos}{23}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}{23}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}{25}{subsection.3.4.2}%
-\contentsline {chapter}{\numberline {4}Resultados}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Consideraciones Finales}{33}{section.4.1}%
-\contentsline {chapter}{Conclusiones}{35}{section*.35}%
-\contentsline {chapter}{Recomendaciones}{36}{section*.37}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{37}{chapter*.41}%
+\contentsline {section}{\numberline {2.1}Preparación y carga de datos}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Dataset}{15}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Transformación de datos}{17}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Modelación y división del conjunto de datos}{17}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Generadores de datos y preprocesamiento}{17}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Desarrollo del modelo y estrategias de optimización}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Selección del modelo y transferencia de aprendizaje}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Diseño y entrenamiento del modelo}{18}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Arquitectura del modelo EfficientNet}{18}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}EfficientNetB1}{20}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Arquitectura del Modelo y Regularización}{20}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Ajuste dinámico del learning rate}{20}{subsection.2.2.6}%
+\contentsline {section}{\numberline {2.3}Experimentos}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}{20}{subsection.2.3.1}%
+\contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Enfoque de Implementación}{22}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Herramientas y Tecnologías}{22}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Aumento y división de datos}{23}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}EfficientNetB1}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Capas adicionales y regularización}{24}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Normalización por lotes}{24}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Capa densa}{24}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Dropout}{24}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Capa de salida}{25}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Optimización}{25}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Ajuste dinámico de la tasa de aprendizaje}{25}{subsection.3.2.7}%
+\contentsline {section}{\numberline {3.3}Experimentos}{25}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}{25}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}{27}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Resultados}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Consideraciones Finales}{35}{section.4.1}%
+\contentsline {chapter}{Conclusiones}{37}{section*.30}%
+\contentsline {chapter}{Recomendaciones}{38}{section*.32}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{39}{chapter*.36}%

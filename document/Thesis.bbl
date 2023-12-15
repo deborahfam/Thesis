@@ -1436,82 +1436,6 @@
       \field{pages}{227\bibrangedash 232}
       \range{pages}{6}
     \endentry
-    \entry{tan2019efficientnet}{misc}{}
-      \name{author}{2}{}{%
-        {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
-           family={Tan},
-           familyi={T\bibinitperiod},
-           given={Mingxing},
-           giveni={M\bibinitperiod}}}%
-        {{hash=841a83a4bb5e622d6e1bde4818879016}{%
-           family={Le},
-           familyi={L\bibinitperiod},
-           given={Quoc},
-           giveni={Q\bibinitperiod}}}%
-      }
-      \strng{namehash}{3c6ed03914c0610af0050fb8a809b599}
-      \strng{fullhash}{3c6ed03914c0610af0050fb8a809b599}
-      \strng{bibnamehash}{3c6ed03914c0610af0050fb8a809b599}
-      \strng{authorbibnamehash}{3c6ed03914c0610af0050fb8a809b599}
-      \strng{authornamehash}{3c6ed03914c0610af0050fb8a809b599}
-      \strng{authorfullhash}{3c6ed03914c0610af0050fb8a809b599}
-      \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: [24 de noviembre de 2023]}
-      \field{title}{EfficientNet: Improving Accuracy and Efficiency through AutoML and Model Scaling}
-      \field{year}{2019}
-      \verb{urlraw}
-      \verb https://blog.research.google/2019/05/efficientnet-improving-accuracy-and.html
-      \endverb
-      \verb{url}
-      \verb https://blog.research.google/2019/05/efficientnet-improving-accuracy-and.html
-      \endverb
-    \endentry
-    \entry{Tan2019EfficientNetRM}{article}{}
-      \name{author}{2}{}{%
-        {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
-           family={Tan},
-           familyi={T\bibinitperiod},
-           given={Mingxing},
-           giveni={M\bibinitperiod}}}%
-        {{hash=c636f146591d51579a8119b777394878}{%
-           family={Le},
-           familyi={L\bibinitperiod},
-           given={Quoc\bibnamedelima V.},
-           giveni={Q\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
-      }
-      \strng{namehash}{d029e8131f7a0bef056d7edc726f1529}
-      \strng{fullhash}{d029e8131f7a0bef056d7edc726f1529}
-      \strng{bibnamehash}{d029e8131f7a0bef056d7edc726f1529}
-      \strng{authorbibnamehash}{d029e8131f7a0bef056d7edc726f1529}
-      \strng{authornamehash}{d029e8131f7a0bef056d7edc726f1529}
-      \strng{authorfullhash}{d029e8131f7a0bef056d7edc726f1529}
-      \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{ar5iv}
-      \field{title}{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}
-      \field{year}{2019}
-      \verb{urlraw}
-      \verb https://ar5iv.labs.arxiv.org/html/1905.11946
-      \endverb
-      \verb{url}
-      \verb https://ar5iv.labs.arxiv.org/html/1905.11946
-      \endverb
-    \endentry
-    \entry{ham10000}{misc}{}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000}}
-      \field{title}{Conjunto de datos HAM10000}
-      \field{year}{2023}
-    \endentry
     \entry{tschandl2018ham10000}{article}{}
       \name{author}{3}{}{%
         {{hash=f4c4ddb3f515e910b4e84077d32c8bcc}{%
@@ -1595,6 +1519,151 @@
       \field{title}{Dataframes de Pandas}
       \field{year}{2023}
     \endentry
+    \entry{analyticsvidhya2020classweight}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3b86256e9c2117ad2222385883bae0dd}{%
+           family={Vidhya},
+           familyi={V\bibinitperiod},
+           given={Analytics},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b86256e9c2117ad2222385883bae0dd}
+      \strng{fullhash}{3b86256e9c2117ad2222385883bae0dd}
+      \strng{bibnamehash}{3b86256e9c2117ad2222385883bae0dd}
+      \strng{authorbibnamehash}{3b86256e9c2117ad2222385883bae0dd}
+      \strng{authornamehash}{3b86256e9c2117ad2222385883bae0dd}
+      \strng{authorfullhash}{3b86256e9c2117ad2222385883bae0dd}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{Online; accessed 16-November-2023}
+      \field{title}{How to Improve Class Imbalance using Class Weights in ML?}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/
+      \endverb
+      \verb{url}
+      \verb https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/
+      \endverb
+    \endentry
+    \entry{augmentation}{misc}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://machinelearningmastery.com/image-augmentation-deep-learning-keras/}}
+      \field{title}{Aumentación de datos}
+      \field{year}{2023}
+    \endentry
+    \entry{efficientnet}{misc}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://towardsdatascience.com/complete-architectural-details-of-efficientnets-7e50bc115fe0}}
+      \field{title}{EfficientNetB1}
+    \endentry
+    \entry{tan2019efficientnet}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Mingxing},
+           giveni={M\bibinitperiod}}}%
+        {{hash=841a83a4bb5e622d6e1bde4818879016}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{fullhash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{bibnamehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{authorbibnamehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{authornamehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{authorfullhash}{3c6ed03914c0610af0050fb8a809b599}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: [24 de noviembre de 2023]}
+      \field{title}{EfficientNet: Improving Accuracy and Efficiency through AutoML and Model Scaling}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://blog.research.google/2019/05/efficientnet-improving-accuracy-and.html
+      \endverb
+      \verb{url}
+      \verb https://blog.research.google/2019/05/efficientnet-improving-accuracy-and.html
+      \endverb
+    \endentry
+    \entry{Pinecone2021ImageNet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f6af38c920e468b8adbdd5793a09b4ca}{%
+           family={Pinecone},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f6af38c920e468b8adbdd5793a09b4ca}
+      \strng{fullhash}{f6af38c920e468b8adbdd5793a09b4ca}
+      \strng{bibnamehash}{f6af38c920e468b8adbdd5793a09b4ca}
+      \strng{authorbibnamehash}{f6af38c920e468b8adbdd5793a09b4ca}
+      \strng{authornamehash}{f6af38c920e468b8adbdd5793a09b4ca}
+      \strng{authorfullhash}{f6af38c920e468b8adbdd5793a09b4ca}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ImageNet - The Dataset that Transformed Image Classification}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.pinecone.io/learn/series/image-search/imagenet/
+      \endverb
+      \verb{url}
+      \verb https://www.pinecone.io/learn/series/image-search/imagenet/
+      \endverb
+    \endentry
+    \entry{Tan2019EfficientNetRM}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Mingxing},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c636f146591d51579a8119b777394878}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc\bibnamedelima V.},
+           giveni={Q\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{fullhash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{bibnamehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authorbibnamehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authornamehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authorfullhash}{d029e8131f7a0bef056d7edc726f1529}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ar5iv}
+      \field{title}{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://ar5iv.labs.arxiv.org/html/1905.11946
+      \endverb
+      \verb{url}
+      \verb https://ar5iv.labs.arxiv.org/html/1905.11946
+      \endverb
+    \endentry
+    \entry{ham10000}{misc}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000}}
+      \field{title}{Conjunto de datos HAM10000}
+      \field{year}{2023}
+    \endentry
     \entry{img_gen}{misc}{}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
@@ -1602,21 +1671,6 @@
       \field{howpublished}{\url{https://keras.io/api/preprocessing/image/}}
       \field{title}{ImageDataGenerator}
       \field{year}{2023}
-    \endentry
-    \entry{augmentation}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://machinelearningmastery.com/image-augmentation-deep-learning-keras/}}
-      \field{title}{Aumentación de datos}
-      \field{year}{2023}
-    \endentry
-    \entry{efficientnet}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://towardsdatascience.com/complete-architectural-details-of-efficientnets-7e50bc115fe0}}
-      \field{title}{EfficientNetB1}
     \endentry
     \entry{regularization}{misc}{}
       \field{sortinit}{6}
@@ -1651,41 +1705,12 @@
       \field{year}{2023}
     \endentry
     \entry{lr}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.jeremyjordan.me/nn-learning-rate/}}
       \field{title}{Tasa de aprendizaje}
       \field{year}{2023}
-    \endentry
-    \entry{analyticsvidhya2020classweight}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=3b86256e9c2117ad2222385883bae0dd}{%
-           family={Vidhya},
-           familyi={V\bibinitperiod},
-           given={Analytics},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{3b86256e9c2117ad2222385883bae0dd}
-      \strng{fullhash}{3b86256e9c2117ad2222385883bae0dd}
-      \strng{bibnamehash}{3b86256e9c2117ad2222385883bae0dd}
-      \strng{authorbibnamehash}{3b86256e9c2117ad2222385883bae0dd}
-      \strng{authornamehash}{3b86256e9c2117ad2222385883bae0dd}
-      \strng{authorfullhash}{3b86256e9c2117ad2222385883bae0dd}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{10}
-      \field{note}{Online; accessed 16-November-2023}
-      \field{title}{How to Improve Class Imbalance using Class Weights in ML?}
-      \field{year}{2020}
-      \verb{urlraw}
-      \verb https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/
-      \endverb
-      \verb{url}
-      \verb https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/
-      \endverb
     \endentry
   \enddatalist
 \endrefsection
