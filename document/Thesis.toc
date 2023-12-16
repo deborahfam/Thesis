@@ -26,18 +26,17 @@
 \contentsline {subsection}{\numberline {2.3.2}Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}{22}{subsection.2.3.2}%
 \contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{23}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Herramientas y Tecnologías}{23}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Aumento y división de datos}{24}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Capas adicionales y regularización}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Capas adicionales y regularización}{25}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Normalización por lotes}{25}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Capa densa}{25}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Dropout}{25}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Capa de salida}{25}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Optimización}{26}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Distribución de datos}{26}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}{26}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}{28}{subsection.3.3.2}%
-\contentsline {chapter}{\numberline {4}Resultados}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Consideraciones Finales}{36}{section.4.1}%
-\contentsline {chapter}{Conclusiones}{38}{section*.33}%
-\contentsline {chapter}{Recomendaciones}{39}{section*.35}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{40}{chapter*.39}%
+\contentsline {subsection}{\numberline {3.2.2}Capa densa}{26}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Dropout}{26}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Capa de salida}{26}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Optimización}{27}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Distribución de datos}{27}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Experimento 1: Evaluación de la división asimétrica de datos}{27}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Experimento 2: Análisis de la estratificación de datos}{28}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Resultados}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Consideraciones Finales}{37}{section.4.1}%
+\contentsline {chapter}{Conclusiones}{39}{section*.34}%
+\contentsline {chapter}{Recomendaciones}{40}{section*.36}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{chapter*.40}%

@@ -13,22 +13,11 @@ La implementación del modelo se llevó a cabo utilizando las siguientes herrami
     \item \textbf{Optimización y Regularización:} Se integrarán técnicas como el ajuste dinámico del learning rate y la regularización L1 y L2 para optimizar el rendimiento del modelo y prevenir el sobre-ajuste.
     \item \textbf{Hardware y Recursos Computacionales:} Se utilizó Google Collab para acelerar el proceso de entrenamiento del modelo, permitiendo la experimentación con diferentes híper-parámetros y arquitecturas de forma eficiente.
 \end{itemize}
+\subsection*{Carga, visualización y transformación de datos}
 
-\section*{Implementación del modelo}
-\subsection*{Hiperparámetros y configuración}
+Lo primero realizado fue la importación y transformación los datos para el modelo. En el proceso de importación, para la carga de imágenes utilizamos \textbf{plt.imread} de la librería Matplotlib y \textbf{pd.read\_csv} de la librería Pandas para cargar los metadatos. Para la división del conjunto de datos en entrenamiento, validación y prueba se utilizó la función \textbf{train\_test\_split} de la librería Scikit-Learn con las variables \textbf{random\_state=123} y \textbf{shuffle=True}. Estas variables aseguran aleatoriedad en la división mezclando los datos antes de dividirlos y que la división sea reproducible. La división, como se expresó en capítulos anteriores es distinta en cada experimento y se especifican los parámetros utilizados luego en el capítulo.
 
-\begin{enumerate}
-   \item Modelo Base: EfficientNetB1 con pesos de ImageNet.
-   \item Tasa de Aprendizaje Inicial: $0.001$.
-   \item Regularizadores: L2 con $\lambda=0.016$ y L1 con $\lambda = 0.006$.
-   \item Tasa de Dropout: 45\%.
-   \item Epochs: $40$
-   \item Callback: Incluye el LRA con parámetros específicos de paciencia, umbral, factor de reducción, y control de \textit{dwell}.
-\end{enumerate}
-
-\subsection{Aumento y división de datos}
-
-Para la carga y procesamiento de imágenes se utilizó la clase \textit{ImageDataGenerator} de Keras \brackcite{img_gen}. Esta clase es una parte integral de la biblioteca Keras y proporciona una forma eficiente de manipular imágenes para tareas de aprendizaje automático. Su principal función es facilitar la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
+Para la carga y procesamiento de imágenes se utilizó la clase \textbf{ImageDataGenerator} de Keras \brackcite{img_gen}. Esta clase facilita la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
 
 Las transformaciones aplicadas fueron las siguientes
 
@@ -49,6 +38,42 @@ Las transformaciones aplicadas fueron las siguientes
    \label{tab:data_augmentation_params}
    \end{table}
      
+
+\section*{Preparación del modelo}
+
+El código siguiente detalla la creación y compilación de un modelo de aprendizaje profundo utilizando Keras, una API de alto nivel para construir y entrenar modelos en TensorFlow. El modelo se basa en EfficientNetB1. Para la compilación del mismo se hace uso de \textbf{model.compile}, con un callback personalizado para ajustar la tasa de aprendizaje y para entrenar utilizamos el \textbf{model.fit}.
+
+\begin{lstlisting}[language=Python]
+   model_name='EfficientNetB1'
+   base_model=tf.keras.applications.EfficientNetB1(include_top=False, weights="imagenet",input_shape=img_shape, pooling='max')
+
+   x=base_model.output
+   x=keras.layers.BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001 )(x)
+   x = Dense(256, kernel_regularizer = regularizers.l2(l = 0.016),activity_regularizer=regularizers.l1(0.006),
+                  bias_regularizer=regularizers.l1(0.006) ,activation='relu')(x)
+   x=Dropout(rate=.45, seed=123)(x)
+
+   output=Dense(class_count, activation='softmax')(x)
+   model=Model(inputs=base_model.input, outputs=output)
+   model.compile(Adamax(learning_rate=.001), loss='categorical_crossentropy', metrics=['accuracy'])
+\end{lstlisting}
+
+\subsection*{Hiperparámetros y configuración}
+
+\begin{itemize}
+   \item \textbf{Modelo Base:} EfficientNetB1 con pesos de ImageNet.
+   \item \textbf{Tasa de aprendizaje inicial:} $0.001$.
+   \item \textbf{Regularizadores:} L2 con $\lambda=0.016$ y L1 con $\lambda = 0.006$.
+   \item \textbf{Tasa de dropout:} 45\%.
+   \item \textbf{Dimensiones de las imágenes:} $224x224x3$
+   \item \textbf{Epochs:} $40$
+   \item \textbf{Optimizador:} Adamax
+   \item \textbf{Métrica inicial:} accuracy
+   \item \textbf{Callback:} Incluye el LRA con parámetros específicos de paciencia, umbral, factor de reducción, y control de \textit{dwell}.
+\end{itemize}
+
+
+
 \section{Capas adicionales y regularización}
    
    Para ajustar el modelo de EfficientNetB1 a nuestras necesidades, se añaden capas adicionales:
@@ -81,23 +106,31 @@ Las transformaciones aplicadas fueron las siguientes
 
 \section{Distribución de datos}
 
-\subsection{Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}
+\subsection{Experimento 1: Evaluación de la división asimétrica de datos}
 
-   La distribución de datos fue la siguiente:
+En este experimento de las herramientas que se utiliza para hacer la división se hace uso del \textit{dummy split}  para mantener la proporción deseada entre validación y prueba. La distribución de datos fue la siguiente:
 
-   \begin{enumerate}
-      \item El 95\% de los datos se destinan al conjunto de entrenamiento.
-      \item El 2.5\% de los datos restantes se destinan al conjunto de validación.
-      \item El 2.5\% restante se destina al conjunto de pruebas.
-   \end{enumerate}
-   
-   Además se mezclan aleatoriamente los datos y se utiliza una variable fija para garantizar que la división sea reproducible. Aquí se utiliza \textit{dummy split} para mantener la proporción deseada entre validación y prueba. Por lo que este experimento tiene $9514$ datos de entrenamiento, $251$ de test y $250$ de validación.
+\begin{table}[ht]
+   \centering
+   \begin{tabular}{lcc}
+   \hline
+   \textbf{Diagnostic category} & \textbf{Porcentaje} & \textbf{Cantidad de datos} \\
+   \hline
+   Entrenamiento       & 95\% & $9514$ \\
+   Validación      & 2.5\% & $251$  \\
+   Prueba      & 2.5\% & $251$  \\ \hline
+   \end{tabular}
+   \caption{Distribución de los conjuntos de entrenamiento, validación y prueba}
+   \label{table:data_distribution_e1}
+   \end{table}
+
+   Por lo que la division de datos por clase quedaría de la siguiente forma:
 
    \begin{table}[ht]
       \centering
       \begin{tabular}{lccc}
       \hline
-      \textbf{Diagnostic category} & \textbf{Training} & \textbf{Validation} & \textbf{Testing} \\
+      \textbf{Diagnostic category} & \textbf{Entrenamiento} & \textbf{Validación} & \textbf{Prueba} \\
       \hline
       NV       & 300 & 158 & 163 \\
       MEL      & 300 & 25  & 35  \\
@@ -153,20 +186,25 @@ Como se evidencia anteriormente, al separar la data en clases el conjunto se man
    \end{table}
 
 
-\subsection{Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}
+\subsection{Experimento 2: Análisis de la estratificación de datos}
 
-Descripción: Este experimento explora la estratificación de datos para mantener una distribución uniforme de etiquetas en cada conjunto de datos. La proporción de los conjuntos de datos es más equilibrada en comparación con el Experimento 1, lo que ofrece insights sobre la importancia de la distribución equitativa de datos en el entrenamiento y evaluación de modelos.
+Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución de etiquetas \textit{label} en cada conjunto. Se calcula la proporción del conjunto de prueba sobre la suma del conjunto de test y el de validación. La distribución de datos fue la siguiente:
 
-La distribución de datos fue la siguiente:
+   \begin{table}[ht]
+      \centering
+      \begin{tabular}{lcc}
+      \hline
+      \textbf{Diagnostic category} & \textbf{Porcentaje} & \textbf{Cantidad de datos} \\
+      \hline
+      Entrenamiento       & 70\% &  $7010$ \\
+      Validación      & 15\% & $1502$  \\
+      Prueba      & 15\% & $1503$  \\ \hline
+      \end{tabular}
+      \caption{Distribución de los conjuntos de entrenamiento, validación y prueba}
+      \label{table:data_distribution_e1}
+      \end{table}
 
-   \begin{enumerate}
-      \item El 70\% de los datos se destinan al conjunto de entrenamiento.
-      \item El 15\% de los datos restantes se destinan al conjunto de validación.
-      \item El 15\% restante se destina al conjunto de pruebas.
-   \end{enumerate}
-   
-Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución de etiquetas \textit{label} en cada conjunto. Se calcula la proporción del conjunto de prueba sobre la suma del conjunto de test y el de validación.
-
+Luego este quedaría distribuido en datos de entrenamiento, test y  validación por clase de la siguiente forma:
    \begin{table}[ht]
       \centering
       \begin{tabular}{lccc}
@@ -185,10 +223,7 @@ Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución 
       \caption{Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación}
       \label{tab:train_test_validate_e2}
       \end{table}
-      
-
-Luego este quedaría distribuido en $7010$ datos de entrenamiento, $1503$ de test y $1502$ de validación.
-
+ 
 \subsubsection*{Generadores de datos y preprocesamiento}
 
 Se establece también un tamaño objetivo de muestras por clase ($500$). Se utiliza la función \textit{groupby} para agrupar el dataFrame por la etiqueta de clase. Se itera sobre cada grupo, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado.
