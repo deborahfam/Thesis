@@ -18,11 +18,7 @@ Aunque ya existen algoritmos eficientes para la clasificación de melanomas, una
 
 \section*{Antecedentes}
 
-El desarrollo de las Redes Neuronales Convolucionales (CNN) ha sido fundamental para la identificación de características en imágenes médicas, una base sobre la cual se construye la motivación actual para aplicar ML en la dermatología. Su uso en medicina ha demostrado ser eficaz para capturar patrones específicos en datos de imágenes con alta precisión (\brackcite{unal2023doc}). Por ejemplo, Brinker et al. \brackcite{brinker2018skin} en 2018, analizan 13 artículos sobre la aplicación de CNN en la clasificación de lesiones cutáneas, resaltando su alto rendimiento y la posibilidad de reutilizar CNNs pre-entrenadas. En 2020, Ameri et al. \brackcite{ameri2020deep} hacen un avance significativo al implementar una CNN profunda para procesar imágenes dermatoscópicas directamente, lo que mejora la eficacia del proceso de clasificación. Más recientemente, en 2022, Shetty et al. \brackcite{shetty2022skin} logran una precisión del 95,18\% en la clasificación de lesiones cutáneas utilizando CNN, demostrando su superioridad sobre otros algoritmos de ML.
-
-En otras investigaciones enfocadas al diagnóstico mejorado de lesiones pigmentadas, Tajerian et al. (2023) \brackcite{tajerian2023design} presentan un enfoque metodológico para el diagnóstico de lesiones cutáneas pigmentadas utilizando CNN, logrando una alta puntuación F1 de 0,93. En 2021 Adegun et al. \brackcite{adegun2021deep} recoge un conjunto de estudios enfocados en el desarrollo de algoritmos con CNN para la detección de cáncer de piel. Estos incluyen enfoques de segmentación y clasificación, arquitecturas de auto-encoder-decoder, y la implementación de redes pre-entrenadas como AlexNet y VGG16.
-
-Las universidades han desempeñado un papel crucial en la investigación y el desarrollo de tecnologías avanzadas en el campo de la medicina, especialmente en la detección y tratamiento del cáncer. Estos centros académicos no solo proporcionan una base sólida para la investigación teórica, sino que también fomentan la innovación práctica mediante el uso de tecnologías emergentes como el aprendizaje automático y la inteligencia artificial. En particular, nuestra universidad ha contribuido significativamente a este campo.
+El desarrollo de las Redes Neuronales Convolucionales (CNN) ha sido fundamental para la identificación de características en imágenes médicas, una base sobre la cual se construye la motivación actual para aplicar ML en la dermatología. Su uso en medicina ha demostrado ser eficaz para capturar patrones específicos en datos de imágenes con alta precisión (\brackcite{unal2023doc}).
 
 Las universidades han desempeñado un papel crucial en la investigación y el desarrollo de tecnologías avanzadas en el campo de la medicina, especialmente en la detección y tratamiento del cáncer. Estos centros académicos no solo proporcionan una base sólida para la investigación teórica, sino que también fomentan la innovación práctica mediante el uso de tecnologías emergentes como el aprendizaje automático y la inteligencia artificial. En particular, nuestra universidad ha contribuido significativamente a este campo.
 
@@ -32,7 +28,7 @@ Complementando esta línea de investigación, la tesis reciente de Claudia Olava
 
 \section*{Problemática}
 
-Es entonces notorio que las investigaciones mencionadas utilizan técnicas de machine learning para llevar a cabo el proceso de clasificación. Esto tiene sentido dado que la problemática central en la detección del cáncer de piel radica en la necesidad de mejorar la precisión y rapidez del diagnóstico. Tradicionalmente, esta tarea recae en dermatólogos y el diagnóstico de melanoma, que depende de la evaluación clínica y los hallazgos clásicos en la biopsia de la lesión. Pero la inspección visual puede no ser suficiente para diferenciar lesiones benignas de tumores malignos, y aunque la biopsia de piel es el estándar de oro, es un procedimiento invasivo con limitaciones. Además, la experiencia, el costo y la disponibilidad son desafíos para el uso generalizado de herramientas no invasivas en el diagnóstico clínico \brackcite{das2021machine}.
+A pesar de los avances significativos en el campo del aprendizaje profundo y su aplicación en la detección y tratamiento del cáncer, como se evidencia en las investigaciones realizadas, aún persisten desafíos fundamentales. Uno de los principales retos es la necesidad de mejorar aún más la precisión y la eficiencia en el diagnóstico del cáncer de piel. Aunque los modelos actuales, como los expuestos en los antecedentes, han mostrado resultados prometedores, la diferenciación precisa entre diversas formas de cáncer de piel sigue siendo compleja, especialmente en etapas tempranas o en casos atípicos. Además, la mayoría de los modelos existentes se centran en la clasificación de melanomas, dejando de lado otras formas de cáncer de piel. Dado esto nos suge la siguiente pregunta \textbf{¿Es posible desarrollar un modelo avanzado de aprendizaje profundo que mejore significativamente la precisión y eficiencia en el diagnóstico de diversas formas de cáncer de piel, incluyendo tanto melanomas como otros tipos menos comunes, especialmente en etapas tempranas o en casos atípicos?} Se supone que mediante la implementación de técnicas avanzadas de aprendizaje profundo y el análisis de un conjunto de datos más amplio y diversificado, se puede desarrollar un modelo que no solo clasifique con mayor precisión los melanomas, sino que también sea eficiente en la identificación de otras formas de cáncer de piel. Este modelo podría superar las limitaciones actuales y proporcionar un diagnóstico más preciso y temprano, lo que resultaría en un tratamiento más efectivo y una mejor tasa de supervivencia para los pacientes. Por lo tanto, el desarrollo de un modelo capaz de clasificar varios tipos de cáncer de piel y generalizar entre ellos es un objetivo crucial. Esto ampliaría el alcance de las imágenes dermatológicas procesables, mejorando potencialmente la precisión en la detección y el tratamiento.
 
 \section*{Objetivos}
 
@@ -43,13 +39,10 @@ Entre los objetivos específicos del proyecto se encuentran:
 \begin{enumerate}
     \item Estudiar el estado del arte sobre las técnicas empleadas en el diagnóstico de imágenes dermatológicas y su efectividad.
     \item Crear un modelo de \textit{deep learning} que dado un conjunto de imágenes de cáncer de piel clasifique el tipo al que pertenecen.
-    \item Decidir mediante un algoritmo de machine learning la mejor distribución de datos para entrenamiento del modelo e implementar mejoras potenciales al modelo e hiperparámetros para mejor precisión del mismo.
+    \item Decidir mediante una técnica de ML la mejor distribución de datos para entrenamiento del modelo 
+    \item implementar mejoras potenciales al modelo e hiperparámetros para aumentar la precisión y generalización del mismo.
     \item Implementar técnicas de validación para evaluar la precisión del modelo.
 \end{enumerate}
-
-\section*{Contribuciones}
-
-La metodología propuesta podría contribuir al desarrollo de un sistema de clasificación de imágenes de cáncer de piel más preciso, para luego ser utilizado en la práctica clínica en el diagnóstico de cáncer de piel. De esta forma podrían extenderse los algoritmos de clasificación existentes para el análisis de estos datos. 
 
 \section*{Estructura de la tesis}
 

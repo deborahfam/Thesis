@@ -1,23 +1,81 @@
 \chapter{Detalles de implementación y experimentos}\label{chapter:implementation}
 
-Este capítulo presenta los métodos, técnicas, detalles e hiperparámetros utilizados en la implementación general del modelo y especifica de cada experimento.
+Este capítulo presenta los métodos, técnicas, detalles e hiperparámetros utilizados en la implementación general del modelo y específica de cada experimento.
 
-\section{Herramientas y Tecnologías}
+\section*{Configuraciones generales}
 
-La implementación del modelo se llevó a cabo utilizando las siguientes herramientas:
+El código desarrollado en la implementación de este modelo en púbico y se puede descargar en github en el repositorio \href{https://github.com/deborahfam/Thesis}{github.com/deborahfam/Thesis} en la carpeta llamada \textit{pipelines}. Cada pipeline es un archivo \textit{.ipynb}. Adelante se describen herramientas y tecnologías que fueron utilizadas en el proyecto:
+
+\section*{Herramientas y Tecnologías}
 
 \begin{itemize}
-    \item \textbf{Lenguajes de Programación:} Python: utilizado por su rica biblioteca de paquetes de aprendizaje automático, incluyendo TensorFlow y Keras para la construcción y entrenamiento del modelo.
-    \item \textbf{Frameworks de Aprendizaje Profundo:} TensorFlow y Keras proporcionan las funcionalidades necesarias para diseñar, entrenar y validar modelos de aprendizaje profundo con alta eficiencia y flexibilidad.
-    \item \textbf{Técnicas de Preprocesamiento:} Herramientas para la normalización de imágenes, el aumento de datos, y el balanceo de clases serán utilizadas para preparar el dataset para el entrenamiento del modelo.
-    \item \textbf{Optimización y Regularización:} Se integrarán técnicas como el ajuste dinámico del learning rate y la regularización L1 y L2 para optimizar el rendimiento del modelo y prevenir el sobre-ajuste.
-    \item \textbf{Hardware y Recursos Computacionales:} Se utilizó Google Collab para acelerar el proceso de entrenamiento del modelo, permitiendo la experimentación con diferentes híper-parámetros y arquitecturas de forma eficiente.
+   \item \textbf{Frameworks de Desarrollo:}
+   \begin{itemize}
+       \item TensorFlow: Framework principal para la construcción y entrenamiento de modelos de machine learning y redes neuronales profundas.
+   \end{itemize}
+
+   \item \textbf{APIs y Librerías de TensorFlow:}
+   \begin{itemize}
+       \item Keras: API de alto nivel para la construcción y entrenamiento de modelos en TensorFlow.
+       \item tf.keras.layers: Conjunto de capas predefinidas para la construcción de modelos.
+       \item tf.keras.optimizers: Algoritmos de optimización como Adam y Adamax.
+       \item tf.keras.metrics: Métricas de evaluación como categorical\_crossentropy.
+       \item tf.keras.regularizers: Técnicas de regularización como L1 y L2.
+       \item tf.keras.preprocessing.image: Herramientas de preprocesamiento y aumento de imágenes.
+       \item tf.keras.models: Herramientas para la creación y carga de modelos.
+   \end{itemize}
+
+   \item \textbf{Librerías de Manipulación de Datos:}
+   \begin{itemize}
+       \item NumPy: Manejo de arrays y matrices de números n-dimensionales.
+       \item Pandas: Análisis y manipulación de datos estructurados.
+   \end{itemize}
+
+   \item \textbf{Utilidades de Sistema y Archivos:}
+   \begin{itemize}
+       \item Shutil: Operaciones de manejo de archivos.
+       \item OS: Interacción con el sistema operativo.
+   \end{itemize}
+
+   \item \textbf{Librerías de Visión por Computadora:}
+   \begin{itemize}
+       \item OpenCV (cv2): Procesamiento de imágenes y visión por computadora.
+   \end{itemize}
+
+   \item \textbf{Herramientas de Visualización de Datos:}
+   \begin{itemize}
+       \item Matplotlib: Creación de gráficos y visualizaciones.
+       \item Seaborn: Visualización de datos estadísticos.
+   \end{itemize}
+
+   \item \textbf{Librerías de Evaluación de Modelos:}
+   \begin{itemize}
+       \item Scikit-learn (sklearn): Herramientas para selección de modelos y evaluación.
+   \end{itemize}
+
+   \item \textbf{Librerías de Procesamiento de Imágenes:}
+   \begin{itemize}
+       \item Pillow (PIL): Procesamiento de imágenes para aplicaciones Python.
+   \end{itemize}
+
+   \item \textbf{Herramientas de Progreso y Medición de Tiempo:}
+   \begin{itemize}
+       \item TQDM: Barras de progreso para loops.
+       \item Time: Medición del tiempo de ejecución de código.
+   \end{itemize}
+
+   \item \textbf{Mejora de Interfaz y Presentación:}
+   \begin{itemize}
+       \item IPython: Mejoras interactivas y de visualización para Python, especialmente en cuadernos Jupyter.
+   \end{itemize}
 \end{itemize}
+
+
 \subsection*{Carga, visualización y transformación de datos}
 
-Lo primero realizado fue la importación y transformación los datos para el modelo. En el proceso de importación, para la carga de imágenes utilizamos \textbf{plt.imread} de la librería Matplotlib y \textbf{pd.read\_csv} de la librería Pandas para cargar los metadatos. Para la división del conjunto de datos en entrenamiento, validación y prueba se utilizó la función \textbf{train\_test\_split} de la librería Scikit-Learn con las variables \textbf{random\_state=123} y \textbf{shuffle=True}. Estas variables aseguran aleatoriedad en la división mezclando los datos antes de dividirlos y que la división sea reproducible. La división, como se expresó en capítulos anteriores es distinta en cada experimento y se especifican los parámetros utilizados luego en el capítulo.
+Lo primero realizado fue la importación y transformación los datos para el modelo. En el proceso de importación, para la carga de imágenes utilizamos \texttt{plt.imread} de la librería Matplotlib y \texttt{pd.read\_csv} de la librería Pandas para cargar los metadatos. Para la división del conjunto de datos en entrenamiento, validación y prueba se utilizó la función \texttt{train\_test\_split} de la librería Scikit-Learn con las variables \texttt{random\_state=123} y \texttt{shuffle=True}. Estas variables aseguran aleatoriedad en la división mezclando los datos antes de dividirlos y que la división sea reproducible. La división, como se expresó en capítulos anteriores es distinta en cada experimento y se especifican los parámetros utilizados luego en el capítulo.
 
-Para la carga y procesamiento de imágenes se utilizó la clase \textbf{ImageDataGenerator} de Keras \brackcite{img_gen}. Esta clase facilita la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
+Para la carga y procesamiento de imágenes se utilizó la clase \texttt{ImageDataGenerator} de Keras \brackcite{img_gen}. Esta clase facilita la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
 
 Las transformaciones aplicadas fueron las siguientes
 
@@ -41,7 +99,7 @@ Las transformaciones aplicadas fueron las siguientes
 
 \section*{Preparación del modelo}
 
-El código siguiente detalla la creación y compilación de un modelo de aprendizaje profundo utilizando Keras, una API de alto nivel para construir y entrenar modelos en TensorFlow. El modelo se basa en EfficientNetB1. Para la compilación del mismo se hace uso de \textbf{model.compile}, con un callback personalizado para ajustar la tasa de aprendizaje y para entrenar utilizamos el \textbf{model.fit}.
+El siguiente fragmento de código siguiente detalla la creación y compilación de un modelo de aprendizaje profundo utilizando Keras, una API de alto nivel para construir y entrenar modelos en TensorFlow. El modelo se basa en EfficientNetB1. Para la compilación del mismo se hace uso de \texttt{model.compile}, con un callback personalizado para ajustar la tasa de aprendizaje y para entrenar utilizamos el \texttt{model.fit}.
 
 \begin{lstlisting}[language=Python]
    model_name='EfficientNetB1'
@@ -58,21 +116,28 @@ El código siguiente detalla la creación y compilación de un modelo de aprendi
    model.compile(Adamax(learning_rate=.001), loss='categorical_crossentropy', metrics=['accuracy'])
 \end{lstlisting}
 
-\subsection*{Hiperparámetros y configuración}
+\subsection*{Detalles de Hiperparámetros y Configuración}
 
 \begin{itemize}
-   \item \textbf{Modelo Base:} EfficientNetB1 con pesos de ImageNet.
-   \item \textbf{Tasa de aprendizaje inicial:} $0.001$.
-   \item \textbf{Regularizadores:} L2 con $\lambda=0.016$ y L1 con $\lambda = 0.006$.
-   \item \textbf{Tasa de dropout:} 45\%.
-   \item \textbf{Dimensiones de las imágenes:} $224x224x3$
-   \item \textbf{Epochs:} $40$
-   \item \textbf{Optimizador:} Adamax
-   \item \textbf{Métrica inicial:} accuracy
-   \item \textbf{Callback:} Incluye el LRA con parámetros específicos de paciencia, umbral, factor de reducción, y control de \textit{dwell}.
+   \item \textbf{Arquitectura del Modelo:} Utilizamos EfficientNetB1 preentrenado con pesos de ImageNet como base.
+   \item \textbf{Tasa de Aprendizaje Inicial:} Establecida en $0.001$.
+   \item \textbf{Regularización:} Aplicación de regularización L2 con $\lambda = 0.016$ y regularización L1 con $\lambda = 0.006$ para los pesos y sesgos.
+   \item \textbf{Dropout:} Se implementa una tasa de dropout del 45\% para mitigar el sobre-ajuste.
+   \item \textbf{Dimensiones de la Imagen:} $224 \times 224 \times 3$.
+   \item \textbf{Optimizador:} Adamax.
+   \item \textbf{Métrica de Evaluación:} La precisión (\textit{accuracy}) se utiliza como la métrica de evaluación principal.
+   \item \textbf{Callbacks:} Se incorpora un ajuste de tasa de aprendizaje (LRA) con los siguientes parámetros
+   \item \begin{itemize}
+      \item \textbf{Epochs:} $40$.
+      \item \textbf{Patience:} 1.      
+      \item \textbf{Stop Patience:} 3.
+      \item \textbf{Threshold:}  0.9.
+      \item \textbf{Factor:} 0.5.      
+      \item \textbf{Dwell:} True
+      \item \textbf{Freeze:} False  
+      \item \textbf{Batches:} $train\_steps = (len(train_gen.labels)/batch_size)$
+   \end{itemize}
 \end{itemize}
-
-
 
 \section{Capas adicionales y regularización}
    
@@ -84,7 +149,7 @@ El código siguiente detalla la creación y compilación de un modelo de aprendi
    
    \subsection{Capa densa}
    
-   Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador \textit{L2} con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador \textit{L1} con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características \brackcite{dense}.
+   Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador L2 con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador L1 con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características \brackcite{dense}.
    
    \subsection{Dropout}
    
@@ -104,7 +169,7 @@ El código siguiente detalla la creación y compilación de un modelo de aprendi
    
    La función de pérdida elegida es la \textit{categorical crossentropy} \brackcite{vitalflux_categorical_crossentropy}, idónea para problemas de clasificación multi-clase. Se configura el modelo para minimizarla y se rastrea la precisión como métrica principal.
 
-\section{Distribución de datos}
+\section{Distribución de datos en los experimentos}
 
 \subsection{Experimento 1: Evaluación de la división asimétrica de datos}
 
@@ -146,7 +211,7 @@ En este experimento de las herramientas que se utiliza para hacer la división s
    
 \subsubsection*{Generadores de datos y preprocesamiento}
 
-Se establece para este un tamaño objetivo de muestras por clase ($300$ en este caso), y se utiliza un bucle para iterar a través de cada clase única. Se realiza un re-muestreo con reemplazo para clases con un número de muestras menor al objetivo ($300$), y sin reemplazo para clases con un número igual o mayor al tamaño objetivo.
+Se establece para este un tamaño objetivo de muestras por clase ($300$ en este caso), y se utiliza un bucle para iterar a través de cada clase única.
 
 \begin{table}[ht]
    \centering
@@ -226,23 +291,5 @@ Luego este quedaría distribuido en datos de entrenamiento, test y  validación 
  
 \subsubsection*{Generadores de datos y preprocesamiento}
 
-Se establece también un tamaño objetivo de muestras por clase ($500$). Se utiliza la función \textit{groupby} para agrupar el dataFrame por la etiqueta de clase. Se itera sobre cada grupo, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado.
-
-En este, a diferencia del primero, en cada clase se alcanza la misma cantidad de muestras, por lo que no es necesario aplicar \textit{Class Weighting}.
-
-\begin{table}[ht]
-   \centering
-   \begin{tabular}{lccc}
-   \hline
-   Diagnostic category & Sampling  \\ \hline
-   AKIEC & 500 \\
-   BCC & 500 \\
-   BKL & 500 \\
-   DF & 500 \\
-   MEL & 500 \\
-   NV & 500 \\
-   VASC & 500 \\ \hline
-   \end{tabular}
-   \caption{Distribución de muestras por categoría después del sobre-muestreo}
-   \label{tab:sampling_distribution}
-   \end{table}
+Se establece también un tamaño objetivo de muestras por clase ($500$). Se itera sobre cada clase, y se realiza un re-muestreo con reemplazo para grupos menores al tamaño deseado y sin reemplazo para los grupos que ya alcanzan o superan el tamaño deseado. 
+En este experimento, a diferencia del anterior, en cada clase se alcanza la misma cantidad de muestras, por lo que no es necesario aplicar \textit{Class Weighting}.

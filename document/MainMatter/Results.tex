@@ -167,57 +167,6 @@ El campo \textit{accuracy} muestra que la precisión mejora de 0.81 a 0.87, refl
 
 En general los experimentos demuestran resultados interesantes en la clasificación. El Experimento 2 muestra mejoras generalizadas en precisión, recall y puntuaciones F1 para la mayoría de las categorías. El soporte aumenta significativamente, lo que indica que se evaluó al modelo con más muestras, proporcionando una base más robusta para la evaluación del rendimiento. A pesar de que el soporte es mayor, lo que generalmente hace más desafiante mantener altas métricas, el Experimento 2 demuestra mejoras en las métricas en general. Este, a diferencia del 1, maneja mejor el desequilibrio de clases, lo que se refleja en una mejor diferenciación entre ciertas categorías diagnósticas, lo que es indicativo de un modelo más preciso y confiable.
 
-% \begin{table}[ht]
-%     \centering
-%     \caption{Informe de clasificación para el Experimento 1}
-%     \label{tab:classification_report_exp1}
-%     \begin{tabular}{lcccc}
-%     \hline
-%     \textbf{Categoría Diagnóstica} & \textbf{Precisión} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Soporte} \\
-%     \hline
-%     AKIEC & 0.47 & 1.00 & 0.64 & 7 \\
-%     BCC   & 0.59 & 1.00 & 0.74 & 10 \\
-%     BKL   & 0.66 & 0.63 & 0.64 & 30 \\
-%     DF    & 0.33 & 1.00 & 0.50 & 3 \\
-%     MEL   & 0.70 & 0.80 & 0.75 & 35 \\
-%     NV    & 0.99 & 0.82 & 0.90 & 163 \\
-%     VASC  & 0.60 & 1.00 & 0.75 & 3 \\
-%     \hline
-%     \textbf{Accuracy} & & & 0.81 & 251 \\
-%     \textbf{Macro Avg} & 0.62 & 0.89 & 0.70 & 251 \\
-%     \textbf{Weighted Avg} & 0.86 & 0.81 & 0.83 & 251 \\
-%     \hline
-%     \end{tabular}
-%     \end{table}
-
-% La precisión global del modelo fue del 81\%, con una media ponderada de precisión del 86\%, recall del 81\%, y una puntuación F1 del 83\%. Describir la precisión, el recall, y la puntuación F1 para cada categoría diagnóstica, destacando que 'NV' tuvo la precisión más alta (0.99) y 'AKIEC' la más baja (0.47). El recall fue perfecto (1.00) para 'AKIEC', 'BCC', 'DF', y 'VASC', lo que indica que todas las muestras verdaderas fueron identificadas correctamente, pero la precisión varió, sugiriendo un posible desequilibrio en la identificación de falsos positivos.
-    
-%     \begin{table}[ht]
-%         \centering
-%         \caption{Informe de clasificación para el Experimento 2}
-%         \label{tab:classification_report_exp2}
-%         \begin{tabular}{lcccc}
-%         \hline
-%         \textbf{Categoría Diagnóstica} & \textbf{Precisión} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Soporte} \\
-%         \hline
-%         AKIEC & 0.82 & 0.96 & 0.89 & 49 \\
-%         BCC   & 0.81 & 1.00 & 0.90 & 77 \\
-%         BKL   & 0.72 & 0.83 & 0.77 & 165 \\
-%         DF    & 0.71 & 1.00 & 0.83 & 17 \\
-%         MEL   & 0.63 & 0.85 & 0.73 & 167 \\
-%         NV    & 0.98 & 0.86 & 0.91 & 1006 \\
-%         VASC  & 0.71 & 1.00 & 0.83 & 22 \\
-%         \hline
-%         \textbf{Accuracy} & & & 0.87 & 1503 \\
-%         \textbf{Macro Avg} & 0.77 & 0.93 & 0.84 & 1503 \\
-%         \textbf{Weighted Avg} & 0.89 & 0.87 & 0.87 & 1503 \\
-%         \hline
-%         \end{tabular}
-%         \end{table}
-        
-% Resultados Generales: La precisión global del modelo fue del 87\%, con una media ponderada de precisión del 89\%, recall del 87\%, y una puntuación F1 del 87\%.
-% Resultados por Categoría Diagnóstica: Enumerar la precisión, el recall, y la puntuación F1 para cada categoría diagnóstica. Resalta que todas las categorías mejoraron en comparación con el Experimento 1, con 'NV' mostrando nuevamente la precisión más alta (0.98) y 'MEL' la más baja (0.63).
-
 \section{Consideraciones Finales}\label{subsubsec:final_considerations}
 %-----------------------------------------------------------------------------------
 
@@ -225,7 +174,7 @@ Los resultados obtenidos son prometedores y sugieren que los modelos de aprendiz
 
 Es notable además la importancia para el dataset específico utilizado (HAM10000) de un balance proporcional en el conjunto de datos, dado que se evidencia en los resultados que la desproporción entre los mismos lleva a errores de sobre-ajuste y a un peor rendimiento del modelo.
 
-\section*{Métricas}
+\section*{Anexos}
 
 \begin{table}[ht]
     \centering
@@ -256,3 +205,83 @@ Es notable además la importancia para el dataset específico utilizado (HAM1000
     \caption{Descripción de términos clave en el entrenamiento de modelos de aprendizaje automático.}
     \label{table:terminology}
     \end{table}
+
+    \begin{table}[ht]
+        \small
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Epoch} & \textbf{Loss} & \textbf{Acc} & \textbf{V Loss} & \textbf{V Acc} & \textbf{LR} & \textbf{Next LR} & \textbf{Monitor} & \textbf{Duration} \\ \hline
+        1 /40  & 9.587  & 40.581 & 8.95658 & 56.800 & 0.00100 & 0.00100 & precisión & 85.25  \\ \hline
+        2 /40  & 7.798  & 67.615 & 7.67235 & 66.800 & 0.00100 & 0.00100 & precisión & 21.72  \\ \hline
+        3 /40  & 6.884  & 79.340 & 6.96014 & 69.600 & 0.00100 & 0.00100 & precisión & 22.56  \\ \hline
+        4 /40  & 6.214  & 87.365 & 6.35865 & 71.200 & 0.00100 & 0.00100 & precisión & 25.81  \\ \hline
+        5 /40  & 5.646  & 91.690 & 5.94812 & 75.200 & 0.00100 & 0.00100 & pérdida val. & 23.08  \\ \hline
+        6 /40  & 5.172  & 92.999 & 5.44954 & 76.800 & 0.00100 & 0.00100 & pérdida val. & 23.23  \\ \hline
+        7 /40  & 4.735  & 94.479 & 5.06016 & 76.400 & 0.00100 & 0.00100 & pérdida val. & 23.19  \\ \hline
+        8 /40  & 4.334  & 96.528 & 4.73837 & 76.800 & 0.00100 & 0.00100 & pérdida val. & 22.90  \\ \hline
+        9 /40  & 3.969  & 97.211 & 4.33689 & 77.200 & 0.00100 & 0.00100 & pérdida val. & 22.74  \\ \hline
+        10 /40 & 3.631  & 98.008 & 4.15826 & 74.000 & 0.00100 & 0.00100 & pérdida val. & 22.56  \\ \hline
+        11 /40 & 3.315  & 98.406 & 3.89153 & 73.600 & 0.00100 & 0.00100 & pérdida val. & 23.11  \\ \hline
+        12 /40 & 3.044  & 98.122 & 3.45597 & 78.000 & 0.00100 & 0.00100 & pérdida val. & 22.90  \\ \hline
+        13 /40 & 2.768  & 98.976 & 3.27968 & 74.800 & 0.00100 & 0.00100 & pérdida val. & 23.01  \\ \hline
+        14 /40 & 2.530  & 98.748 & 2.96314 & 78.000 & 0.00100 & 0.00100 & pérdida val. & 22.32  \\ \hline
+        15 /40 & 2.298  & 98.862 & 2.81532 & 75.200 & 0.00100 & 0.00100 & pérdida val. & 22.32  \\ \hline
+        16 /40 & 2.097  & 99.032 & 2.58953 & 74.400 & 0.00100 & 0.00100 & pérdida val. & 25.73  \\ \hline
+        17 /40 & 1.898  & 99.431 & 2.49290 & 73.200 & 0.00100 & 0.00100 & pérdida val. & 23.25  \\ \hline
+        18 /40 & 1.721  & 99.488 & 2.28217 & 74.800 & 0.00100 & 0.00100 & pérdida val. & 22.98  \\ \hline
+        19 /40 & 1.565  & 99.659 & 2.19958 & 74.000 & 0.00100 & 0.00100 & pérdida val. & 22.36  \\ \hline
+        20 /40 & 1.411  & 99.715 & 1.95434 & 77.200 & 0.00100 & 0.00100 & pérdida val. & 22.71  \\ \hline
+        21 /40 & 1.280  & 99.829 & 1.89412 & 75.600 & 0.00100 & 0.00100 & pérdida val. & 25.82  \\ \hline
+        22 /40 & 1.169  & 99.545 & 1.74949 & 77.200 & 0.00100 & 0.00100 & pérdida val. & 23.20  \\ \hline
+        23 /40 & 1.055  & 99.829 & 1.64937 & 75.200 & 0.00100 & 0.00100 & pérdida val. & 23.06  \\ \hline
+        24 /40 & 0.944  & 99.886 & 1.54814 & 75.600 & 0.00100 & 0.00100 & pérdida val. & 22.80  \\ \hline
+        25 /40 & 0.870  & 99.488 & 1.51110 & 76.000 & 0.00100 & 0.00100 & pérdida val. & 22.87  \\ \hline
+        26 /40 & 0.793  & 99.431 & 1.55223 & 74.000 & 0.00100 & 0.00050 & pérdida val. & 22.38  \\ \hline
+        27 /40 & 0.807  & 99.659 & 1.42688 & 76.800 & 0.00050 & 0.00050 & pérdida val. & 25.70  \\ \hline
+        28 /40 & 0.765  & 99.772 & 1.35257 & 77.600 & 0.00050 & 0.00050 & pérdida val. & 23.38  \\ \hline
+        29 /40 & 0.727  & 99.659 & 1.27547 & 78.800 & 0.00050 & 0.00050 & pérdida val. & 22.97  \\ \hline
+        30 /40 & 0.682  & 99.886 & 1.25111 & 78.000 & 0.00050 & 0.00050 & pérdida val. & 22.80  \\ \hline
+        31 /40 & 0.646  & 99.943 & 1.20186 & 78.000 & 0.00050 & 0.00050 & pérdida val. & 23.36  \\ \hline
+        32 /40 & 0.619  & 99.715 & 1.22486 & 77.600 & 0.00050 & 0.00025 & pérdida val. & 23.07  \\ \hline
+        33 /40 & 0.621  & 99.829 & 1.24364 & 77.600 & 0.00025 & 0.00013 & pérdida val. & 23.57  \\ \hline
+        34 /40 & 0.627  & 99.886 & 1.24470 & 76.800 & 0.00013 & 0.00006 & pérdida val. & 23.30  \\ \hline
+        \end{tabular}
+        \caption{Resultados del entrenamiento del experimento 1}
+        \label{tab:training_results_b1}
+        \end{table}
+
+        
+        \begin{table}[ht]
+            \small
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \textbf{Epoch} & \textbf{Loss} & \textbf{Acc} & \textbf{V Loss} & \textbf{V Acc} & \textbf{LR} & \textbf{Next LR} & \textbf{Monitor} & \textbf{Duration} \\ \hline
+            1 /40  & 8.418  & 48.371 & 7.41700 & 66.911 & 0.00100 & 0.00100 & precisión & 184.55 \\ \hline
+            2 /40  & 6.362  & 69.943 & 5.81767 & 69.907 & 0.00100 & 0.00100 & precisión & 107.94 \\ \hline
+            3 /40  & 5.110  & 77.686 & 4.76153 & 72.969 & 0.00100 & 0.00100 & precisión & 106.30 \\ \hline
+            4 /40  & 4.181  & 81.371 & 3.86405 & 78.362 & 0.00100 & 0.00100 & precisión & 104.60 \\ \hline
+            5 /40  & 3.417  & 84.771 & 3.25588 & 77.097 & 0.00100 & 0.00100 & precisión & 101.90 \\ \hline
+            6 /40  & 2.777  & 87.314 & 2.70253 & 78.495 & 0.00100 & 0.00100 & precisión & 101.85 \\ \hline
+            7 /40  & 2.247  & 90.143 & 2.24392 & 80.360 & 0.00100 & 0.00100 & pérdida val. & 101.98 \\ \hline
+            8 /40  & 1.819  & 91.143 & 1.98878 & 77.364 & 0.00100 & 0.00100 & pérdida val. & 101.74 \\ \hline
+            9 /40  & 1.464  & 92.543 & 1.70207 & 77.896 & 0.00100 & 0.00100 & pérdida val. & 101.27 \\ \hline
+            10 /40 & 1.197  & 94.000 & 1.43860 & 81.225 & 0.00100 & 0.00100 & pérdida val. & 101.71 \\ \hline
+            11 /40 & 0.992  & 94.000 & 1.24007 & 81.358 & 0.00100 & 0.00100 & pérdida val. & 101.23 \\ \hline
+            12 /40 & 0.826  & 94.800 & 1.10713 & 81.625 & 0.00100 & 0.00100 & pérdida val. & 100.90 \\ \hline
+            13 /40 & 0.699  & 95.086 & 1.08394 & 79.228 & 0.00100 & 0.00100 & pérdida val. & 101.31 \\ \hline
+            14 /40 & 0.580  & 96.571 & 0.86793 & 84.021 & 0.00100 & 0.00100 & pérdida val. & 101.53 \\ \hline
+            15 /40 & 0.498  & 96.886 & 0.85960 & 83.688 & 0.00100 & 0.00100 & pérdida val. & 100.92 \\ \hline
+            16 /40 & 0.453  & 96.914 & 0.88978 & 81.025 & 0.00100 & 0.00050 & pérdida val. & 116.17 \\ \hline
+            17 /40 & 0.436  & 97.857 & 0.93461 & 79.561 & 0.00050 & 0.00025 & pérdida val. & 100.73 \\ \hline
+            18 /40 & 0.449  & 97.543 & 0.80205 & 83.755 & 0.00025 & 0.00025 & pérdida val. & 101.01 \\ \hline
+            19 /40 & 0.420  & 97.971 & 0.79843 & 84.887 & 0.00025 & 0.00025 & pérdida val. & 115.73 \\ \hline
+            20 /40 & 0.399  & 98.429 & 0.82976 & 83.888 & 0.00025 & 0.00013 & pérdida val. & 100.45 \\ \hline
+            21 /40 & 0.395  & 98.571 & 0.83847 & 83.688 & 0.00013 & 0.00006 & pérdida val. & 101.25 \\ \hline
+            22 /40 & 0.406  & 98.057 & 0.81854 & 83.955 & 0.00006 & 0.00003 & pérdida val. & 101.18 \\ \hline
+            \end{tabular}
+            \caption{Resultados del entrenamiento del experimento 2}
+            \label{tab:training_results_b2}
+            \end{table}
+            
