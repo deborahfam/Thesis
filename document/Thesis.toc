@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {2.2}Desarrollo del modelo y estrategias de optimización}{18}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Diseño y entrenamiento del modelo}{18}{subsection.2.2.1}%
 \contentsline {subsubsection}{Arquitectura del modelo EfficientNet}{18}{section*.15}%
-\contentsline {subsection}{\numberline {2.2.2}Arquitectura del Modelo y Regularización}{20}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}Arquitectura del modelo y regularización}{20}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Ajuste dinámico del learning rate}{20}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Experimentos}{21}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}{21}{subsection.2.3.1}%
@@ -37,5 +37,5 @@
 \contentsline {chapter}{\numberline {4}Resultados}{31}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Consideraciones Finales}{37}{section.4.1}%
 \contentsline {chapter}{Conclusiones}{41}{section*.35}%
-\contentsline {chapter}{Recomendaciones}{42}{section*.37}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{44}{chapter*.41}%
+\contentsline {chapter}{Recomendaciones}{43}{section*.37}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{45}{chapter*.41}%

@@ -28,20 +28,21 @@ Las $10015$ imágenes dermatoscópicas del conjunto de datos HAM10000 se recopil
 
 \begin{table}[ht]
    \centering
+   \small
    \begin{tabular}{lccc}
    \hline
-   \textbf{Categoría Diagnóstica} & \textbf{Número de Imágenes} & \textbf{Porcentaje} \\
+   \textbf{Categoría Diagnóstica} & \textbf{Cantidad} & \textbf{Porcentaje} \\
    \hline
-   Melanocytic nevi               & 6705                        & 66.95\%             \\
-   Melanoma                       & 1113                        & 11.11\%             \\
-   Benign keratosis-like lesions  & 1099                        & 10.97\%             \\
-   Basal cell carcinoma           & 514                         & 5.13\%              \\
-   Actinic keratoses              & 327                         & 3.27\%              \\
-   Vascular lesions               & 142                         & 1.42\%              \\
-   Dermatofibroma                 & 115                         & 1.15\%              \\
+   Melanocytic nevi (NV) & 6705 & 66.95\%  \\
+   Melanoma (MEL) & 1113 & 11.11\% \\
+   Benign keratosis-like lesions (BKL) & 1099 & 10.97\% \\
+   Basal cell carcinoma (BCC) & 514 & 5.13\% \\
+   Actinic Keratosis and Intraepithelial Carcinoma (AKIEC) & 327                         & 3.27\%              \\
+   Vascular lesions (VASC) & 142 & 1.42\%  \\
+   Dermatofibroma  (DF) & 115 & 1.15\% \\
    \hline
    \end{tabular}
-   \caption{Distribución de imágenes por categoría diagnóstica}
+   \caption{Distribución de imágenes por categoría diagnóstica.}
    \label{tab:ham10000_distribution}
 \end{table}   
    
@@ -67,7 +68,7 @@ Los metadatos asociados a la clasificación, etiquetados con el método menciona
       4 & $ISIC\_0024310.jpg$ & MEL \\
    \hline
    \end{tabular}
-   \caption{Datos transformados a formato categórico}
+   \caption{Datos transformados a formato categórico.}
    \label{}
 \end{table}   
 
@@ -107,7 +108,7 @@ EfficientNet comenzó con la creación de un modelo base, EfficientNet-B0, utili
    \begin{figure}[ht]%
       \begin{center}
       \includegraphics[width=1\textwidth]{./Graphics/efficientnet_performance.png}
-      \caption{Estadísticas del rendimiento de los modelos de EfficientNet}
+      \caption{Estadísticas del rendimiento de los modelos de EfficientNet.}
       \label{fig:efficientnet_performance}
       \end{center}
       \end{figure}
@@ -116,7 +117,7 @@ Los experimentos demostraron que el método de escalado compuesto mejoraba la pr
 
 En relación con el dataset HAM1000 \brackcite{ham10000}, la implementación del EfficientNetB1 puede ser particularmente beneficiosa para el análisis de datos. EfficientNetB1, entre las variantes de la serie EfficientNet, se encuentra en un punto medio en términos de complejidad y tamaño, ofreciendo un equilibrio entre precisión y eficiencia computacional. Dado que el HAM1000 es un conjunto de datos de imágenes dermatoscópicas que requiere una alta precisión en la identificación y clasificación de lesiones cutáneas, la utilización de EfficientNetB1 podría proporcionar una precisión y eficiencia aceptable en términos de recursos computacionales.
 
-\subsection{Arquitectura del Modelo y Regularización}
+\subsection{Arquitectura del modelo y regularización}
 
 Para fortalecer la arquitectura del modelo, se añadieron capas adicionales, incluyendo Dropout y regularizadores L1 y L2, esenciales para combatir el sobre-ajuste. Una capa densa personalizada fue incorporada para facilitar la clasificación precisa de múltiples tipos de tumores. La compilación del modelo se realizó con un enfoque en la clasificación multi-clase, utilizando la pérdida de entropía cruzada categórica (\textit{categorical crossentropy}) y un optimizador \textit{Adamax}.
 

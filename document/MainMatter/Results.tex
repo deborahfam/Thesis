@@ -3,11 +3,9 @@ En este capítulo se presenta un marco experimental para evaluar la efectividad 
 
 Se genera también un gráfico de barras que muestra la distribución de errores por clase en el conjunto de pruebas. Además se genera una matriz de confusión y un informe de clasificación que incluye precisión, recuperación (recall), puntuación F1 y soporte para cada clase. Al final del entrenamiento, se evalúa el modelo en el conjunto de pruebas y se obtiene la precisión del mismo. El modelo con mayor eficiencia luego de varios ajustes tuvo una eficacia cercana al 87\%.
 
-La tabla 4.1 al final del capítulo describe las métricas utilizadas para la evaluación del modelo:
+La tabla 4.1 al final del capítulo describe las métricas utilizadas para la evaluación del modelo.
 
-\section*{Pérdida y presición (loss y accuracy)}
-
-%annadir introduccion
+\section*{Pérdida y precisión (loss y accuracy)}
 
 En el primer experimento se observa que la precisión de entrenamiento aumenta con cada epoch, la pérdida de entrenamiento disminuye consistentemente y la tasa de aprendizaje permanece constante al principio y luego disminuye para afinar el entrenamiento a medida que el modelo comienza a converger, lo cual indica que el modelo esta entrenando de forma correcta. Sin embargo la división asimétrica de datos en este experimento influye en el aprendizaje del modelo. El uso de división asimétrica puede estar causando que el modelo esté sesgado hacia clases con más muestras, afectando la precisión general y la capacidad de generalizar. Esto se evidencia dado que a pesar de la disminución de la pérdida de validación y el aumento de la precisión de validación, la notable diferencia entre la precisión de entrenamiento y la precisión de validación podría indicar un potencial sobre-ajuste.
 
@@ -88,20 +86,20 @@ Las figuras 4.1 y 4.2 corresponde a la curva de aprendizaje del experimento 1 y 
 %-----------------------------------------------------------------------------------
 \section*{Estadísticas de eficacia}\label{sub:accuracy_statistic_p1}
 %-----------------------------------------------------------------------------------
-La matriz de confusión proporciona información valiosa sobre el rendimiento del modelo en relación de Actual/Predicho, en términos de su capacidad para clasificar correctamente cada una de las siete clases de cáncer de piel. La diagonal principal de la matriz representa los verdaderos positivos (TP), el número de casos en los que el modelo ha predicho correctamente la clase correspondiente. Los valores fuera de la diagonal principal indican errores de clasificación
+La matriz de confusión proporciona información valiosa sobre el rendimiento del modelo en relación de Actual/Predicho, en términos de su capacidad para clasificar correctamente cada una de las siete clases de cáncer de piel. La diagonal principal de la matriz representa los verdaderos positivos (TP), el número de casos en los que el modelo ha predicho correctamente la clase correspondiente. Los valores fuera de la diagonal principal indican errores de clasificación.
 
 \begin{figure}[ht]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./Graphics/confussionmatrix_p1.png}
-        \caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas}
+        \caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas.}
         \label{fig:confussion_matrix_p1}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./Graphics/confussionMatrix_p3.png}
-        \caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas}
+        \caption{Estadísticas de eficacia del modelo al estimar los resultados en el conjunto de pruebas.}
         \label{fig:confussion_matrix_p3}
     \end{minipage}
 \end{figure}
@@ -122,46 +120,50 @@ En las siguientes figuras se evidencia el margen de error de las clases con mas 
 \begin{figure}[ht]%
     \begin{center}
         \includegraphics[width=0.8\textwidth]{./Graphics/errorByClass_p3.png}
-            \caption{Gráfico de errores por clase en el conjunto de pruebas\label{fig:class_errors_p3}}
+            \caption{Gráfico de errores por clase en el conjunto de pruebas.\label{fig:class_errors_p3}}
     \end{center}
 \end{figure}
 
-En el caso de "NV", el número de errores del primer gráfico de barras se correlaciona con un conjunto de pruebas en el que el modelo tiene casi las mismas posibilidades de hacer una predicción correcta que de dar un falso positivo. En el segundo gráfico, a pesar del aumento de errores, el modelo tiene la misma proporción de verdaderos positivos que de falsos positivos, lo que sugiere que el rendimiento del modelo se ha mantenido constante en relación con el tamaño del conjunto de datos. MEL" y "BKL" muestran un aumento de los errores en el segundo gráfico de barras, pero también es proporcional al aumento del tamaño del conjunto de datos. La proporción de verdaderos positivos frente a falsos positivos sigue siendo la misma.
-AKIEC" presenta un número relativamente pequeño de errores en el segundo gráfico de barras, lo que puede deberse al rendimiento relativamente bueno del modelo en esta clase en el conjunto de datos más grande.
+En el caso de NV, el número de errores del primer gráfico de barras se correlaciona con un conjunto de pruebas en el que el modelo tiene casi las mismas posibilidades de hacer una predicción correcta que de dar un falso positivo. En el segundo gráfico, a pesar del aumento de errores, el modelo tiene la misma proporción de verdaderos positivos que de falsos positivos, lo que sugiere que el rendimiento del modelo se ha mantenido constante en relación con el tamaño del conjunto de datos. MEL y BKL muestran un aumento de los errores en el segundo gráfico de barras, pero también es proporcional al aumento del tamaño del conjunto de datos. La proporción de verdaderos positivos frente a falsos positivos sigue siendo la misma.
+AKIEC presenta un número relativamente pequeño de errores en el segundo gráfico de barras, lo que puede deberse al rendimiento relativamente bueno del modelo en esta clase en el conjunto de datos más grande.
 
 \section*{Informe de clasificación}
 
-La tabla siguientes proporcionan una visión cuantitativa de la precisión, el recall (sensibilidad), el puntaje F1 y el soporte (número de muestras verdaderas) (NM) para cada categoría diagnóstica evaluada. Estos indicadores de rendimiento son esenciales para comprender la capacidad del modelo para identificar correctamente cada condición, así como su confiabilidad general en un conjunto de datos diverso. La métrica de 'Accuracy' refleja la proporción general de predicciones correctas, mientras que los promedios 'Macro' y 'Weighted' proporcionan una perspectiva agregada del rendimiento del modelo, teniendo en cuenta el desequilibrio en el soporte de las clases. 
+La tabla siguiente proporcionan una visión cuantitativa de la precisión, el recall (sensibilidad), el puntaje F1 y $F_{\beta}$ y el soporte (número de muestras verdaderas) (NM) para cada categoría diagnóstica evaluada. Estos indicadores de rendimiento son esenciales para comprender la capacidad del modelo para identificar correctamente cada condición, así como su confiabilidad general en un conjunto de datos diverso. La métrica de 'Accuracy' refleja la proporción general de predicciones correctas, mientras que los promedios 'Macro' y 'Weighted' proporcionan una perspectiva agregada del rendimiento del modelo, teniendo en cuenta el desequilibrio en el soporte de las clases. 
 
 \begin{table}[ht]
     \small
     \centering
-    \caption{Informe de clasificación combinado para los Experimentos 1 y 2}
+    \caption{Informe de clasificación combinado para los Experimentos 1 y 2.}
     \label{tab:classification_report_combined}
-    \begin{tabular}{lcccccccc}
+    \begin{tabular}{lcccccccccc}
     \hline
-    & \multicolumn{4}{c}{\textbf{Experimento 1}} & \multicolumn{4}{c}{\textbf{Experimento 2}} \\
-    \cline{2-9}
-    \textbf{Categoría} & \textbf{Acc} & \textbf{Recall} & \textbf{F1-Score} & \textbf{NM} & \textbf{Acc} & \textbf{Recall} & \textbf{F1-Score} & \textbf{NM} \\
+    & \multicolumn{5}{c}{\textbf{Experimento 1}} & \multicolumn{5}{c}{\textbf{Experimento 2}} \\
+    \cline{2-10}
+    \textbf{Categoría} & \textbf{Acc} & \textbf{Recall} & \textbf{F1} & \textbf{$F_{\beta}$} & \textbf{NM} & \textbf{Acc} & \textbf{Recall} & \textbf{F1} & \textbf{$F_{\beta}$} & \textbf{NM} \\
     \hline
-    AKIEC & 0.47 & 1.00 & 0.64 & 7   & 0.82 & 0.96 & 0.89 & 49 \\
-    BCC   & 0.59 & 1.00 & 0.74 & 10  & 0.81 & 1.00 & 0.90 & 77 \\
-    BKL   & 0.66 & 0.63 & 0.64 & 30  & 0.72 & 0.83 & 0.77 & 165 \\
-    DF    & 0.33 & 1.00 & 0.50 & 3   & 0.71 & 1.00 & 0.83 & 17 \\
-    MEL   & 0.70 & 0.80 & 0.75 & 35  & 0.63 & 0.85 & 0.73 & 167 \\
-    NV    & 0.99 & 0.82 & 0.90 & 163 & 0.98 & 0.86 & 0.91 & 1006 \\
-    VASC  & 0.60 & 1.00 & 0.75 & 3   & 0.71 & 1.00 & 0.83 & 22 \\
+    AKIEC & 0.47 & 1.00 & 0.64 & 0.816 & 7   & 0.82 & 0.96 & 0.89 & 0.928  & 49 \\
+    BCC   & 0.59 & 1.00 & 0.74 & 0.878 & 10  & 0.81 & 1.00 & 0.90 &  0.955 & 77 \\
+    BKL   & 0.66 & 0.63 & 0.64 & 0.636 & 30  & 0.72 & 0.83 & 0.77 & 0.805  & 165 \\
+    DF    & 0.33 & 1.00 & 0.50 & 0.711 & 3   & 0.71 & 1.00 & 0.83 & 0.924  & 17 \\
+    MEL   & 0.70 & 0.80 & 0.75 & 0.778 & 35  & 0.63 & 0.85 & 0.73 & 0.795  & 167 \\
+    NV    & 0.99 & 0.82 & 0.90 & 0.849 & 163 & 0.98 & 0.86 & 0.91 & 0.882  & 1006 \\
+    VASC  & 0.60 & 1.00 & 0.75 & 0.882 & 3   & 0.71 & 1.00 & 0.83 & 0.924  & 22 \\
     \hline
-    \textbf{Accuracy} & & & 0.81 & 251 & & & 0.87 & 1503 \\
-    \textbf{Macro Avg} & 0.62 & 0.89 & 0.70 & 251 & 0.77 & 0.93 & 0.84 & 1503 \\
-    \textbf{Weighted Avg} & 0.86 & 0.81 & 0.83 & 251 & 0.89 & 0.87 & 0.87 & 1503 \\
+    \textbf{Acc} & & & 0.81 & & 251 & & & 0.87 & & 1503 \\
+    \textbf{M Avg} & 0.62 & 0.89 & 0.70 & & 251 & 0.77 & 0.93 & 0.84 & & 1503 \\
+    \textbf{W Avg} & 0.86 & 0.81 & 0.83 & & 251 & 0.89 & 0.87 & 0.87 & & 1503 \\
     \hline
     \end{tabular}
 \end{table}
 
-Se añadieron a la tabla 4.3 los campos \textit{Accuracy}, \textit{MacroAvg} y \textit{WeightedAvg} para un mejor análisis de los resultados. 
+Se añadieron a la tabla 4.3 los campos \textit{Accuracy}, \textit{MacroAvg}(M Avg) y \textit{WeightedAvg}(W Avg) para un mejor análisis de los resultados.
 
 El campo \textit{accuracy} muestra que la precisión mejora de 0.81 a 0.87, reflejando un aumento en la capacidad general del modelo para hacer predicciones correctas. El Macro Avg (Promedio Macro) aumento de 0.62 a 0.77 en precisión y de 0.70 a 0.84 en la puntuación F1, indicando una mejora en el rendimiento medio del modelo a través de todas las categorías. El Weighted Avg (Promedio Ponderado) muestra un incremento de 0.86 a 0.89 en precisión y de 0.83 a 0.87 en la puntuación F1, mostrando que, teniendo en cuenta el número de muestras (soporte), el rendimiento general del modelo ha mejorado.
+
+Calculamos además $F_{\beta}$. El cálculo del puntaje $F_{\beta}$ es una forma de considerar la precisión y la recuperación (\textit{recall}) en un único número, ponderando uno de estos aspectos más que el otro. En nuestro caso específico le asignamos al recobrado prioridad con respecto a la precisión, dado que en la práctica sería mas importante evitar los falsos positivos. Asignamos $\beta = 2$.
+
+En todas las categorías, el puntaje $F_{\beta}$ es mayor en el Experimento 2 que en el Experimento 1. Esto indica que este fue más exitoso en equilibrar la precisión y el recall, especialmente con un enfoque en minimizar los falsos negativos. La mejora general en el Experimento 2 confirma un mejor equilibrio en el conjunto de datos y la efectividad de esto para nuestro propósito.
 
 \section*{Observaciones generales entre los experimentos}
 
@@ -247,7 +249,7 @@ Es notable además la importancia para el dataset específico utilizado (HAM1000
         33 /40 & 0.621  & 99.829 & 1.24364 & 77.600 & 0.00025 & 0.00013 & pérdida val. & 23.57  \\ \hline
         34 /40 & 0.627  & 99.886 & 1.24470 & 76.800 & 0.00013 & 0.00006 & pérdida val. & 23.30  \\ \hline
         \end{tabular}
-        \caption{Resultados del entrenamiento del experimento 1}
+        \caption{Resultados del entrenamiento del experimento 1.}
         \label{tab:training_results_b1}
         \end{table}
 
@@ -281,7 +283,7 @@ Es notable además la importancia para el dataset específico utilizado (HAM1000
             21 /40 & 0.395  & 98.571 & 0.83847 & 83.688 & 0.00013 & 0.00006 & pérdida val. & 101.25 \\ \hline
             22 /40 & 0.406  & 98.057 & 0.81854 & 83.955 & 0.00006 & 0.00003 & pérdida val. & 101.18 \\ \hline
             \end{tabular}
-            \caption{Resultados del entrenamiento del experimento 2}
+            \caption{Resultados del entrenamiento del experimento 2.}
             \label{tab:training_results_b2}
             \end{table}
             
