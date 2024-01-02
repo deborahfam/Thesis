@@ -1,16 +1,16 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis.blg'
-[133] biber-MSWIN32:340> INFO - === 
-[202] Biber.pm:418> INFO - Reading 'Thesis.bcf'
-[378] Biber.pm:972> INFO - Found 51 citekeys in bib section 0
-[398] Biber.pm:4383> INFO - Processing section 0
-[411] Biber.pm:4574> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
-[485] bibtex.pm:1713> INFO - LaTeX decoding ...
-[558] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
-[817] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[817] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[817] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
-[856] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
-[885] bbl.pm:757> INFO - Output to Thesis.bbl
-[885] Biber.pm:130> WARN - Duplicate entry key: 'tan2019efficientnet' in file 'Bibliography.bib', skipping ...
-[885] Biber.pm:132> INFO - WARNINGS: 1
+[106] biber-MSWIN32:340> INFO - === 
+[149] Biber.pm:418> INFO - Reading 'Thesis.bcf'
+[284] Biber.pm:972> INFO - Found 52 citekeys in bib section 0
+[301] Biber.pm:4383> INFO - Processing section 0
+[313] Biber.pm:4574> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
+[388] bibtex.pm:1713> INFO - LaTeX decoding ...
+[461] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
+[697] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[697] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[697] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
+[738] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
+[768] bbl.pm:757> INFO - Output to Thesis.bbl
+[768] Biber.pm:130> WARN - Duplicate entry key: 'tan2019efficientnet' in file 'Bibliography.bib', skipping ...
+[768] Biber.pm:132> INFO - WARNINGS: 1

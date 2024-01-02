@@ -1035,6 +1035,59 @@
       \field{pages}{132\bibrangedash 146}
       \range{pages}{15}
     \endentry
+    \entry{wu2022skin}{article}{}
+      \name{author}{6}{}{%
+        {{hash=41becb741e46f02b921495250d7a9f54}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yinhao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e68812ef39031c269522ef59a77d9a06}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9239870e5ecfd48b40a2633d78f9e123}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={An},
+           giveni={A\bibinitperiod}}}%
+        {{hash=91f10a7ab11fc2439e4642e2f78eac27}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=36614ccb9d8cb625cfe591cc9c109fc2}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ruixuan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=99eaac6fa6868783c9c0ded63db05023}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Shen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{29fe78cf9d18cfb3be37421987dbc0e0}
+      \strng{fullhash}{4301645fb10f879d0c4a09e6a9491c69}
+      \strng{bibnamehash}{29fe78cf9d18cfb3be37421987dbc0e0}
+      \strng{authorbibnamehash}{29fe78cf9d18cfb3be37421987dbc0e0}
+      \strng{authornamehash}{29fe78cf9d18cfb3be37421987dbc0e0}
+      \strng{authorfullhash}{4301645fb10f879d0c4a09e6a9491c69}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Oncology}
+      \field{title}{Skin cancer classification with deep learning: a systematic review}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{893972}
+      \range{pages}{1}
+    \endentry
     \entry{brinker2018skin}{article}{}
       \name{author}{10}{}{%
         {{hash=94ca39f9ec413a9f577ab704c475140f}{%
@@ -1097,8 +1150,8 @@
       \strng{authorbibnamehash}{01b8083bbe8707fe67c8a0e83619ba4c}
       \strng{authornamehash}{01b8083bbe8707fe67c8a0e83619ba4c}
       \strng{authorfullhash}{e282b4f597b9ac294de5e22c44406c94}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of medical Internet research}
@@ -1126,8 +1179,8 @@
       \strng{authorbibnamehash}{e2bea46e7def1221b80ede0ed7756364}
       \strng{authornamehash}{e2bea46e7def1221b80ede0ed7756364}
       \strng{authorfullhash}{e2bea46e7def1221b80ede0ed7756364}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of biomedical physics \& engineering}
@@ -1180,8 +1233,8 @@
       \strng{authorbibnamehash}{dc1d1eea6adbf51bf1d5273d4e01f733}
       \strng{authornamehash}{dc1d1eea6adbf51bf1d5273d4e01f733}
       \strng{authorfullhash}{5b4218bd864247b2808426cd685a841e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific Reports}
@@ -1224,8 +1277,8 @@
       \strng{authorbibnamehash}{1afd4eef8adf7ba3e65d7320cbf2b3fb}
       \strng{authornamehash}{1afd4eef8adf7ba3e65d7320cbf2b3fb}
       \strng{authorfullhash}{e17f3741b6d90df8c77e30b659adeaa8}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Plos one}
@@ -1258,8 +1311,8 @@
       \strng{authorbibnamehash}{435f5ee185d62697aa0525c29cd0b20d}
       \strng{authornamehash}{435f5ee185d62697aa0525c29cd0b20d}
       \strng{authorfullhash}{435f5ee185d62697aa0525c29cd0b20d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Artificial Intelligence Review}
@@ -1331,8 +1384,8 @@
       \strng{authorbibnamehash}{2f3d2386f9e1739503f84ef72924feb6}
       \strng{authornamehash}{2f3d2386f9e1739503f84ef72924feb6}
       \strng{authorfullhash}{b79ff75d8b9c227f68fdc06d2d75f99d}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International journal of environmental research and public health}
@@ -1375,8 +1428,8 @@
       \strng{authorbibnamehash}{d9b5dcb4d96504687efbe4cf0863f08d}
       \strng{authornamehash}{d9b5dcb4d96504687efbe4cf0863f08d}
       \strng{authorfullhash}{fbdd190177f929624aa89c541ffa9b51}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Neuroscience Informatics}
@@ -1409,8 +1462,8 @@
       \strng{authorbibnamehash}{6d213858a127ecaf5939cf9ba104759f}
       \strng{authornamehash}{6d213858a127ecaf5939cf9ba104759f}
       \strng{authorfullhash}{6d213858a127ecaf5939cf9ba104759f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2021 IEEE 16th International Conference on Industrial and Information Systems (ICIIS)}
@@ -1446,8 +1499,8 @@
       \strng{authorbibnamehash}{54dd54ed498a10b4a63c7bd482674626}
       \strng{authornamehash}{54dd54ed498a10b4a63c7bd482674626}
       \strng{authorfullhash}{54dd54ed498a10b4a63c7bd482674626}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific data}
@@ -1459,8 +1512,8 @@
       \range{pages}{9}
     \endentry
     \entry{ohe}{misc}{}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/}}
       \field{title}{One-hot encoding}
@@ -1480,8 +1533,8 @@
       \strng{authorbibnamehash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
       \strng{authornamehash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
       \strng{authorfullhash}{e17e7dfbbc9b0b54de35a893adcdc4fd}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: [25 de noviembre de 2023]}
@@ -1495,8 +1548,8 @@
       \endverb
     \endentry
     \entry{pandas}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html}}
       \field{title}{Dataframes de Pandas}
@@ -1516,8 +1569,8 @@
       \strng{authorbibnamehash}{3b86256e9c2117ad2222385883bae0dd}
       \strng{authornamehash}{3b86256e9c2117ad2222385883bae0dd}
       \strng{authorfullhash}{3b86256e9c2117ad2222385883bae0dd}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
@@ -1532,16 +1585,16 @@
       \endverb
     \endentry
     \entry{augmentation}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://machinelearningmastery.com/image-augmentation-deep-learning-keras/}}
       \field{title}{Aumentación de datos}
       \field{year}{2023}
     \endentry
     \entry{efficientnet}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://towardsdatascience.com/complete-architectural-details-of-efficientnets-7e50bc115fe0}}
       \field{title}{EfficientNetB1}
@@ -1566,8 +1619,8 @@
       \strng{authornamehash}{3c6ed03914c0610af0050fb8a809b599}
       \strng{authorfullhash}{3c6ed03914c0610af0050fb8a809b599}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: [24 de noviembre de 2023]}
@@ -1592,8 +1645,8 @@
       \strng{authorbibnamehash}{f6af38c920e468b8adbdd5793a09b4ca}
       \strng{authornamehash}{f6af38c920e468b8adbdd5793a09b4ca}
       \strng{authorfullhash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{ImageNet - The Dataset that Transformed Image Classification}
@@ -1625,8 +1678,8 @@
       \strng{authornamehash}{d029e8131f7a0bef056d7edc726f1529}
       \strng{authorfullhash}{d029e8131f7a0bef056d7edc726f1529}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ar5iv}
@@ -1640,56 +1693,56 @@
       \endverb
     \endentry
     \entry{ham10000}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000}}
       \field{title}{Conjunto de datos HAM10000}
       \field{year}{2023}
     \endentry
     \entry{lr}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.jeremyjordan.me/nn-learning-rate/}}
       \field{title}{Tasa de aprendizaje}
       \field{year}{2023}
     \endentry
     \entry{img_gen}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://keras.io/api/preprocessing/image/}}
       \field{title}{ImageDataGenerator}
       \field{year}{2023}
     \endentry
     \entry{regularization}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://machinelearningmastery.com/how-to-reduce-overfitting-in-deep-neural-networks-with-weight-regularization-in-keras/}}
       \field{title}{Regularización}
       \field{year}{2023}
     \endentry
     \entry{dense}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://towardsdatascience.com/activated-dense-layer-intuition-and-implementation-93e090cadc34}}
       \field{title}{Capas densas}
       \field{year}{2023}
     \endentry
     \entry{dropout}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/}}
       \field{title}{Dropout}
       \field{year}{2023}
     \endentry
     \entry{adamax}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://keras.io/api/optimizers/adamax/}}
       \field{title}{Adamax}
