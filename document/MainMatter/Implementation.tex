@@ -169,6 +169,17 @@ El siguiente fragmento de código siguiente detalla la creación y compilación 
    
    La función de pérdida elegida es la \textit{categorical crossentropy} \brackcite{vitalflux_categorical_crossentropy}, idónea para problemas de clasificación multi-clase. Se configura el modelo para minimizarla y se rastrea la precisión como métrica principal.
 
+\section{Experimentos}
+
+Como se había expresado al inicio del capítulo se llevaron a cabo una serie de experimentos de los cuales analizaremos los siguientes para la distribución y normalización de datos. La metodología general para ambos experimentos coincide, en ambos se utiliza una red convolucional, EfficientNetB1 y capas adicionales.
+
+\subsection{Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}
+
+Este experimento se centra en una división de datos altamente asimétrica, con un enfoque predominante en el conjunto de entrenamiento. La técnica de \textit{dummy split} se emplea para mantener proporciones consistentes entre los conjuntos de validación y prueba. A esta división se le aplica luego un determinado peso para que el algoritmo preste especial atención a las clases menos representadas.
+
+\subsection{Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}
+
+Este experimento explora la estratificación de datos para mantener una distribución uniforme de etiquetas en cada conjunto de datos. La proporción de los conjuntos de datos es más equilibrada en comparación con el Experimento 1, lo que ofrece \textit{insights} sobre la importancia de la distribución equitativa de datos en el entrenamiento y evaluación de modelos.
 \section{Distribución de datos en los experimentos}
 
 \subsection{Experimento 1: Evaluación de la división asimétrica de datos}

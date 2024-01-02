@@ -46,8 +46,8 @@
       \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
       \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
       \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{nature}
@@ -82,8 +82,8 @@
       \strng{authorbibnamehash}{dd1cf37f77546eba5f478e1defb71ff1}
       \strng{authornamehash}{dd1cf37f77546eba5f478e1defb71ff1}
       \strng{authorfullhash}{dd1cf37f77546eba5f478e1defb71ff1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Foundations and trends{®} in signal processing}
@@ -121,8 +121,8 @@
       \strng{authorbibnamehash}{1e0f6b02879790a136bccf152d601d44}
       \strng{authornamehash}{1e0f6b02879790a136bccf152d601d44}
       \strng{authorfullhash}{1e0f6b02879790a136bccf152d601d44}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annals of translational medicine}
@@ -153,8 +153,8 @@
       \strng{authorbibnamehash}{d26411c70d5a41e5256aa944e31a5354}
       \strng{authornamehash}{d26411c70d5a41e5256aa944e31a5354}
       \strng{authorfullhash}{d26411c70d5a41e5256aa944e31a5354}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Neural Information Processing: 20th International Conference, ICONIP 2013, Daegu, Korea, November 3-7, 2013. Proceedings, Part I 20}
@@ -167,8 +167,8 @@
       \list{organization}{1}{%
         {American Cancer Society}%
       }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{note}{Último acceso: 2023-11-27}
       \field{title}{Estadísticas importantes sobre el cáncer de piel tipo melanoma}
@@ -196,8 +196,8 @@
       \strng{authorbibnamehash}{ca8df7c39af52de71645429a4cd3b057}
       \strng{authornamehash}{ca8df7c39af52de71645429a4cd3b057}
       \strng{authorfullhash}{ca8df7c39af52de71645429a4cd3b057}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://aedv.fundacionpielsana.es/piel-sana/que-es-la-dermatologia/}}
@@ -251,8 +251,8 @@
       \strng{authorbibnamehash}{a375b3f759153d1c5cc39cea1d775ad7}
       \strng{authornamehash}{a375b3f759153d1c5cc39cea1d775ad7}
       \strng{authorfullhash}{02274ba006f5546a92fc5f544351670f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Environmental Research and Public Health}
@@ -859,8 +859,8 @@
       \strng{authorbibnamehash}{15f80ca984b0e555a7d0533b83057478}
       \strng{authornamehash}{15f80ca984b0e555a7d0533b83057478}
       \strng{authorfullhash}{15f80ca984b0e555a7d0533b83057478}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Técnicas y usos en la clasificación automática de imágenes}
@@ -1499,8 +1499,8 @@
       \strng{authorbibnamehash}{54dd54ed498a10b4a63c7bd482674626}
       \strng{authornamehash}{54dd54ed498a10b4a63c7bd482674626}
       \strng{authorfullhash}{54dd54ed498a10b4a63c7bd482674626}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific data}
@@ -1645,8 +1645,8 @@
       \strng{authorbibnamehash}{f6af38c920e468b8adbdd5793a09b4ca}
       \strng{authornamehash}{f6af38c920e468b8adbdd5793a09b4ca}
       \strng{authorfullhash}{f6af38c920e468b8adbdd5793a09b4ca}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{ImageNet - The Dataset that Transformed Image Classification}
@@ -1733,16 +1733,16 @@
       \field{year}{2023}
     \endentry
     \entry{dropout}{misc}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/}}
       \field{title}{Dropout}
       \field{year}{2023}
     \endentry
     \entry{adamax}{misc}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://keras.io/api/optimizers/adamax/}}
       \field{title}{Adamax}

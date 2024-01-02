@@ -1,7 +1,7 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Estadísticas del rendimiento de los modelos de EfficientNet.\relax }}{20}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Estadísticas del rendimiento de los modelos de EfficientNet \blx@tocontentsinit {0}\brackcite {tan2019efficientnet}.\relax }}{20}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 1.\relax }}{34}{figure.caption.26}%
