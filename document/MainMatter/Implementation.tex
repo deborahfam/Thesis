@@ -14,7 +14,7 @@ El código desarrollado en la implementación de este modelo en púbico y se pue
        \item TensorFlow: Framework principal para la construcción y entrenamiento de modelos de machine learning y redes neuronales profundas.
    \end{itemize}
 
-   \item \textbf{APIs y Librerías de TensorFlow:}
+   \item \textbf{APIs y bibliotecas de TensorFlow:}
    \begin{itemize}
        \item Keras: API de alto nivel para la construcción y entrenamiento de modelos en TensorFlow.
        \item tf.keras.layers: Conjunto de capas predefinidas para la construcción de modelos.
@@ -25,9 +25,9 @@ El código desarrollado en la implementación de este modelo en púbico y se pue
        \item tf.keras.models: Herramientas para la creación y carga de modelos.
    \end{itemize}
 
-   \item \textbf{Librerías de Manipulación de Datos:}
+   \item \textbf{Manipulación de Datos:}
    \begin{itemize}
-       \item NumPy: Manejo de arrays y matrices de números n-dimensionales.
+       \item NumPy: Manejo de \textit{arrays} y matrices de números n-dimensionales.
        \item Pandas: Análisis y manipulación de datos estructurados.
    \end{itemize}
 
@@ -37,7 +37,7 @@ El código desarrollado en la implementación de este modelo en púbico y se pue
        \item OS: Interacción con el sistema operativo.
    \end{itemize}
 
-   \item \textbf{Librerías de Visión por Computadora:}
+   \item \textbf{Visión por Computadora:}
    \begin{itemize}
        \item OpenCV (cv2): Procesamiento de imágenes y visión por computadora.
    \end{itemize}
@@ -48,12 +48,12 @@ El código desarrollado en la implementación de este modelo en púbico y se pue
        \item Seaborn: Visualización de datos estadísticos.
    \end{itemize}
 
-   \item \textbf{Librerías de Evaluación de Modelos:}
+   \item \textbf{Evaluación de Modelos:}
    \begin{itemize}
        \item Scikit-learn (sklearn): Herramientas para selección de modelos y evaluación.
    \end{itemize}
 
-   \item \textbf{Librerías de Procesamiento de Imágenes:}
+   \item \textbf{Procesamiento de Imágenes:}
    \begin{itemize}
        \item Pillow (PIL): Procesamiento de imágenes para aplicaciones Python.
    \end{itemize}
@@ -119,7 +119,7 @@ El siguiente fragmento de código siguiente detalla la creación y compilación 
 \subsection*{Detalles de Hiperparámetros y Configuración}
 
 \begin{itemize}
-   \item \textbf{Arquitectura del Modelo:} Utilizamos EfficientNetB1 preentrenado con pesos de ImageNet como base.
+   \item \textbf{Arquitectura del Modelo:} Se utiliza EfficientNetB1 preentrenado con pesos de ImageNet como base.
    \item \textbf{Tasa de Aprendizaje Inicial:} Establecida en $0.001$.
    \item \textbf{Regularización:} Aplicación de regularización L2 con $\lambda = 0.016$ y regularización L1 con $\lambda = 0.006$ para los pesos y sesgos.
    \item \textbf{Dropout:} Se implementa una tasa de dropout del 45\% para mitigar el sobre-ajuste.
@@ -141,11 +141,11 @@ El siguiente fragmento de código siguiente detalla la creación y compilación 
 
 \section{Capas adicionales y regularización}
    
-   Para ajustar el modelo de EfficientNetB1 a nuestras necesidades, se añaden capas adicionales:
+   Para ajustar y optimizar el modelo de EfficientNetB1, se añaden capas adicionales:
    
    \subsection{Normalización por lotes}
    
-   Esta capa se define con un \textit{eje de normalización} establecido en $-1$, lo que indica que la normalización se aplica a lo largo del último eje en el tensor de entrada. Además, se configura un \textit{momentum} de $0.99$ y un valor de \textit{epsilon} de $0.001$. El alto valor de momentum ayuda a mantener la estabilidad de las medias y varianzas móviles a lo largo del entrenamiento, mientras que el pequeño valor de epsilon evita divisiones por cero, asegurando así cálculos numéricos estables \brackcite{regularization}.
+   Esta capa se define con un \textit{eje de normalización} establecido en $-1$, lo que indica que la normalización se aplica a lo largo del último eje en el tensor de entrada. Además, se configura un \textit{momentum} de $0.99$ y un valor de \textit{epsilon} de $0.001$. El alto valor de \textit{momentum} ayuda a mantener la estabilidad de las medias y varianzas móviles a lo largo del entrenamiento, mientras que el pequeño valor de epsilon evita divisiones por cero, asegurando así cálculos numéricos estables \brackcite{regularization}.
    
    \subsection{Capa densa}
    
@@ -153,36 +153,31 @@ El siguiente fragmento de código siguiente detalla la creación y compilación 
    
    \subsection{Dropout}
    
-   En la arquitectura del modelo, se integra una capa de dropout para aumentar la robustez y prevenir el sobre-ajuste. Esta capa se configura con una tasa de desactivación del 45\% , lo que significa que, durante el entrenamiento, el 45\% de las neuronas se desactivarán aleatoriamente en cada paso. 
+   En la arquitectura del modelo, se integra una capa de \textit{dropout} para aumentar la robustez y prevenir el sobre-ajuste. Esta capa se configura con una tasa de desactivación del 45\% , lo que significa que, durante el entrenamiento, el 45\% de las neuronas se desactivarán aleatoriamente en cada paso. 
    
-   En una primera iteración del algoritmo tuvo una tasa de desactivación más baja. Luego de varias iteraciones se concluyó que se necesitaba un algoritmo de clasificación que estudiara más a detalle la data fomentando así una mejor generalización y reduciendo el riesgo de sobre-ajuste en el proceso de aprendizaje. Basándonos en esto aumentamos la tasa y obtuvimos mejores resultados.
+   En una primera iteración del algoritmo tuvo una tasa de desactivación más baja. Luego de varias iteraciones se concluyó que se necesitaba un algoritmo de clasificación que estudiara más a detalle la data fomentando así una mejor generalización y reduciendo el riesgo de sobre-ajuste en el proceso de aprendizaje. Dado esto, en esto se aumenta la tasa y se obtienen mejores resultados.
    
    Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica \brackcite{dropout}.
    
    \subsection{Capa de salida}
    
-   La capa de salida utiliza una activación \textit{softmax} para transformar las salidas del modelo en probabilidades de pertenencia a cada clase. Esto, clasifica las entradas en categorías distintas, proporcionando probabilidades para cada clase, lo cual es esencial en la clasificación multi-clase.
+   La capa de salida utiliza una activación \textit{softmax} para transformar las salidas del modelo en probabilidades de pertenencia a cada clase. Esto clasifica las entradas en categorías distintas, proporcionando probabilidades para cada clase, lo cual es esencial en la clasificación multi-clase.
    
    \subsection{Optimización}
    
-   Para el proceso de entrenamiento, se utiliza el optimizador \textit{Adamax} \brackcite{adamax}. Este es una variante del conocido optimizador Adam, que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en entornos con gradientes dispersos, lo cual es común en imágenes médicas 
+   Para el proceso de entrenamiento se utiliza el optimizador \textit{Adamax} \brackcite{adamax}. Este es una variante del conocido optimizador Adam, que combina las ventajas de los métodos adaptativos de tasa de aprendizaje con una implementación más robusta en entornos con gradientes dispersos, lo cual es común en imágenes médicas 
    
    La función de pérdida elegida es la \textit{categorical crossentropy} \brackcite{vitalflux_categorical_crossentropy}, idónea para problemas de clasificación multi-clase. Se configura el modelo para minimizarla y se rastrea la precisión como métrica principal.
 
 \section{Experimentos}
 
-Como se había expresado al inicio del capítulo se llevaron a cabo una serie de experimentos de los cuales analizaremos los siguientes para la distribución y normalización de datos. La metodología general para ambos experimentos coincide, en ambos se utiliza una red convolucional, EfficientNetB1 y capas adicionales.
+Como se había expresado previamente se llevaron a cabo una serie de experimentos de los cuales analizaremos los siguientes para la distribución y normalización de datos. La metodología general para ambos experimentos coincide, en ambos se utiliza una red convolucional, EfficientNetB1 y capas adicionales.
 
 \subsection{Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}
 
 Este experimento se centra en una división de datos altamente asimétrica, con un enfoque predominante en el conjunto de entrenamiento. La técnica de \textit{dummy split} se emplea para mantener proporciones consistentes entre los conjuntos de validación y prueba. A esta división se le aplica luego un determinado peso para que el algoritmo preste especial atención a las clases menos representadas.
 
-\subsection{Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}
-
-Este experimento explora la estratificación de datos para mantener una distribución uniforme de etiquetas en cada conjunto de datos. La proporción de los conjuntos de datos es más equilibrada en comparación con el Experimento 1, lo que ofrece \textit{insights} sobre la importancia de la distribución equitativa de datos en el entrenamiento y evaluación de modelos.
-\section{Distribución de datos en los experimentos}
-
-\subsection{Experimento 1: Evaluación de la división asimétrica de datos}
+\subsection{Distribución de datos}
 
 En este experimento de las herramientas que se utiliza para hacer la división se hace uso del \textit{dummy split}  para mantener la proporción deseada entre validación y prueba. La distribución de datos fue la siguiente:
 
@@ -261,8 +256,11 @@ Como se evidencia anteriormente, al separar la data en clases el conjunto se man
    \label{tab:weighting_distribution}
    \end{table}
 
+\subsection{Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}
 
-\subsection{Experimento 2: Análisis de la estratificación de datos}
+Este experimento explora la estratificación de datos para mantener una distribución uniforme de etiquetas en cada conjunto de datos. La proporción de los conjuntos de datos es más equilibrada en comparación con el Experimento 1, lo que ofrece \textit{insights} sobre la importancia de la distribución equitativa de datos en el entrenamiento y evaluación de modelos.
+
+\subsection{Distribución de datos}
 
 Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución de etiquetas \textit{label} en cada conjunto. Se calcula la proporción del conjunto de prueba sobre la suma del conjunto de test y el de validación. La distribución de datos fue la siguiente:
 

@@ -30,10 +30,9 @@
 \contentsline {subsection}{\numberline {3.1.5}Optimización}{29}{subsection.3.1.5}%
 \contentsline {section}{\numberline {3.2}Experimentos}{29}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}{29}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}{29}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Distribución de datos en los experimentos}{30}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Experimento 1: Evaluación de la división asimétrica de datos}{30}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Experimento 2: Análisis de la estratificación de datos}{31}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.2.2}Distribución de datos}{29}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Experimento 2: Análisis de la estratificación de datos en la clasificación de imágenes de cáncer de piel}{31}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Distribución de datos}{31}{subsection.3.2.4}%
 \contentsline {chapter}{\numberline {4}Resultados}{33}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Consideraciones Finales}{39}{section.4.1}%
 \contentsline {chapter}{Conclusiones}{43}{section*.36}%
