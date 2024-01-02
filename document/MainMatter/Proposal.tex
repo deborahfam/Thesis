@@ -12,7 +12,7 @@ Con la intensión de evaluar la efectividad y precisión del modelo se hizo uso 
 
 La sección que sigue detalla la metodología empleada en la preparación y carga de los datos. Esta fase es esencial, ya que la calidad y el tratamiento de los datos tienen un impacto directo en la eficacia del modelo.
 
-\begin{figure}[ht]%
+\begin{figure}[H]
    \begin{center}
    \includegraphics[width=1\textwidth]{./Graphics/model.png}
    \caption{Diagrama de flujo del proceso de entrenamiento  y validación del modelo.}
@@ -34,7 +34,7 @@ El conjunto de datos HAM10000, acrónimo de \textit{Human Against Machine with 1
 
 Las $10015$ imágenes dermatoscópicas del conjunto de datos HAM10000 se recopilaron a lo largo de 20 años desde dos ubicaciones diferentes: el Departamento de Dermatología de la Universidad Médica de Viena, Austria, y la práctica de cáncer de piel de Cliff Rosendahl en Queensland, Australia \brackcite{tschandl2018ham10000}. En comparación con otros conjuntos de datos, HAM10000 ofrece un conjunto más diverso y completo de imágenes dermatoscópicas para la investigación del aprendizaje automático. Las imágenes y los metadatos del HAM10000  tienen la siguiente distribución.
 
-\begin{table}[ht]
+\begin{table}[H]
    \centering
    \small
    \begin{tabular}{lccc}
@@ -63,11 +63,11 @@ Los datos utilizados como medio de aprendizaje para este proyecto son imágenes 
 
 Los metadatos asociados a la clasificación, etiquetados con el método mencionado (\textit{one hot encoding}), fueron convertidos a un formato \textit{categórico} \brackcite{vitalflux_categorical_crossentropy} para su procesamiento. En este proceso a cada elemento se le asignó una etiqueta basada en las categoría de la lesion cutánea, como 'MEL' (Melanoma), 'NV' (Nevus Melanocítico), entre otras. Se elimina del \textit{dataframe}, además, cualquier columna innecesaria, dejando solo las etiquetas y nombres de imágenes relevantes. De tal forma que los datos quedan distribuidos por clase.
 
-\begin{table}[ht]
+\begin{table}[H]
    \centering
    \begin{tabular}{lccc}
    \hline
-   \textbf{index} & \textbf{Imágenes} & \textbf{Etiqueta} \\
+   \textbf{Index} & \textbf{Imágenes} & \textbf{Etiqueta} \\
    \hline
       0 & $ISIC\_0024306.jpg$ & NV \\
       1 & $ISIC\_0024307.jpg$ & NV \\
@@ -111,7 +111,7 @@ Inicialmente, el enfoque se centraba en aumentar la profundidad o el ancho de la
 
 EfficientNet comenzó con la creación de un modelo base, EfficientNet-B0, utilizando una búsqueda de arquitectura neural multiobjetivo que optimizaba tanto la precisión como los FLOPS. Esta red base se caracterizaba por su bloque principal, el cuello de botella móvil invertido MBConv, y la optimización de compresión y excitación. El proceso de escalado de EfficientNet se realizó en dos etapas principales. Primero, se fijaron ciertos parámetros y luego se escaló la red base para obtener variantes más grandes, desde EfficientNet-B1 hasta B7, utilizando el método de escalado compuesto. Mientras que la arquitectura EfficientNet B0 tiene $5.3$ millones de parámetros y acepta imágenes de entrada de $224x224$, EfficientNet B7 cuenta con $66$ millones de parámetros y acepta imágenes de $600x600$ \brackcite{Tan2019EfficientNetRM}.
   
-   \begin{figure}[ht]%
+   \begin{figure}[H]
       \begin{center}
       \includegraphics[width=1\textwidth]{./Graphics/efficientnet_performance.png}
       \caption{Estadísticas del rendimiento de los modelos de EfficientNet \brackcite{tan2019efficientnet}.}

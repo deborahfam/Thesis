@@ -1,16 +1,16 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
-[0] Config.pm:310> INFO - Logfile is 'Thesis.blg'
-[114] biber-MSWIN32:340> INFO - === 
-[158] Biber.pm:418> INFO - Reading 'Thesis.bcf'
-[305] Biber.pm:972> INFO - Found 52 citekeys in bib section 0
-[322] Biber.pm:4383> INFO - Processing section 0
-[334] Biber.pm:4574> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
-[430] bibtex.pm:1713> INFO - LaTeX decoding ...
-[531] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
-[913] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[913] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[913] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
-[964] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
-[1011] bbl.pm:757> INFO - Output to Thesis.bbl
-[1011] Biber.pm:130> WARN - Duplicate entry key: 'tan2019efficientnet' in file 'Bibliography.bib', skipping ...
-[1012] Biber.pm:132> INFO - WARNINGS: 1
+[1] Config.pm:310> INFO - Logfile is 'Thesis.blg'
+[124] biber-MSWIN32:340> INFO - === 
+[173] Biber.pm:418> INFO - Reading 'Thesis.bcf'
+[313] Biber.pm:972> INFO - Found 52 citekeys in bib section 0
+[328] Biber.pm:4383> INFO - Processing section 0
+[342] Biber.pm:4574> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
+[412] bibtex.pm:1713> INFO - LaTeX decoding ...
+[497] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
+[752] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[752] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[752] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
+[788] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
+[817] bbl.pm:757> INFO - Output to Thesis.bbl
+[817] Biber.pm:130> WARN - Duplicate entry key: 'tan2019efficientnet' in file 'Bibliography.bib', skipping ...
+[817] Biber.pm:132> INFO - WARNINGS: 1
