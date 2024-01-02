@@ -1421,6 +1421,11 @@ INPUT ./MainMatter/Proposal.tex
 INPUT MainMatter/Proposal.tex
 INPUT ./MainMatter/Proposal.tex
 INPUT MainMatter/Proposal.tex
+INPUT ./Graphics/model.png
+INPUT ./Graphics/model.png
+INPUT ./Graphics/model.png
+INPUT ./Graphics/model.png
+INPUT ./Graphics/model.png
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
