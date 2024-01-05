@@ -37,6 +37,14 @@ El modelo \textit{EfficientNetB1} se carga pre-entrenado con pesos de \textit{Im
 
 Luego que \textit{efficientnet} extrae las características relevantes se obtiene un vector de características. Este vector se normaliza mediante la capa de \textit{Batch Normalization}, ajustando los valores a una escala manejable y estabilizando el entrenamiento. El vector normalizado se introduce en una capa densa. En esta capa cada neurona calcula una suma ponderada de sus entradas, aplica regularizadores si están activos, y luego utiliza la función de activación \textit{ReLU}, que convierte los valores negativos a 0 y mantiene los positivos. Durante el entrenamiento, se aplica \textit{dropout}, desactivando aleatoriamente una cantidad de neuronas en esta capa para prevenir el sobre-ajuste. La salida de  la capa \textit{Dropout} pasa a través de una capa densa final con 7 neuronas, una por cada clase para luego sus salidas sean convertidas en probabilidades. Luego se calcula el error comparando esta etiqueta con las probabilidades obtenidas con la salida del modelo. Ya por último el optimizador utilizado ajusta los pesos del modelo basándose en este error y con los pesos ajustados, la siguiente iteración comienza con una nueva imagen de entrada, repitiendo el proceso.
 
+\begin{figure}[H]
+   \begin{center}
+   \includegraphics[width=1\textwidth]{./Graphics/diagrama_modelo.drawio.png}
+   \caption{Diagrama del modelo propuesto.}
+   \label{fig:model_permormance}
+   \end{center}
+   \end{figure}
+
 \section{Ajuste dinámico del learning rate}
 
 Un elemento innovador del entrenamiento fue el uso de un \textit{callback} personalizado para el ajuste dinámico del learning rate \brackcite{lr}. Se implementa un mecanismo de ajuste de la tasa de aprendizaje (LRA) personalizado. Este, ajusta dinámicamente la tasa de aprendizaje durante el entrenamiento basado en la precisión y la pérdida de validación, con el objetivo de mejorar la eficiencia del entrenamiento y alcanzar una mejor convergencia. Los componentes clave del LRA son:
@@ -53,7 +61,7 @@ La clase LRA se inicializa con varios parámetros, incluyendo la paciencia para 
 
 \begin{figure}[H]
    \begin{center}
-   \includegraphics[width=1\textwidth]{./Graphics/diagrama_lra.drawio.png}
+   \includegraphics[width=0.85\textwidth]{./Graphics/diagrama_lra.drawio.png}
    \caption{Diagrama del ajuste dinámico de la tasa de aprendizaje.}
    \label{fig:lra_permormance}
    \end{center}

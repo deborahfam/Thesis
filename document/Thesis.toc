@@ -32,6 +32,6 @@
 \contentsline {section}{\numberline {3.4}Discusión}{37}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Observaciones generales}{39}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Consideraciones finales}{40}{subsection.3.4.2}%
-\contentsline {chapter}{Conclusiones}{43}{section*.36}%
-\contentsline {chapter}{Recomendaciones}{45}{section*.38}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{47}{chapter*.42}%
+\contentsline {chapter}{Conclusiones}{43}{section*.37}%
+\contentsline {chapter}{Recomendaciones}{45}{section*.39}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{47}{chapter*.43}%

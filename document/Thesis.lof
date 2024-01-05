@@ -2,12 +2,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Estadísticas del rendimiento de los modelos de EfficientNet \blx@tocontentsinit {0}\brackcite {tan2019efficientnet}.\relax }}{17}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama del ajuste dinámico de la tasa de aprendizaje.\relax }}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama del modelo propuesto.\relax }}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama del ajuste dinámico de la tasa de aprendizaje.\relax }}{19}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de división de datos.\relax }}{25}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 1.\relax }}{32}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Matriz de confusión del experimento 1.\relax }}{33}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas\relax }}{33}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 2.\relax }}{36}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Matriz de confusión del experimento 2.\relax }}{36}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas.\relax }}{37}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de división de datos.\relax }}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 1.\relax }}{32}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Matriz de confusión del experimento 1.\relax }}{33}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas\relax }}{33}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Curva de aprendizaje a lo largo del proceso de entrenamiento del experimento 2.\relax }}{36}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Matriz de confusión del experimento 2.\relax }}{36}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Gráfico de errores por clase en el conjunto de pruebas.\relax }}{37}{figure.caption.34}%
