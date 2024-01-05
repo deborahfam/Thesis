@@ -4,22 +4,22 @@ Este capítulo presenta los métodos, técnicas, detalles e hiperparámetros uti
 
 \section*{Configuraciones generales}
 
-El código desarrollado en la implementación de este modelo en púbico y se puede descargar en github en el repositorio \href{https://github.com/deborahfam/Thesis}{github.com/deborahfam/Thesis} en la carpeta llamada \textit{pipelines}. Cada pipeline es un archivo \textit{.ipynb}. Adelante se describen herramientas y tecnologías que fueron utilizadas en el proyecto:
+El código desarrollado en la implementación de este modelo en público y se puede descargar en github en el repositorio \href{https://github.com/deborahfam/Thesis}{github.com/deborahfam/Thesis} en la carpeta llamada \textit{pipelines}. Cada pipeline es un archivo \textit{.ipynb}. Adelante se describen herramientas y tecnologías que fueron utilizadas en el proyecto:
 
 \section*{Herramientas y Tecnologías}
 
 \begin{itemize}
    \item \textbf{Frameworks de Desarrollo:}
    \begin{itemize}
-       \item TensorFlow: Framework principal para la construcción y entrenamiento de modelos de machine learning y redes neuronales profundas.
+       \item TensorFlow: Framework principal para la construcción y entrenamiento de modelos de \textit{machine learning} y redes neuronales profundas.
    \end{itemize}
 
    \item \textbf{APIs y bibliotecas de TensorFlow:}
    \begin{itemize}
-       \item Keras: API de alto nivel para la construcción y entrenamiento de modelos en TensorFlow.
+       \item Keras: \textit{API} de alto nivel para la construcción y entrenamiento de modelos en TensorFlow.
        \item tf.keras.layers: Conjunto de capas predefinidas para la construcción de modelos.
-       \item tf.keras.optimizers: Algoritmos de optimización como Adam y Adamax.
-       \item tf.keras.metrics: Métricas de evaluación como categorical\_crossentropy.
+       \item tf.keras.optimizers: Algoritmos de optimización como Adamax.
+       \item tf.keras.metrics: Métricas de evaluación como \textit{categorical\_crossentropy}.
        \item tf.keras.regularizers: Técnicas de regularización como L1 y L2.
        \item tf.keras.preprocessing.image: Herramientas de preprocesamiento y aumento de imágenes.
        \item tf.keras.models: Herramientas para la creación y carga de modelos.
@@ -70,12 +70,84 @@ El código desarrollado en la implementación de este modelo en púbico y se pue
    \end{itemize}
 \end{itemize}
 
+\section{Fuente de datos}
 
-\subsection*{Carga, visualización y transformación de datos}
+El conjunto de datos utilizado para el entrenamiento y validación del algoritmo es el HAM10000. Este es acrónimo de \textit{Human Against Machine with 10000 training images} (Humano Contra Máquina con 10000 imágenes de entrenamiento), y se presenta como una solución al problema de la falta de diversidad y tamaño reducido en los conjuntos de datos disponibles para el diagnóstico automatizado de lesiones cutáneas pigmentadas. Este conjunto de datos es notable por su extenso alcance y diversidad, abarcando una amplia gama de lesiones cutáneas pigmentadas comunes \brackcite{tschandl2018ham10000}. 
 
-Lo primero realizado fue la importación y transformación los datos para el modelo. En el proceso de importación, para la carga de imágenes utilizamos \texttt{plt.imread} de la librería Matplotlib y \texttt{pd.read\_csv} de la librería Pandas para cargar los metadatos. Para la división del conjunto de datos en entrenamiento, validación y prueba se utilizó la función \texttt{train\_test\_split} de la librería Scikit-Learn con las variables \texttt{random\_state=123} y \texttt{shuffle=True}. Estas variables aseguran aleatoriedad en la división mezclando los datos antes de dividirlos y que la división sea reproducible. La división, como se expresó en capítulos anteriores es distinta en cada experimento y se especifican los parámetros utilizados luego en el capítulo.
+\subsection*{HAM10000}
 
-Para la carga y procesamiento de imágenes se utilizó la clase \texttt{ImageDataGenerator} de Keras \brackcite{img_gen}. Esta clase facilita la creación de lotes de imágenes que se utilizan durante el entrenamiento y la evaluación de modelos de Machine Learning, especialmente en el contexto de redes neuronales. 
+Las $10015$ imágenes dermatoscópicas del conjunto de datos HAM10000 se recopilaron a lo largo de 20 años desde dos ubicaciones diferentes: el Departamento de Dermatología de la Universidad Médica de Viena, Austria, y la práctica de cáncer de piel de Cliff Rosendahl en Queensland, Australia \brackcite{tschandl2018ham10000}. En comparación con otros conjuntos de datos, HAM10000 ofrece un conjunto más diverso y completo de imágenes dermatoscópicas para la investigación del aprendizaje automático. Las imágenes y los metadatos del HAM10000  tienen la siguiente distribución.
+
+\begin{table}[H]
+   \centering
+   \small
+   \begin{tabular}{lccc}
+   \hline
+   \textbf{Categoría Diagnóstica} & \textbf{Cantidad} & \textbf{Porcentaje} \\
+   \hline
+   Melanocytic nevi (NV) & 6705 & 66.95\%  \\
+   Melanoma (MEL) & 1113 & 11.11\% \\
+   Benign keratosis-like lesions (BKL) & 1099 & 10.97\% \\
+   Basal cell carcinoma (BCC) & 514 & 5.13\% \\
+   Actinic Keratosis and Intraepithelial Carcinoma (AKIEC) & 327                         & 3.27\%              \\
+   Vascular lesions (VASC) & 142 & 1.42\%  \\
+   Dermatofibroma  (DF) & 115 & 1.15\% \\
+   \hline
+   \end{tabular}
+   \caption{Distribución de imágenes por categoría diagnóstica.}
+   \label{tab:ham10000_distribution}
+\end{table}   
+   
+Las imágenes almacenadas, originalmente como diapositivas, fueron digitalizadas usando un escáner \textit{Nikon Coolscan 5000 ED}. Posteriormente, se ajustaron manualmente para centrar las lesiones y se aplicaron correcciones al histograma para mejorar el contraste visual y la reproducción del color. Para separar eficientemente las imágenes dermatoscópicas de otros tipos de imágenes (como primeros planos y vistas generales), se utilizó un método automatizado que clasificaba más de 30,000 imágenes. Se empleó una arquitectura \textit{InceptionV3}, entrenada con un conjunto de imágenes etiquetadas manualmente, para categorizar las imágenes. Las imágenes mal clasificadas por este método fueron revisadas y corregidas manualmente.  Se realizó una revisión manual final para excluir imágenes con ciertos atributos no deseados, como contenido potencialmente identificable, imágenes fuera de enfoque o con artefactos perturbadores como prendas, y lesiones completamente no pigmentadas. Las imágenes restantes fueron revisadas para asegurar una reproducción de color y luminosidad adecuadas, aplicando correcciones manuales si era necesario \brackcite{tschandl2018ham10000}. 
+
+Los datos utilizados como medio de aprendizaje para este proyecto son imágenes y metadatos. El dataset HAM10000 contiene imágenes y un archivo de metadatos que contienen información relacionada con cada imagen en formato \textit{one hot encoding} \brackcite{ohe}.
+
+\subsection{Transformación de datos}
+
+Lo primero realizado fue la importación y transformación los datos para el modelo. En el proceso de importación, para la carga de imágenes utilizamos \texttt{plt.imread} de la biblioteca Matplotlib y \texttt{pd.read\_csv} de la biblioteca Pandas para cargar los metadatos. Para la transformación de datos los metadatos asociados a la clasificación, etiquetados con el método mencionado (\textit{one hot encoding}) fueron convertidos a un formato \textit{categórico} \brackcite{vitalflux_categorical_crossentropy} para su procesamiento. En este proceso a cada elemento se le asignó una etiqueta basada en las categoría de la lesion cutánea, como 'MEL' (Melanoma), 'NV' (Nevus Melanocítico), entre otras. Se elimina del \textit{dataframe}, además, cualquier columna innecesaria, dejando solo las etiquetas y nombres de imágenes relevantes. De tal forma que los datos quedan distribuidos por clase.
+
+\begin{table}[H]
+   \centering
+   \begin{tabular}{lccc}
+   \hline
+   \textbf{Index} & \textbf{Imágenes} & \textbf{Etiqueta} \\
+   \hline
+      0 & $ISIC\_0024306.jpg$ & NV \\
+      1 & $ISIC\_0024307.jpg$ & NV \\
+      2 & $ISIC\_0024308.jpg$ & NV \\
+      3 & $ISIC\_0024309.jpg$ & NV \\
+      4 & $ISIC\_0024310.jpg$ & MEL \\
+   \hline
+   \end{tabular}
+   \caption{Datos transformados a formato categórico.}
+   \label{}
+\end{table}   
+
+\subsection{Modelación y división del conjunto de datos}
+
+Los datos se modelan a partir de un \textit{dataframe} de Pandas \brackcite{pandas}. Estos son divididos en 3 conjuntos: Entrenamiento, Validación y Prueba, utilizando un enfoque simple de division de datos en porcentaje.
+
+Inicialmente, el conjunto de datos, fue dividido en dos subconjuntos: \textit{train}, que se destinó para el entrenamiento, y \textit{dummy}, que fue utilizado como una combinación temporal para los conjuntos de validación y prueba. Luego el segundo conjunto fue separado en \textit{valid}, destinado a la validación y \textit{test}, utilizado para las pruebas. 
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=0.7\textwidth]{./Graphics/division_datos.drawio.png}
+    \caption{Diagrama de división de datos.}
+    \label{fig:model_structure}
+    \end{center}
+    \end{figure}
+
+Para la división del conjunto de datos en entrenamiento, validación y prueba se utilizó la función \texttt{train\_test\_split} de la biblioteca Scikit-Learn con las variables \texttt{random\_state=123} y \texttt{shuffle=True}. Estas variables aseguran aleatoriedad en la división mezclando los datos antes de dividirlos y que la división sea reproducible. La división, es distinta en cada experimento y se especifican los parámetros utilizados luego en el capítulo.
+
+
+\subsection{Generadores de datos y preprocesamiento}
+
+Uno de los principales problemas del \textit{dataset}, como se puede observar en la tabla 3.1, es el desequilibrio en la representación de las clases, un problema habitual en los conjuntos de datos médicos en los que algunas enfermedades son más raras que otras. Para solucionar este problema, el conjunto de datos se equilibra limitando el número máximo de muestras por clase. Esto garantiza que el modelo no esté sesgado hacia las clases más comunes y pueda generalizar mejor entre varios tipos de lesiones cutáneas. 
+
+La cantidad de muestras por clase se ajustó de manera selectiva. Incluso con estas transformaciones algunas clases seguían desbalanceadas, lo que llevó a la implementación de la técnica de \textit{class weighting} \brackcite{analyticsvidhya2020classweight}. Con este método se asignó pesos diferenciados a cada clase durante el entrenamiento del modelo, reforzando así la señal de aprendizaje para las clases menos representadas.
+
+Además, a los conjuntos segmentados en entrenamiento, validación y prueba, se les aplicó \textit{data augmentation}. Esta técnica aplicó varias transformaciones a las imágenes, como rotación, desplazamiento y zoom, durante su carga, generando lotes de imágenes optimizados para el entrenamiento y evaluación del modelo \brackcite{augmentation}. Para la carga y procesamiento de imágenes se utilizó la clase \texttt{ImageDataGenerator} de Keras \brackcite{img_gen}.
+
 
 Las transformaciones aplicadas fueron las siguientes
 
@@ -99,7 +171,7 @@ Las transformaciones aplicadas fueron las siguientes
 
 \section*{Preparación del modelo}
 
-El siguiente fragmento de código siguiente detalla la creación y compilación de un modelo de aprendizaje profundo utilizando Keras, una API de alto nivel para construir y entrenar modelos en TensorFlow. El modelo se basa en EfficientNetB1. Para la compilación del mismo se hace uso de \texttt{model.compile}, con un callback personalizado para ajustar la tasa de aprendizaje y para entrenar utilizamos el \texttt{model.fit}.
+El fragmento de código siguiente detalla la creación y compilación de el modelo de aprendizaje. El mismo se basa en EfficientNetB1. Para la compilación de este se hace uso de \texttt{model.compile}, con un callback personalizado para ajustar la tasa de aprendizaje y para entrenar utilizamos el \texttt{model.fit}.
 
 \begin{lstlisting}[language=Python]
    model_name='EfficientNetB1'
@@ -135,39 +207,9 @@ El siguiente fragmento de código siguiente detalla la creación y compilación 
       \item \textbf{Factor:} 0.5.      
       \item \textbf{Dwell:} True
       \item \textbf{Freeze:} False  
-      \item \textbf{Batches:} $train\_steps = (len(train_gen.labels)/batch_size)$
+      \item \textbf{Batches:} \texttt{train\_steps} = \texttt{len(train\_gen.labels)/batch\_size}
    \end{itemize}
 \end{itemize}
-
-\begin{table}[H]
-   \centering
-   \small
-   \begin{tabular}{|c|p{10cm}|}
-   \hline
-   \textbf{Término} & \textbf{Descripción} \\
-   \hline
-   Epoch & Es una iteración completa sobre todo el conjunto de datos de entrenamiento. \\
-   \hline
-   Loss (Pérdida) & Es una medida de cuán bien el modelo está realizando sus predicciones. Los valores decrecientes indican una mejora en el aprendizaje. \\
-   \hline
-   Accuracy (Precisión) & Muestra el porcentaje de etiquetas que el modelo predice correctamente para el conjunto de entrenamiento. \\
-   \hline
-   V loss (Pérdida de Validación) & Es similar a la pérdida, pero se calcula sobre un conjunto de datos que no se utiliza para el entrenamiento. \\
-   \hline
-   V acc (Precisión de Validación) & Muestra el porcentaje de etiquetas que el modelo predice correctamente para el conjunto de datos de validación. \\
-   \hline
-   LR (Learning Rate) & La tasa de aprendizaje dicta cuánto se ajustan los pesos del modelo en cada actualización. \\
-   \hline
-   Next LR (Próxima Learning Rate) & Indica la próxima tasa de aprendizaje planificada. La adaptación de la tasa de aprendizaje puede ayudar a evitar el estancamiento y mejorar la convergencia. \\
-   \hline
-   Monitor & Muestra la métrica que se está utilizando para monitorizar el rendimiento del modelo. Cambia de \textit{accuracy} a \textit{val loss}, lo que probablemente indica que el cambio se hizo para evitar el sobre'ajuste. \\
-   \hline
-   Duration (Duración) & Tiempo que tardó cada epoch en completarse. Importante para evaluar la eficiencia del entrenamiento. \\
-   \hline
-   \end{tabular}
-   \caption{Descripción de términos clave en el entrenamiento de modelos de aprendizaje automático.}
-   \label{table:terminology}
-   \end{table}
 
 \section{Capas adicionales y regularización}
    
@@ -179,15 +221,11 @@ El siguiente fragmento de código siguiente detalla la creación y compilación 
    
    \subsection{Capa densa}
    
-   Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador L2 con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de bias se configuran con un regularizador L1 con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características \brackcite{dense}.
+   Se integra una capa densa con $256$ neuronas, que juega un papel clave en la síntesis de las características aprendidas por el modelo. Se utiliza un regularizador L2 con un \textit{lambda} de $0.016$ para los pesos de la capa, lo que ayuda a penalizar y controlar el tamaño de los pesos, reduciendo así el riesgo de sobre-ajuste. Además, tanto el regularizador de actividad como el regularizador de \textit{bias} se configuran con un regularizador L1 con un \textit{lambda} de $0.006$. Este enfoque impone una penalización en los pesos y los sesgos, promoviendo un modelo más simple y disperso. La función de activación utilizada es \textit{ReLU} , conocida por su eficacia en la introducción de no linealidad en el modelo, lo que permite aprender relaciones complejas entre las características \brackcite{dense}.
    
    \subsection{Dropout}
    
-   En la arquitectura del modelo, se integra una capa de \textit{dropout} para aumentar la robustez y prevenir el sobre-ajuste. Esta capa se configura con una tasa de desactivación del 45\% , lo que significa que, durante el entrenamiento, el 45\% de las neuronas se desactivarán aleatoriamente en cada paso. 
-   
-   En una primera iteración del algoritmo tuvo una tasa de desactivación más baja. Luego de varias iteraciones se concluyó que se necesitaba un algoritmo de clasificación que estudiara más a detalle la data fomentando así una mejor generalización y reduciendo el riesgo de sobre-ajuste en el proceso de aprendizaje. Dado esto, en esto se aumenta la tasa y se obtienen mejores resultados.
-   
-   Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica \brackcite{dropout}.
+   En la arquitectura del modelo, se integra una capa de \textit{dropout} para aumentar la robustez y prevenir el sobre-ajuste. Esta capa se configura con una tasa de desactivación del 45\% , lo que significa que, durante el entrenamiento, el 45\% de las neuronas se desactivarán aleatoriamente en cada paso. Para asegurar la reproducibilidad, se establece una semilla(seed) $123$. Esta introducción de aleatoriedad ayuda a que el modelo no dependa excesivamente de ninguna característica o neurona específica \brackcite{dropout}.
    
    \subsection{Capa de salida}
    
@@ -205,11 +243,11 @@ Como se había expresado previamente, se llevaron a cabo una serie de experiment
 
 \subsection{Experimento 1: Evaluación de la eficiencia de la división asimétrica de datos en la clasificación de imágenes de cáncer de piel}
 
-Este experimento se realiza con la intensión de utilizar evaluar el comportamiento del modelo utilizando una técnica clásica de división de datos, teniendo en cuenta que la distribución de datos es importante en cuestión de efectividad de los algoritmos. El mismo se centra en una división altamente asimétrica, con un enfoque predominante en el conjunto de entrenamiento. La técnica de \textit{dummy split} se emplea para mantener proporciones consistentes entre los conjuntos de validación y prueba. A esta división se le aplica luego un determinado peso para que el algoritmo preste especial atención a las clases menos representadas. 
+Este experimento se realiza con la intensión de evaluar el comportamiento del modelo utilizando una técnica clásica de división de datos, teniendo en cuenta que la distribución de datos es importante en cuestión de efectividad de los algoritmos. El mismo se centra en una división altamente asimétrica, con un enfoque predominante en el conjunto de entrenamiento. A esta división se le aplica luego un determinado peso para que el algoritmo preste especial atención a las clases menos representadas. 
 
 \subsection*{Distribución de datos}
 
-En este experimento de las herramientas que se utiliza para hacer la división se hace uso del \textit{dummy split}  para mantener la proporción deseada entre validación y prueba. Se escoge la siguiente distribución de datos para realizar una prueba de datos en la que existiera desproporción y se entrenara el modelo para ver fallas e índices de sobre-ajuste y en otras versiones mejorar la distribución de datos del modelo. La distribución fue la siguiente:
+Las herramientas que se utiliza para hacer la división se hace uso del \textit{dummy split}  para mantener la proporción deseada entre validación y prueba. Se escoge la siguiente distribución de datos para realizar una prueba de datos en la que existiera desproporción y se entrenara el modelo para ver fallas e índices de sobre-ajuste y en otras versiones mejorar la distribución de datos del modelo. La distribución fue la siguiente:
 
 \begin{table}[H]
    \small
@@ -249,7 +287,7 @@ En este experimento de las herramientas que se utiliza para hacer la división s
    
 \subsubsection*{Generadores de datos y preprocesamiento}
 
-Se establece para este un tamaño objetivo de muestras por clase ($300$ en este caso), y se utiliza un bucle para iterar a través de cada clase única.
+Se establece para este un tamaño objetivo de muestras por clase de $300$ , y se utiliza un bucle para iterar a través de cada clase única.
 
 \begin{table}[H]
    \centering
@@ -269,7 +307,7 @@ Se establece para este un tamaño objetivo de muestras por clase ($300$ en este 
    \end{table}
 
 
-Como se evidencia anteriormente, al separar la data en clases el conjunto se mantiene desbalanceado. Se hace necesario aplicar un método llamado \textit{Class Weighting} para compensar este desbalanceo. Este método consiste en asignar un peso a cada clase inversamente proporcional a su frecuencia. De esta manera, las clases con menor representación tendrán un mayor peso y las clases con mayor representación tendrán un menor peso. Esto permite que el modelo se entrene de manera más equilibrada y que no se sesgue hacia las clases con mayor representación.
+Como se evidencia anteriormente, al separar la data en clases el conjunto se mantiene desbalanceado. Se hace necesario aplicar el método llamado \textit{Class Weighting} para compensar este desbalanceo. Este método consiste en asignar un peso a cada clase inversamente proporcional a su frecuencia. De esta manera, las clases con menor representación tendrán un mayor peso y las clases con mayor representación tendrán un menor peso. Esto permite que el modelo se entrene de manera más equilibrada y que no se sesgue hacia las clases con mayor representación.
 
 \begin{table}[H]
    \centering
@@ -289,6 +327,8 @@ Como se evidencia anteriormente, al separar la data en clases el conjunto se man
    \end{table}
 
 
+Ya luego de esta modelación de datos se empieza a entrenar y evaluar el algoritmo hasta obtener los resultados.
+
 \subsection*{Resultados}
 
 En este experimento se observa que la precisión de entrenamiento aumenta con cada epoch, la pérdida de entrenamiento disminuye consistentemente y la tasa de aprendizaje permanece constante al principio y luego disminuye para afinar el entrenamiento a medida que el modelo comienza a converger, lo cual indica que el modelo esta entrenando de forma correcta. Sin embargo, la división asimétrica de datos en este experimento influye en el aprendizaje del modelo. El uso de división asimétrica puede estar causando que el modelo esté sesgado hacia clases con más muestras, afectando la precisión general y la capacidad de generalizar. Esto se evidencia dado que, a pesar de la disminución de la pérdida de validación y el aumento de la precisión de validación, la notable diferencia entre la precisión de entrenamiento y la precisión de validación podría indicar un potencial sobre-ajuste.
@@ -305,9 +345,9 @@ En este experimento se observa que la precisión de entrenamiento aumenta con ca
           5 & 5.646 & 91.690 & 5.94812 & 75.200 & $10^{-2}$ & vloss & 23.08 \\ \hline
           6 & 5.172 & 92.999 & 5.44954 & 76.800 & $10^{-2}$ & vloss & 23.23 \\ \hline
           7 & 4.735 & 94.479 & 5.06016 & 76.400 & $10^{-2}$ & vloss & 23.19 \\ \hline
-          8 & 4.334 & 96.528 & 4.73837 & 76.800 & $10^{-2}$ & vloss & 22.90 \\ \hline
-          9 & 3.969 & 97.211 & 4.33689 & 77.200 & $10^{-2}$ & val\_loss & 22.74 \\ \hline
-          10 & 3.631 & 98.008 & 4.15826 & 74.000 & $10^{-2}$ & val\_loss & 22.56 \\ \hline
+        %   8 & 4.334 & 96.528 & 4.73837 & 76.800 & $10^{-2}$ & vloss & 22.90 \\ \hline
+        %   9 & 3.969 & 97.211 & 4.33689 & 77.200 & $10^{-2}$ & val\_loss & 22.74 \\ \hline
+        %   10 & 3.631 & 98.008 & 4.15826 & 74.000 & $10^{-2}$ & val\_loss & 22.56 \\ \hline
          %  11 & 3.315 & 98.406 & 3.89153 & 73.600 & $10^{-2}$ & val\_loss & 23.11 \\ \hline
           \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots \\ \hline
           34 & 0.627 & 99.886 & 1.24470 & 76.800 & 0.00013 & val\_loss & 23.30 \\ \hline
@@ -327,7 +367,7 @@ La curva de aprendizaje refleja los resultados mencionados anteriormente. Se pre
 
 El modelo tardó en entrenarse aproximadamente 2h y tuvo una efectividad de aproximadamente del 81\%.
 
-Se implemento para la evaluación del rendimiento del modelo una matriz de confusion, de la que se concluye que:
+Se implemento para la evaluación del rendimiento del modelo una matriz de confusión, de la que se concluye que:
 
 \begin{figure}[H]
    \begin{minipage}{0.45\textwidth}
@@ -363,7 +403,7 @@ Este experimento explora la estratificación de datos para mantener una distribu
 
 \subsubsection*{Distribución de datos}
 
-Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución de etiquetas \textit{label} en cada conjunto. Se calcula la proporción del conjunto de prueba sobre la suma del conjunto de test y el de validación. La distribución de datos fue la siguiente:
+Se utiliza \textit{stratify} en ambas divisiones para mantener la distribución de etiquetas \textit{label} en cada conjunto. Se calcula la proporción del conjunto de prueba sobre la suma del conjunto de \textit{test} y el de validación. La distribución de datos fue la siguiente:
 
    \begin{table}[H]
       \centering
@@ -474,4 +514,145 @@ La matriz de confusión de este experimento muestra los siguientes resultados.
 \end{figure}
         
        
-            
+\section{Discusión}
+
+En esta sección se realiza un análisis comparativo para evaluar la efectividad de los experimentos realizados. Para ello se generan un informe de clasificación que incluye precisión, recuperación (recall), puntuación F1 y F2 y soporte para cada clase y además se analizan los resultados de clasificación de ambos modelos en cuanto a la matrices de confusión y los gráficos de errores por clase generados.
+
+\subsection*{Estadísticas de eficacia}\label{sub:accuracy_statistic_p1}
+
+Ambas matrices de confusión muestran en común que ambos modelos se desarrollaron bien y que tienen gran efectividad en la clasificación. En estas, la clase con el mayor número de verdaderos positivos es "NV", en la primera con $134$ casos predichos correctamente y en la segunda con $862$ casos. Sin embargo en otras se nota una mejora de clasificación clara. En el caso de 'AKIEC', la tasa de $TP$ mejoró significativamente, pasando de $7$ de $300$ a $47$ de $500$. Incluso teniendo en cuenta el aumento del tamaño del conjunto de datos, se trata de una clara mejora. Se observan mejoras similares en otras clases, como 'BCC', 'BKL', 'DF', 'MEL' y 'NV'. 
+
+La tasa de TP (\textit{true positive} o verdaderos positivos) ha aumentado no sólo en términos absolutos, sino también proporcionalmente si se tiene en cuenta el mayor tamaño del conjunto de datos. 'VASC' es un caso especial; mientras que la primera matriz no muestra ningún TP y tiene 3 FN (false negative o falsos negativos), la segunda matriz, a pesar de tener un gran número de FP(false positive o falsos positivos) (22), muestra que el modelo ha empezado a reconocer esta clase, cosa que antes no hacía.
+
+Con respecto a los errores expresados de cada experimento en la clasificación, en el caso de 'NV', el número de errores del gráfico de barras del experimento 1 se relaciona numéricamente con el conjunto de pruebas, por lo que el modelo tiene casi las mismas posibilidades de hacer una predicción correcta que de dar un falso positivo. En el segundo experimento, a pesar del aumento de errores, el modelo tiene la misma proporción de verdaderos positivos que de falsos positivos, lo que sugiere que el rendimiento del modelo se ha mantenido constante en relación con el tamaño del conjunto de datos. 'MEL' y'BKL' muestran un aumento de los errores en el segundo gráfico de barras, pero también es proporcional al aumento del tamaño del conjunto de datos. La proporción de verdaderos positivos frente a falsos positivos sigue siendo la misma. 'AKIEC' presenta un número relativamente pequeño de errores en el experimento 2, lo que puede deberse a que el conjunto de datos es más grande.
+
+\subsection*{Informe de clasificación}
+
+La tabla siguiente proporcionan una visión cuantitativa de la precisión, el recall (sensibilidad), las métricas F1 y F2 y el soporte (número de muestras verdaderas) (NM) para cada categoría diagnóstica evaluada. Estos indicadores de rendimiento son esenciales para comprender la capacidad del modelo para identificar correctamente cada condición, así como su confiabilidad general en un conjunto de datos diverso. Se añadieron a la tabla los campos \textit{Accuracy}, \textit{MacroAvg}(M Avg) y \textit{WeightedAvg}(W Avg) para un mejor análisis de los resultados:
+\begin{itemize}
+    \item Accuracy: Esta métrica mide la proporción de predicciones correctas realizadas por el modelo en relación con el total de predicciones. Se calcula como el número de predicciones correctas dividido por el número total de predicciones.
+    \item Promedio Macro (Macro Average): Este enfoque calcula la métrica (como la precisión, el recall, o el F1-score) de manera independiente para cada clase y luego toma el promedio de estas métricas. No tiene en cuenta el desequilibrio de las clases, es decir, trata a todas las clases por igual, independientemente de su frecuencia en el conjunto de datos.
+    \item Promedio Ponderado (Weighted Average): Similar al promedio macro, pero en este caso, el promedio se pondera. Esto significa que la métrica para cada clase se multiplica por el número de instancias en esa clase (el soporte) antes de calcular el promedio. De esta manera, las clases con más instancias tienen más peso en el promedio final.
+\end{itemize}
+
+Se calcula además $F_{\beta}$ o F2. El cálculo del puntaje F2 es una forma de considerar la precisión y la recuperación (\textit{recall}) en un único número, ponderando uno de estos aspectos más que el otro. En nuestro caso específico le asignamos al recobrado prioridad con respecto a la precisión, dado que en la práctica sería mas importante evitar los falsos positivos. Asignamos $\beta = 2$.
+
+\begin{table}[H]
+    \small
+    \centering
+    \caption{Informe de clasificación combinado para los Experimentos 1 y 2.}
+    \label{tab:classification_report_combined}
+    \begin{tabular}{lcccccccccc}
+    \hline
+    & \multicolumn{5}{c}{\textbf{Experimento 1}} & \multicolumn{5}{c}{\textbf{Experimento 2}} \\
+    \cline{2-10}
+    \textbf{Categoría} & \textbf{Acc} & \textbf{Recall} & \textbf{F1} & \textbf{F2} & \textbf{NM} & \textbf{Acc} & \textbf{Recall} & \textbf{F1} & \textbf{F2} & \textbf{NM} \\
+    \hline
+    AKIEC & 0.47 & 1.00 & 0.64 & 0.816 & 7   & 0.82 & 0.96 & 0.89 & 0.928  & 49 \\
+    BCC   & 0.59 & 1.00 & 0.74 & 0.878 & 10  & 0.81 & 1.00 & 0.90 &  0.955 & 77 \\
+    BKL   & 0.66 & 0.63 & 0.64 & 0.636 & 30  & 0.72 & 0.83 & 0.77 & 0.805  & 165 \\
+    DF    & 0.33 & 1.00 & 0.50 & 0.711 & 3   & 0.71 & 1.00 & 0.83 & 0.924  & 17 \\
+    MEL   & 0.70 & 0.80 & 0.75 & 0.778 & 35  & 0.63 & 0.85 & 0.73 & 0.795  & 167 \\
+    NV    & 0.99 & 0.82 & 0.90 & 0.849 & 163 & 0.98 & 0.86 & 0.91 & 0.882  & 1006 \\
+    VASC  & 0.60 & 1.00 & 0.75 & 0.882 & 3   & 0.71 & 1.00 & 0.83 & 0.924  & 22 \\
+    \hline
+    \textbf{Acc} & & & 0.81 & & 251 & & & 0.87 & & 1503 \\
+    \textbf{M Avg} & 0.62 & 0.89 & 0.70 & & 251 & 0.77 & 0.93 & 0.84 & & 1503 \\
+    \textbf{W Avg} & 0.86 & 0.81 & 0.83 & & 251 & 0.89 & 0.87 & 0.87 & & 1503 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+
+El campo \textit{accuracy} muestra que la precisión mejora de $0.81$ a $0.87$, reflejando un aumento en la capacidad general del modelo para hacer predicciones correctas. El Macro Avg (Promedio Macro) aumento de $0.62$ a $0.77$ en precisión y de $0.70$ a $0.84$ en la puntuación F1, indicando una mejora en el rendimiento medio del modelo a través de todas las categorías. El Weighted Avg (Promedio Ponderado) muestra un incremento de $0.86$ a $0.89$ en precisión y de $0.83$ a $0.87$ en la puntuación F1, mostrando que, teniendo en cuenta el número de muestras (soporte), el rendimiento general del modelo ha mejorado.
+
+En todas las categorías, el puntaje F2 es mayor en el Experimento 2 que en el Experimento 1. Esto indica que este fue más exitoso en equilibrar la precisión y el recall, especialmente con un enfoque en minimizar los falsos negativos. La mejora general en el Experimento 2 confirma un mejor equilibrio en el conjunto de datos y la efectividad de esto para nuestro propósito.
+
+\subsection{Observaciones generales}
+
+En general los experimentos demuestran resultados interesantes en la clasificación. El Experimento 2 muestra mejoras generalizadas en precisión, \textit{recall} y puntuaciones F1 para la mayoría de las categorías. El soporte aumenta significativamente, lo que indica que se evaluó al modelo con más muestras, proporcionando una base más robusta para la evaluación del rendimiento. A pesar de que el soporte es mayor, lo que generalmente hace más desafiante mantener altas métricas, el Experimento 2 demuestra mejoras en las métricas en general. Este, a diferencia del 1, maneja mejor el desequilibrio de clases, lo que se refleja en una mejor diferenciación entre ciertas categorías diagnósticas, lo que es indicativo de un modelo más preciso y confiable.
+
+\subsection{Consideraciones finales}
+
+Los resultados obtenidos son prometedores y sugieren que los modelos de aprendizaje profundo tienen un potencial considerable para mejorar la precisión y la eficiencia del diagnóstico del cáncer de piel. Tomando como referencia los resultados del experimento 2, se obtuvo una eficacia de clasificación de 87\%, lo cual es bajo con respecto a métodos más robustos mencionados en el estado del arte pero prometedor teniendo en cuenta que los algoritmos desarrollados utilizando EfficientNet obtienen resultados entre 84\% y 86.5\% de eficacia \brackcite{ali2022multiclass}.
+
+Es notable además la importancia para el dataset específico utilizado (HAM10000) de un balance proporcional en el conjunto de datos, dado que se evidencia en los resultados que la desproporción entre los mismos lleva a errores de sobre-ajuste y a un peor rendimiento del modelo.
+
+    \begin{table}[H]
+        \small
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Epoch} & \textbf{Loss} & \textbf{Acc} & \textbf{V Loss} & \textbf{V Acc} & \textbf{LR} & \textbf{Next LR} & \textbf{Monitor} & \textbf{Duration} \\ \hline
+        1 /40  & 9.587  & 40.581 & 8.95658 & 56.800 & 0.00100 & 0.00100 & precisión & 85.25  \\ \hline
+        2 /40  & 7.798  & 67.615 & 7.67235 & 66.800 & 0.00100 & 0.00100 & precisión & 21.72  \\ \hline
+        3 /40  & 6.884  & 79.340 & 6.96014 & 69.600 & 0.00100 & 0.00100 & precisión & 22.56  \\ \hline
+        4 /40  & 6.214  & 87.365 & 6.35865 & 71.200 & 0.00100 & 0.00100 & precisión & 25.81  \\ \hline
+        5 /40  & 5.646  & 91.690 & 5.94812 & 75.200 & 0.00100 & 0.00100 & pérdida val. & 23.08  \\ \hline
+        6 /40  & 5.172  & 92.999 & 5.44954 & 76.800 & 0.00100 & 0.00100 & pérdida val. & 23.23  \\ \hline
+        7 /40  & 4.735  & 94.479 & 5.06016 & 76.400 & 0.00100 & 0.00100 & pérdida val. & 23.19  \\ \hline
+        8 /40  & 4.334  & 96.528 & 4.73837 & 76.800 & 0.00100 & 0.00100 & pérdida val. & 22.90  \\ \hline
+        9 /40  & 3.969  & 97.211 & 4.33689 & 77.200 & 0.00100 & 0.00100 & pérdida val. & 22.74  \\ \hline
+        10 /40 & 3.631  & 98.008 & 4.15826 & 74.000 & 0.00100 & 0.00100 & pérdida val. & 22.56  \\ \hline
+        11 /40 & 3.315  & 98.406 & 3.89153 & 73.600 & 0.00100 & 0.00100 & pérdida val. & 23.11  \\ \hline
+        12 /40 & 3.044  & 98.122 & 3.45597 & 78.000 & 0.00100 & 0.00100 & pérdida val. & 22.90  \\ \hline
+        13 /40 & 2.768  & 98.976 & 3.27968 & 74.800 & 0.00100 & 0.00100 & pérdida val. & 23.01  \\ \hline
+        14 /40 & 2.530  & 98.748 & 2.96314 & 78.000 & 0.00100 & 0.00100 & pérdida val. & 22.32  \\ \hline
+        15 /40 & 2.298  & 98.862 & 2.81532 & 75.200 & 0.00100 & 0.00100 & pérdida val. & 22.32  \\ \hline
+        16 /40 & 2.097  & 99.032 & 2.58953 & 74.400 & 0.00100 & 0.00100 & pérdida val. & 25.73  \\ \hline
+        17 /40 & 1.898  & 99.431 & 2.49290 & 73.200 & 0.00100 & 0.00100 & pérdida val. & 23.25  \\ \hline
+        18 /40 & 1.721  & 99.488 & 2.28217 & 74.800 & 0.00100 & 0.00100 & pérdida val. & 22.98  \\ \hline
+        19 /40 & 1.565  & 99.659 & 2.19958 & 74.000 & 0.00100 & 0.00100 & pérdida val. & 22.36  \\ \hline
+        20 /40 & 1.411  & 99.715 & 1.95434 & 77.200 & 0.00100 & 0.00100 & pérdida val. & 22.71  \\ \hline
+        21 /40 & 1.280  & 99.829 & 1.89412 & 75.600 & 0.00100 & 0.00100 & pérdida val. & 25.82  \\ \hline
+        22 /40 & 1.169  & 99.545 & 1.74949 & 77.200 & 0.00100 & 0.00100 & pérdida val. & 23.20  \\ \hline
+        23 /40 & 1.055  & 99.829 & 1.64937 & 75.200 & 0.00100 & 0.00100 & pérdida val. & 23.06  \\ \hline
+        24 /40 & 0.944  & 99.886 & 1.54814 & 75.600 & 0.00100 & 0.00100 & pérdida val. & 22.80  \\ \hline
+        25 /40 & 0.870  & 99.488 & 1.51110 & 76.000 & 0.00100 & 0.00100 & pérdida val. & 22.87  \\ \hline
+        26 /40 & 0.793  & 99.431 & 1.55223 & 74.000 & 0.00100 & 0.00050 & pérdida val. & 22.38  \\ \hline
+        27 /40 & 0.807  & 99.659 & 1.42688 & 76.800 & 0.00050 & 0.00050 & pérdida val. & 25.70  \\ \hline
+        28 /40 & 0.765  & 99.772 & 1.35257 & 77.600 & 0.00050 & 0.00050 & pérdida val. & 23.38  \\ \hline
+        29 /40 & 0.727  & 99.659 & 1.27547 & 78.800 & 0.00050 & 0.00050 & pérdida val. & 22.97  \\ \hline
+        30 /40 & 0.682  & 99.886 & 1.25111 & 78.000 & 0.00050 & 0.00050 & pérdida val. & 22.80  \\ \hline
+        31 /40 & 0.646  & 99.943 & 1.20186 & 78.000 & 0.00050 & 0.00050 & pérdida val. & 23.36  \\ \hline
+        32 /40 & 0.619  & 99.715 & 1.22486 & 77.600 & 0.00050 & 0.00025 & pérdida val. & 23.07  \\ \hline
+        33 /40 & 0.621  & 99.829 & 1.24364 & 77.600 & 0.00025 & 0.00013 & pérdida val. & 23.57  \\ \hline
+        34 /40 & 0.627  & 99.886 & 1.24470 & 76.800 & 0.00013 & 0.00006 & pérdida val. & 23.30  \\ \hline
+        \end{tabular}
+        \caption{Resultados del entrenamiento del experimento 1.}
+        \label{tab:training_results_b1}
+        \end{table}
+
+        \begin{table}[H]
+         \small
+         \centering
+         \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+         \hline
+         \textbf{Epoch} & \textbf{Loss} & \textbf{Acc} & \textbf{V Loss} & \textbf{V Acc} & \textbf{LR} & \textbf{Next LR} & \textbf{Monitor} & \textbf{Duration} \\ \hline
+         1 /40  & 8.418  & 48.371 & 7.41700 & 66.911 & 0.00100 & 0.00100 & precisión & 184.55 \\ \hline
+         2 /40  & 6.362  & 69.943 & 5.81767 & 69.907 & 0.00100 & 0.00100 & precisión & 107.94 \\ \hline
+         3 /40  & 5.110  & 77.686 & 4.76153 & 72.969 & 0.00100 & 0.00100 & precisión & 106.30 \\ \hline
+         4 /40  & 4.181  & 81.371 & 3.86405 & 78.362 & 0.00100 & 0.00100 & precisión & 104.60 \\ \hline
+         5 /40  & 3.417  & 84.771 & 3.25588 & 77.097 & 0.00100 & 0.00100 & precisión & 101.90 \\ \hline
+         6 /40  & 2.777  & 87.314 & 2.70253 & 78.495 & 0.00100 & 0.00100 & precisión & 101.85 \\ \hline
+         7 /40  & 2.247  & 90.143 & 2.24392 & 80.360 & 0.00100 & 0.00100 & pérdida val. & 101.98 \\ \hline
+         8 /40  & 1.819  & 91.143 & 1.98878 & 77.364 & 0.00100 & 0.00100 & pérdida val. & 101.74 \\ \hline
+         9 /40  & 1.464  & 92.543 & 1.70207 & 77.896 & 0.00100 & 0.00100 & pérdida val. & 101.27 \\ \hline
+         10 /40 & 1.197  & 94.000 & 1.43860 & 81.225 & 0.00100 & 0.00100 & pérdida val. & 101.71 \\ \hline
+         11 /40 & 0.992  & 94.000 & 1.24007 & 81.358 & 0.00100 & 0.00100 & pérdida val. & 101.23 \\ \hline
+         12 /40 & 0.826  & 94.800 & 1.10713 & 81.625 & 0.00100 & 0.00100 & pérdida val. & 100.90 \\ \hline
+         13 /40 & 0.699  & 95.086 & 1.08394 & 79.228 & 0.00100 & 0.00100 & pérdida val. & 101.31 \\ \hline
+         14 /40 & 0.580  & 96.571 & 0.86793 & 84.021 & 0.00100 & 0.00100 & pérdida val. & 101.53 \\ \hline
+         15 /40 & 0.498  & 96.886 & 0.85960 & 83.688 & 0.00100 & 0.00100 & pérdida val. & 100.92 \\ \hline
+         16 /40 & 0.453  & 96.914 & 0.88978 & 81.025 & 0.00100 & 0.00050 & pérdida val. & 116.17 \\ \hline
+         17 /40 & 0.436  & 97.857 & 0.93461 & 79.561 & 0.00050 & 0.00025 & pérdida val. & 100.73 \\ \hline
+         18 /40 & 0.449  & 97.543 & 0.80205 & 83.755 & 0.00025 & 0.00025 & pérdida val. & 101.01 \\ \hline
+         19 /40 & 0.420  & 97.971 & 0.79843 & 84.887 & 0.00025 & 0.00025 & pérdida val. & 115.73 \\ \hline
+         20 /40 & 0.399  & 98.429 & 0.82976 & 83.888 & 0.00025 & 0.00013 & pérdida val. & 100.45 \\ \hline
+         21 /40 & 0.395  & 98.571 & 0.83847 & 83.688 & 0.00013 & 0.00006 & pérdida val. & 101.25 \\ \hline
+         22 /40 & 0.406  & 98.057 & 0.81854 & 83.955 & 0.00006 & 0.00003 & pérdida val. & 101.18 \\ \hline
+         \end{tabular}
+         \caption{Resultados del entrenamiento del experimento 2.}
+         \label{tab:training_results_b2}
+         \end{table}

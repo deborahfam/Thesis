@@ -1,20 +1,19 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Distribución de imágenes por categoría diagnóstica.\relax }}{18}{table.2.1}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Datos transformados a formato categórico.\relax }}{19}{table.2.2}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Descripción de términos clave en el entrenamiento de modelos de aprendizaje automático.\relax }}{20}{table.2.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Parámetros de aumento de datos.\relax }}{26}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Descripción de términos clave en el entrenamiento de modelos de aprendizaje automático.\relax }}{28}{table.3.2}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Distribución de los conjuntos de entrenamiento, validación y prueba.\relax }}{30}{table.3.3}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Experimento 1: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación.\relax }}{31}{table.3.4}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Distribución de muestras por categoría después del sobre-muestreo.\relax }}{31}{table.3.5}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Distribución de muestras con peso asignado.\relax }}{32}{table.3.6}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Estadísticas básicas del modelo del experimento 1.\relax }}{32}{table.3.7}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Distribución de los conjuntos de entrenamiento, validación y prueba.\relax }}{35}{table.3.8}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación.\relax }}{35}{table.3.9}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Estadísticas básicas del modelo del experimento 2.\relax }}{36}{table.3.10}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Informe de clasificación combinado para los Experimentos 1 y 2.\relax }}{40}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Resultados del entrenamiento del experimento 1.\relax }}{42}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Resultados del entrenamiento del experimento 2.\relax }}{43}{table.4.3}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Distribución de imágenes por categoría diagnóstica.\relax }}{23}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Datos transformados a formato categórico.\relax }}{24}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Parámetros de aumento de datos.\relax }}{26}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Distribución de los conjuntos de entrenamiento, validación y prueba.\relax }}{29}{table.3.4}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Experimento 1: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación.\relax }}{30}{table.3.5}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Distribución de muestras por categoría después del sobre-muestreo.\relax }}{30}{table.3.6}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Distribución de muestras con peso asignado.\relax }}{31}{table.3.7}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Estadísticas básicas del modelo del experimento 1.\relax }}{31}{table.3.8}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces Distribución de los conjuntos de entrenamiento, validación y prueba.\relax }}{34}{table.3.9}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Experimento 2: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación.\relax }}{34}{table.3.10}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces Estadísticas básicas del modelo del experimento 2.\relax }}{35}{table.3.11}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces Informe de clasificación combinado para los Experimentos 1 y 2.\relax }}{39}{table.3.12}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces Resultados del entrenamiento del experimento 1.\relax }}{41}{table.3.13}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces Resultados del entrenamiento del experimento 2.\relax }}{42}{table.3.14}%
