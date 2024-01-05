@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {2.1}Desarrollo del modelo y estrategias de optimización}{15}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Arquitectura del modelo EfficientNet}{16}{subsection.2.1.1}%
 \contentsline {section}{\numberline {2.2}Diseño y entrenamiento del modelo}{18}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Ajuste dinámico del learning rate}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Ajuste dinámico del \textit {learning rate}}{18}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Detalles de implementación y experimentos}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Fuente de datos}{23}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Transformación de datos}{24}{subsection.3.1.1}%

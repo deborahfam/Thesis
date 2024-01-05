@@ -1352,6 +1352,7 @@ INPUT ./FrontMatter/SupervisorOpinion.tex
 INPUT FrontMatter/SupervisorOpinion.tex
 INPUT ./FrontMatter/SupervisorOpinion.tex
 INPUT FrontMatter/SupervisorOpinion.tex
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT ./FrontMatter/Abstract.tex
 INPUT ./FrontMatter/Abstract.tex
 INPUT ./FrontMatter/Abstract.tex
@@ -1362,7 +1363,6 @@ INPUT ./FrontMatter/Abstract.tex
 INPUT FrontMatter/Abstract.tex
 INPUT ./FrontMatter/Abstract.tex
 INPUT FrontMatter/Abstract.tex
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT ./FrontMatter/Contents.tex
 INPUT ./FrontMatter/Contents.tex
 INPUT ./FrontMatter/Contents.tex
