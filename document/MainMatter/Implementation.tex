@@ -381,11 +381,11 @@ Se implemento para la evaluación del rendimiento del modelo una matriz de confu
        \begin{itemize}
            \item \textbf{AKIEC:} 7 correctamente identificadas, 0 errores.
            \item \textbf{BCC:} 10 correctamente identificadas, 0 errores.
-           \item \textbf{BKL:} 19 correctamente identificadas, 2 clasificadas como AKIEC, 2 como BCC, 5 como NV, 1 como MEL, 1 como VASC.
-           \item \textbf{DF:} 0 correctamente identificadas, 3 clasificadas como NV.
-           \item \textbf{MEL:} 28 correctamente identificadas, 2 clasificadas como AKIEC, 3 como BCC, 1 como NV.
+           \item \textbf{BKL:} 19 correctamente identificadas, 2 clasificadas como AKIEC, 2 como BCC, 5 como MEL, 1 como NV, 1 como VASC.
+           \item \textbf{DF:} 3 correctamente identificadas.
+           \item \textbf{MEL:} 28 correctamente identificadas, 2 clasificadas como AKIEC, 3 como BCC,1 como BKL y 1 como NV.
            \item \textbf{NV:} 134 correctamente identificadas, errores con varias clases.
-           \item \textbf{VASC:} 0 correctamente identificadas, 3 clasificadas como NV.
+           \item \textbf{VASC:} 3 correctamente identificadas.
        \end{itemize}
    \end{minipage}
 \end{figure}
@@ -522,7 +522,7 @@ En esta sección se realiza un análisis comparativo para evaluar la efectividad
 
 Ambas matrices de confusión muestran en común que ambos modelos se desarrollaron bien y que tienen gran efectividad en la clasificación. En estas, la clase con el mayor número de verdaderos positivos es "NV", en la primera con $134$ casos predichos correctamente y en la segunda con $862$ casos. Sin embargo en otras se nota una mejora de clasificación clara. En el caso de 'AKIEC', la tasa de $TP$ mejoró significativamente, pasando de $7$ de $300$ a $47$ de $500$. Incluso teniendo en cuenta el aumento del tamaño del conjunto de datos, se trata de una clara mejora. Se observan mejoras similares en otras clases, como 'BCC', 'BKL', 'DF', 'MEL' y 'NV'. 
 
-La tasa de TP (\textit{true positive} o verdaderos positivos) ha aumentado no sólo en términos absolutos, sino también proporcionalmente si se tiene en cuenta el mayor tamaño del conjunto de datos. 'VASC' es un caso especial; mientras que la primera matriz no muestra ningún TP y tiene 3 FN (false negative o falsos negativos), la segunda matriz, a pesar de tener un gran número de FP(false positive o falsos positivos) (22), muestra que el modelo ha empezado a reconocer esta clase, cosa que antes no hacía.
+La tasa de TP (\textit{true positive} o verdaderos positivos) ha aumentado no sólo en términos absolutos, sino también proporcionalmente si se tiene en cuenta el mayor tamaño del conjunto de datos.
 
 Con respecto a los errores expresados de cada experimento en la clasificación, en el caso de 'NV', el número de errores del gráfico de barras del experimento 1 se relaciona numéricamente con el conjunto de pruebas, por lo que el modelo tiene casi las mismas posibilidades de hacer una predicción correcta que de dar un falso positivo. En el segundo experimento, a pesar del aumento de errores, el modelo tiene la misma proporción de verdaderos positivos que de falsos positivos, lo que sugiere que el rendimiento del modelo se ha mantenido constante en relación con el tamaño del conjunto de datos. 'MEL' y'BKL' muestran un aumento de los errores en el segundo gráfico de barras, pero también es proporcional al aumento del tamaño del conjunto de datos. La proporción de verdaderos positivos frente a falsos positivos sigue siendo la misma. 'AKIEC' presenta un número relativamente pequeño de errores en el experimento 2, lo que puede deberse a que el conjunto de datos es más grande.
 
