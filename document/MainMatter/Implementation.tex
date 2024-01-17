@@ -276,10 +276,10 @@ Las herramientas que se utiliza para hacer la división se hace uso del \textit{
       NV       & 300 & 158 & 163 \\
       MEL      & 300 & 25  & 35  \\
       BKL      & 300 & 34  & 30  \\
-      DF       & 115 & 5   & 3   \\
+      DF       & 107 & 5   & 3   \\
       AKIEC    & 300 & 11  & 7   \\
       BCC      & 300 & 16  & 10  \\
-      VASC     & 142 & 1   & 3   \\ \hline
+      VASC     & 138 & 1   & 3   \\ \hline
       \end{tabular}
       \caption{Experimento 1: Distribución de imágenes de cáncer de piel en los conjuntos de entrenamiento, test y validación.}
       \label{table:train_test_validate_e1}
@@ -297,10 +297,10 @@ Se establece para este un tamaño objetivo de muestras por clase de $300$ , y se
    AKIEC & 300 \\
    BCC & 300 \\
    BKL & 300 \\
-   DF & 115 \\
+   DF & 107 \\
    MEL & 300 \\
    NV & 300 \\
-   VASC & 142 \\ \hline
+   VASC & 138 \\ \hline
    \end{tabular}
    \caption{Distribución de muestras por categoría después del sobre-muestreo.}
    \label{tab:sampling_distribution_1}
@@ -317,10 +317,10 @@ Como se evidencia anteriormente, al separar la data en clases el conjunto se man
    AKIEC & 300 & 1.00\\
    BCC & 300 & 1.00\\
    BKL & 300 & 1.00\\
-   DF & 115 & 2.60\\
+   DF & 107 & 2.60\\
    MEL & 300 & 1.00\\
    NV & 300 & 1.00\\
-   VASC & 142 & 2.11\\ \hline
+   VASC & 138 & 2.11\\ \hline
    \end{tabular}
    \caption{Distribución de muestras con peso asignado.}
    \label{tab:weighting_distribution}
@@ -562,7 +562,6 @@ Se calcula además $F_{\beta}$ o F2. El cálculo del puntaje F2 es una forma de 
     \hline
     \end{tabular}
 \end{table}
-
 
 
 El campo \textit{accuracy} muestra que la precisión mejora de $0.81$ a $0.87$, reflejando un aumento en la capacidad general del modelo para hacer predicciones correctas. El Macro Avg (Promedio Macro) aumento de $0.62$ a $0.77$ en precisión y de $0.70$ a $0.84$ en la puntuación F1, indicando una mejora en el rendimiento medio del modelo a través de todas las categorías. El Weighted Avg (Promedio Ponderado) muestra un incremento de $0.86$ a $0.89$ en precisión y de $0.83$ a $0.87$ en la puntuación F1, mostrando que, teniendo en cuenta el número de muestras (soporte), el rendimiento general del modelo ha mejorado.
