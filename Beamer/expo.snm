@@ -1,0 +1,12 @@
+\beamer@slide {fig:skin-cancer}{2}
+\beamer@slide {fig:ml}{3}
+\beamer@slide {fig:cnn-convol}{11}
+\beamer@slide {fig:pre-trained}{15}
+\beamer@slide {fig:pre-trained-cnn}{19}
+\beamer@slide {fig:model_permormance}{21}
+\beamer@slide {fig:lra_permormance}{23}
+\beamer@slide {tab:ham10000_distribution}{25}
+\beamer@slide {table:data_distribution_e1}{30}
+\beamer@slide {table:data_distribution_e2}{35}
+\beamer@slide {tab:classification_report_combined}{39}
+\beamer@slide {table:train_test_validate_e1}{48}
